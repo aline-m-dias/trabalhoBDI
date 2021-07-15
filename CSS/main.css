@@ -1,10 +1,43 @@
 .navbar {
     height: 50px;
     background-color: black;
+    font-size: 125%;
+    font-family: "Noto Sans", sans-serif;
+    text-align: center;
+
 }
 
 .menu {
     color: #22d6b5;
-    text-align: center;
-    height: 50px;
+    height: 70px;
+   
+}
+
+.ola {
+    background-color: #22d6b5;
+    color: black;
+    height: 150px;
+    font-size: 150%;
+}
+
+.fundoAzul {
+    background-color: #22d6b5;
+    color: black;
+    height: 110px;
+}
+
+.fundoPreto {
+    color: #22d6b5;
+}
+
+.fundoAmarelo{
+    background-color: #D6A913;
+}
+
+.fundoRosa {
+    background-color: D140D6;
+}
+
+.fundoRoxo{
+    background-color: 86128A;
 }
