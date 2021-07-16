@@ -20,6 +20,66 @@
     font-size: 150%;
 }
 
+.cadastro {
+    background-color: #D6A913;
+    height: 500px;
+    width: 500px;
+    float: right;
+    margin: 40px;
+}
+
+.cadastrar {
+    background-color: #22d6b5;
+    color: black;
+    height: 50px;
+}
+
+.logar {
+    background-color: #D6A913;
+    color: black;
+    height: 50px;
+}
+
+.login {
+    background-color: #22d6b5;
+    height: 50px;
+    width: 500px;
+    float: right;
+    margin-right: 40px;
+}
+
+.fazerLogin {
+    background-color: #86128A;
+    height: 400px;
+    width: 500px;
+    float: right;
+    margin: 40px;
+}
+
+.clear{
+    clear: both;
+}
+
+.fundoPretoLogin {
+    color: #86128A;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: left;
+    margin: 40px;
+
+}
+
+.fundoPretoCadastro {
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: left;
+    margin: 40px;
+
+}
+
 .fundoAzul {
     background-color: #22d6b5;
     color: black;
@@ -33,12 +93,5 @@
 
 .fundoAmarelo{
     background-color: #D6A913;
-}
-
-.fundoRosa {
-    background-color: D140D6;
-}
-
-.fundoRoxo{
-    background-color: 86128A;
+    color: black;
 }
