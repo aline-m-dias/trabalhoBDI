@@ -4,13 +4,11 @@
     font-size: 125%;
     font-family: "Noto Sans", sans-serif;
     text-align: center;
-
 }
 
 .menu {
     color: #22d6b5;
     height: 70px;
-   
 }
 
 .ola {
@@ -56,7 +54,7 @@
     margin: 40px;
 }
 
-.clear{
+.clear {
     clear: both;
 }
 
@@ -67,7 +65,6 @@
     font-size: 300%;
     text-align: left;
     margin: 40px;
-
 }
 
 .fundoPretoCadastro {
@@ -77,7 +74,6 @@
     font-size: 300%;
     text-align: left;
     margin: 40px;
-
 }
 
 .fundoAzul {
@@ -91,7 +87,7 @@
     height: 110px;
 }
 
-.fundoAmarelo{
+.fundoAmarelo {
     background-color: #D6A913;
     color: black;
 }
