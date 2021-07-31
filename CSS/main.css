@@ -11,6 +11,15 @@
     height: 70px;
 }
 
+#register-form{
+    font-size: 80%;
+    padding: 20px;
+}
+
+.full-box{
+
+}
+
 .ola {
     background-color: #22d6b5;
     color: black;
@@ -30,6 +39,12 @@
     background-color: #22d6b5;
     color: black;
     height: 50px;
+    text-align: center;
+}
+
+#register-form{
+    
+
 }
 
 .logar {
@@ -79,11 +94,6 @@
 .fundoAzul {
     background-color: #22d6b5;
     color: black;
-    height: 110px;
-}
-
-.fundoPreto {
-    color: #22d6b5;
     height: 110px;
 }
 
