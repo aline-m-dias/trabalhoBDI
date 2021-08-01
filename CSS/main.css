@@ -1,3 +1,34 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100 px;
+    height: 100px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    background-color: #D6A913;
+    width: 100%;
+    height: 120%;
+    float: left;
+    padding: 3%, 4%;
+}
+
+.logo {
+    float: left;
+    margin-top: 0 auto;
+}
+
 .navbar {
     height: 50px;
     background-color: black;
@@ -11,14 +42,12 @@
     height: 70px;
 }
 
-#register-form{
+#register-form {
     font-size: 80%;
     padding: 20px;
 }
 
-.full-box{
-
-}
+.full-box {}
 
 .ola {
     background-color: #22d6b5;
@@ -42,10 +71,7 @@
     text-align: center;
 }
 
-#register-form{
-    
-
-}
+#register-form {}
 
 .logar {
     background-color: #D6A913;
