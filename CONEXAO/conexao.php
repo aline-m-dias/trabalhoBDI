@@ -9,7 +9,6 @@ class Conexao {
 
 	public function conectar() {
 		try {
-
 			$conexao = new PDO(
 				"pgsql:host=$this->host;dbname=$this->dbname",
 				"$this->user",

@@ -1,14 +1,22 @@
 
 <?php
-/*
+
 class TarefaService {
 
 	private $conexao;
 	private $tarefa;
+	private $usuario;
+	private $receita;
+	private $despesa;
+	private $meta;
 
-	public function __construct(Conexao $conexao, Tarefa $tarefa) {
+	public function __construct(Conexao $conexao, Usuario $usuario, Despesa $despesa, 
+	Receita $receita, Meta $meta) {
 		$this->conexao = $conexao->conectar();
-		$this->tarefa = $tarefa;
+		$this->usuario = $usuario;
+		this->receita = $receita;
+		this->despesa = $despesa;
+		this->meta = $meta;
 	}
 
 	//criar função para validar o login
@@ -17,7 +25,7 @@ class TarefaService {
 	}
 	*/
 
-	/*public function inserir() { //create
+	public function inserir() { //create
 		$query = 'insert into tb_tarefas(tarefa)values(:tarefa)'; //tarefa será especificado no bindValue
 		$stmt = $this->conexao->prepare($query); 
 		$stmt->bindValue(':tarefa', $this->tarefa->__get('tarefa')); //trata a inserção: remove injeções de SQL
@@ -32,14 +40,14 @@ class TarefaService {
 				tb_tarefas as t
 				left join tb_status as s on (t.id_status = s.id)
 		';
-		/*
+		
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_OBJ); // fetchall retorna todos os registros da consulta em forrma
 		// em forma de um array, para acessar indice especifico variavel[]->local 
 		//TECH_OBJ retorna a consulta em classes de objetos
 	}
-*/
-//}
+
+}
 
 ?>
