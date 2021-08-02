@@ -137,6 +137,7 @@ input[type="submit"] {
     font-size: 30px;
     text-align: center;
     font-family: "Noto Sans", sans-serif;
+    padding-top: 70px;
 }
 
 .clear {
@@ -166,12 +167,13 @@ input[type="submit"] {
 }
 
 .mes {
+    margin-top: 70px;
     background-color: #D6A913;
     color: black;
     width: 100%;
     height: 40px;
     text-align: center;
-    margin: 2 auto;
+    padding-top: 20px;
 }
 
 /*receita e despesa*/
@@ -183,6 +185,7 @@ input[type="submit"] {
     margin: 50 px;
     background-color: #22d6b5;
     text-align: center;
+    padding-top: 10px;
 }
 
 .botão {
@@ -203,4 +206,30 @@ select {
     text-align: center;
     padding: 5px;
     border-radius: 8px;
+}
+
+.register-form-receita {
+    font-size: 18 px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10 px;
+}
+
+.fundoPretoReceita {
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: center;
+    margin: 40px;
+}
+
+.cadrastrarReceita {
+    background-color: #22d6b5;
+    height: 150px;
+    width: 500px;
+    float: left;
+    margin: 240px;
+    margin-left: -80px;
+    border-radius: 10 px;
 }
