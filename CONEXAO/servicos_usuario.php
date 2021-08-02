@@ -1,29 +1,28 @@
 
 <?php
 
-class TarefaService {
+class Serviços_usuario {
 
 	private $conexao;
-	private $tarefa;
 	private $usuario;
-	private $receita;
-	private $despesa;
-	private $meta;
+	
 
-	public function __construct(Conexao $conexao, Usuario $usuario, Despesa $despesa, 
-	Receita $receita, Meta $meta) {
+	public function __construct(Conexao $conexao, Usuario $usuario) { 
 		$this->conexao = $conexao->conectar();
 		$this->usuario = $usuario;
-		this->receita = $receita;
-		this->despesa = $despesa;
-		this->meta = $meta;
 	}
 
-	//criar função para validar o login
-	/*public function logar(){
-		if()
+	public function inserirUsuario(){
+
 	}
-	*/
+
+	public function logar(){
+		
+	}
+
+	public function retornarUsuario(){
+		
+	}
 
 	public function inserir() { //create
 		$query = 'insert into tb_tarefas(tarefa)values(:tarefa)'; //tarefa será especificado no bindValue

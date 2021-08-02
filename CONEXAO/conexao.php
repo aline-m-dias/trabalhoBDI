@@ -14,7 +14,6 @@ class Conexao {
 				"$this->user",
 				"$this->pass"				
 			);
-
 			return $conexao;
 		} catch (PDOException $e) {
 			echo '<p>'.$e->getMessage().'</p>';
