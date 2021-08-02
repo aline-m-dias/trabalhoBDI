@@ -2,6 +2,7 @@ body {
     background-color: black;
     margin: 0;
     padding: 0;
+    font-family: "Noto Sans", sans-serif;
 }
 
 a {
@@ -42,9 +43,38 @@ img {
     height: 70px;
 }
 
+/*formulario*/
+
 #register-form {
     font-size: 80%;
-    padding: 20px;
+    margin: 0 px;
+    padding: 0 px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cadastrar {
+    background-color: #22d6b5;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.cadastro {
+    background-color: #D6A913;
+    height: 300px;
+    width: 400px;
+    float: right;
+    margin: 80px;
+}
+
+.login {
+    background-color: #22d6b5;
+    height: 50px;
+    width: 400px;
+    float: right;
+    margin-top: 70px;
 }
 
 .full-box {}
@@ -56,35 +86,10 @@ img {
     font-size: 150%;
 }
 
-.cadastro {
-    background-color: #D6A913;
-    height: 500px;
-    width: 500px;
-    float: right;
-    margin: 40px;
-}
-
-.cadastrar {
-    background-color: #22d6b5;
-    color: black;
-    height: 50px;
-    text-align: center;
-}
-
-#register-form {}
-
 .logar {
     background-color: #D6A913;
     color: black;
     height: 50px;
-}
-
-.login {
-    background-color: #22d6b5;
-    height: 50px;
-    width: 500px;
-    float: right;
-    margin-right: 40px;
 }
 
 .fazerLogin {
