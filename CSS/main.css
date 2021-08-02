@@ -132,11 +132,11 @@ input[type="submit"] {
     font-size: 20px;
 }
 
-.ola {
-    background-color: #22d6b5;
-    color: black;
-    height: 150px;
-    font-size: 150%;
+#ola {
+    color: #22d6b5;
+    font-size: 30px;
+    text-align: center;
+    font-family: "Noto Sans", sans-serif;
 }
 
 .clear {
@@ -163,4 +163,44 @@ input[type="submit"] {
 .sair {
     float: right;
     text-align: center;
+}
+
+.mes {
+    background-color: #D6A913;
+    color: black;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin: 2 auto;
+}
+
+/*receita e despesa*/
+
+#receita_despesa {
+    width: 100%;
+    height: 270px;
+    color: black;
+    margin: 50 px;
+    background-color: #22d6b5;
+    text-align: center;
+}
+
+.botão {
+    margin: 10px;
+    font-size: 24px;
+}
+
+.textoReceita {
+    font-size: 30px;
+}
+
+button {
+    border-radius: 10px;
+    text-align: center;
+}
+
+select {
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
 }
