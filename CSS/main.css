@@ -10,7 +10,7 @@ a {
 }
 
 img {
-    width: 100 px;
+    width: 120 px;
     height: 60px;
     position: relative;
     margin: 0 auto;
@@ -156,4 +156,11 @@ input[type="submit"] {
     background-color: #22d6b5;
     color: black;
     height: 110px;
+}
+
+/* botão sair*/
+
+.sair {
+    float: right;
+    text-align: center;
 }
