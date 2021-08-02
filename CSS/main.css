@@ -53,7 +53,7 @@ input[type="submit"] {
 }
 
 #register-form {
-    font-size: 80%;
+    font-size: 18 px;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 10 px;
@@ -86,6 +86,7 @@ input[type="submit"] {
     margin-top: 110px;
     padding-top: 10px;
     border-radius: 10 px;
+    text-align: center;
 }
 
 .full-box {
