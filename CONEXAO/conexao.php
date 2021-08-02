@@ -3,13 +3,12 @@
 class Conexao {
 
 	private $host = 'localhost';
-	private $dbname = 'poupeMais';
+	private $dbname = 'poupemais';
 	private $user = 'postgres';
 	private $pass = '1234';
 
 	public function conectar() {
 		try {
-
 			$conexao = new PDO(
 				"pgsql:host=$this->host;dbname=$this->dbname",
 				"$this->user",

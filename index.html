@@ -2,9 +2,9 @@
 <html>
 
 <head>
-	<title>Poupe Mais</title>
+	<title>Poupe Mais | Cadastrar</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale 1" />
+	<meta name="viewport" content="width=device-width, initial-scale 1">
 </head>
 
 <body>
@@ -16,51 +16,64 @@
 	<header class="cabecalho">
 		<a class="logo" href="cadastrar.html"> <img
 				src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
-
-		<div class="sair">
-			<input id="btn-submit" type="submit" value="sair">
-		</div>
 	</header>
 
-	<!--
-	<div class="ola">
-		<br> Olá, Nome
-	</div>
-	<div class="fundoPreto">
-		<br> + mês/ano -
-	</div>
-	<div class="fundoAzul">
-		<br> + Receita - <br>
-		<br> + Despesa -
-	</div>
-	<div class="fundoPreto">
-		<br> Metas
-		<br> + Metas curto prazo - <br>
-		<br> + Metas longo prazo -
-	</div>
-	<div class="fundoAzul">
-		<br> Receita
-		<br> Lista de receita
-	</div>
-	<div class="fundoPreto">
-		<br> Despesas
-		<br> Valor R$xxx,xxx
-	</div>
-	<div class="fundoAzul">
-		<br> Balanço
-		<br> Valor R$xxx,xxx
-	</div>
-	<div class="fundoPreto">
-		<br> Despesas por categorias
-	</div>
-	<div class="fundoAzul">
-		<br> Meta curto prazo
-	</div>
-	<div class="fundoPreto">
-		<br> Meta longo prazo
+	<div class="fundoPretoCadastro">
+		<br> Organize os gastos da sua
+		<br> família de forma fácil
+
+		<div class="frase">
+			<p> A educação financeira que a sua família precisa para conquistar seu objetivos!</p>
+		</div>
 	</div>
 
--->
+	<div class="cadastro">
+
+		<p class="cadastrar">Cadastra-se</p>
+
+		<form id="register-form" action="">
+
+			<div class="full-box">
+				<label for="name">Nome</label>
+				<input type="text" name="name" id="name" placeholder="Digite seu nome">
+			</div>
+			<div class="full-box">
+				<label for="name">Nome da Família</label>
+				<input type="text" name="nameFamília" id="nameFamília" placeholder="Digite o nome da família">
+			</div>
+			<div class="full-box">
+				<label for="name">Quantidade de Pessoas</label>
+				<input type="text" name="quantidadeFamília" id="quantidadeFamília"
+					placeholder="Digite o número de pessoas">
+			</div>
+			<div class="full-box">
+				<label for="name">Senha</label>
+				<input type="password" name="password" id="password" placeholder="Digite sua senha">
+			</div>
+			<div class="full-box">
+				<label for="passconfirmation">Confirmação de senha</label>
+				<input type="password" name="passconfirmation" id="passwordconfirmation"
+					placeholder="Digite novamente sua senha">
+			</div>
+			<div>
+				<input type="checkbox" name="agreement" id="agreement">
+				<label for="agreement" id="agreement-label"> Concordo em enviar meus dados</label>
+			</div>
+			<div class="full-box">
+				<input id="btn-submit" type="submit" value="Cadrastre-se">
+			</div>
+			<div class="login">
+				Já tem cadastro?
+				<input id="btn-submitLogin" type="submit" value="Login">
+			</div>
+		</form>
+
+	</div>
+
+
+
+
+	<script src="JS/scripts.js"></script>
 
 </body>
 
