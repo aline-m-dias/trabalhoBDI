@@ -47,8 +47,6 @@ img {
 
 #register-form {
     font-size: 80%;
-    margin: 0 px;
-    padding: 0 px;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -63,7 +61,7 @@ img {
 
 .cadastro {
     background-color: #D6A913;
-    height: 300px;
+    height: 250px;
     width: 400px;
     float: right;
     margin: 80px;
@@ -74,10 +72,12 @@ img {
     height: 50px;
     width: 400px;
     float: right;
-    margin-top: 70px;
+    margin-top: 110px;
 }
 
-.full-box {}
+.full-box {
+    margin: 10px;
+}
 
 .ola {
     background-color: #22d6b5;
