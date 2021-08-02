@@ -6,33 +6,38 @@
 	<meta charset="utf-8" />
 </head>
 
-<body class=" navbar">
+<body>
 
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
-	<div class="fundoAmarelo">
-		<br>Poupe Mais (logo) <br>
-	</div>
-	<div class="fundoPretoLogin">  
+	<header class="cabecalho">
+		<a class="logo" href="cadrastrar.html"> <img
+				src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
+	</header>
+
+	<div class="fundoPretoLogin">
 		<br> Faça seu login
 	</div>
 
 	<div class="fazerLogin">
-		
-		<div class="logar">
-			Login
-		</div>
 
-		<form>
-			<br><br><br>
-			Login:<br>
-			<input type="text" name="login"><br><br>
-			Senha:<br>
-			<input type="text" name="senha"><br><br>
-			<input type="submit" value="Login">
-		</form>
+		<p class="logar">Login</p>
+
+		<form id="register-form" action="">
+
+			<div class="full-box">
+				<label for="name">Login</label>
+				<input type="text" name="login" id="login" placeholder="Digite seu login">
+			</div>
+			<div class="full-box">
+				<label for="name">Senha</label>
+				<input type="text" name="senha" id="senha" placeholder="Digite sua senha">
+			</div>
+			<div class="full-box">
+				<input id="btn-submit" type="submit" value="Entrar">
+			</div>
 	</div>
 
 	<div class="clear"></div>

@@ -45,6 +45,13 @@ img {
 
 /*formulario*/
 
+input[type="submit"] {
+    border-radius: 10px;
+    height: 30px;
+    cursor: pointer;
+    padding: 50 px;
+}
+
 #register-form {
     font-size: 80%;
     box-sizing: border-box;
@@ -59,6 +66,7 @@ img {
     margin: 0 auto;
     padding: 0 auto;
     border-radius: 10 px;
+    font-size: 40 px;
 }
 
 .cadastro {
@@ -86,6 +94,43 @@ img {
     position: relative;
 }
 
+.frase {
+    color: #D6A913;
+    font-size: 18px;
+    margin-top: 60px;
+    padding: 0 auto;
+}
+
+/*tela login*/
+
+.fundoPretoLogin {
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: left;
+    margin: 40px;
+}
+
+.fazerLogin {
+    background-color: #22d6b5;
+    height: 150px;
+    width: 500px;
+    float: left;
+    margin: 250px;
+    margin-left: 80px;
+    border-radius: 10 px;
+}
+
+.logar {
+    background-color: #D6A913;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-size: 20px;
+}
+
 .ola {
     background-color: #22d6b5;
     color: black;
@@ -93,31 +138,8 @@ img {
     font-size: 150%;
 }
 
-.logar {
-    background-color: #D6A913;
-    color: black;
-    height: 50px;
-}
-
-.fazerLogin {
-    background-color: #86128A;
-    height: 400px;
-    width: 500px;
-    float: right;
-    margin: 40px;
-}
-
 .clear {
     clear: both;
-}
-
-.fundoPretoLogin {
-    color: #86128A;
-    height: 110px;
-    float: left;
-    font-size: 300%;
-    text-align: left;
-    margin: 40px;
 }
 
 .fundoPretoCadastro {
@@ -133,9 +155,4 @@ img {
     background-color: #22d6b5;
     color: black;
     height: 110px;
-}
-
-.fundoAmarelo {
-    background-color: #D6A913;
-    color: black;
 }
