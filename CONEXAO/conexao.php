@@ -5,7 +5,7 @@ class Conexao{
 	private $host = 'localhost';
 	private $dbname = 'poupemais';
 	private $user = 'postgres';
-	private $pass = '';
+	private $pass = '1234';
 
 	public function conectar() {
 		try {
@@ -17,6 +17,7 @@ class Conexao{
 			return $conexao;
 		} catch (PDOException $e) {
 			echo '<p>'.$e->getMessage().'</p>';
+			print("ERRO DE CONEXÃO");
 		}
 	}
 }
