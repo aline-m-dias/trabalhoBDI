@@ -4,21 +4,28 @@
 class Serviços_usuario {
 
 	private $conexao;
-	private $usuario;
+	private $login;
+	private $senha;
+	private $nome_familia;
+	private $qtd_pessoas;
+	
 	
 	public function __construct(Conexao $conexao, Usuario $usuario) { 
 		$this->conexao = $conexao->conectar();
-		$this->usuario = $usuario;
+		$this->login = $usuario->__get('login');
+		$this->senha = $usuario->__get('senha');
+		$this->nome_familia = $usuario->__get('nome_familia');
+		$this->qtd_pessoas = $usuario->__get('qtd_pessoas');
 	}
+	
 	
 	public function inserirUsuario(){
 		$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
-		values ('João da Silva', '982114', 'Silva', 3 )";
+		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas )";
 		$this->conexao->exec($query);
 		
 	}
 
-	
 	/*$stmt = $this->conexao->prepare($query);
 		$stmt->bindValue(':login', $this->usuario->__get('login'));
 		$stmt->bindValue(':senha', $this->usuario->__get('senha'));
