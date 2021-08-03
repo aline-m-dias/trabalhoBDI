@@ -226,7 +226,17 @@ select {
 
 .cadrastrarReceita {
     background-color: #22d6b5;
-    height: 150px;
+    height: 180px;
+    width: 500px;
+    float: left;
+    margin: 240px;
+    margin-left: -80px;
+    border-radius: 10 px;
+}
+
+.cadrastrarDespesa {
+    background-color: #22d6b5;
+    height: 200px;
     width: 500px;
     float: left;
     margin: 240px;

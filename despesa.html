@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Poupe Mais | Receita</title>
+    <title>Poupe Mais | Despesa</title>
     <meta charset="utf-8" />
 </head>
 
@@ -18,27 +18,41 @@
     </header>
 
     <div class="fundoPretoReceita">
-        <br> Cadrastre sua receita
+        <br> Cadrastre sua despesa
     </div>
 
-    <div class="cadrastrarReceita">
+    <div class="cadrastrarDespesa">
 
-        <p class="logar">Receita</p>
+        <p class="logar">Despesa</p>
 
         <form id="register-form-receita">
 
             <div class="full-box">
                 <label for="name">Nome</label>
-                <input type="text" name="login" id="login" placeholder="Digite o nome">
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome">
             </div>
             <div class="full-box">
                 <label for="name">Valor</label>
-                <input type="text" name="senha" id="senha" placeholder="Digite o valor">
+                <input type="text" name="valor" id="valor" placeholder="Digite o valor">
+            </div>
+            <div class="full-box">
+                <label for="name">Categorias</label>
+                <select>
+                    <option value="vazio">--</option>
+                    <option value="alimentação">Alimentação</option>
+                    <option value="saúde">Saúde</option>
+                    <option value="educação">Educação</option>
+                    <option value="moradia">Moradia</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="diversos">Diversos</option>
+
+                </select>
             </div>
             <div class="full-box">
                 <label for="name">Data</label>
                 <input type="date" name="data" id="data" placeholder="Digite o valor">
             </div>
+
             <div class="full-box">
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
