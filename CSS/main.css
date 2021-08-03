@@ -243,3 +243,13 @@ select {
     margin-left: -80px;
     border-radius: 10 px;
 }
+
+.cadrastrarMeta {
+    background-color: #22d6b5;
+    height: 180px;
+    width: 500px;
+    float: left;
+    margin: 100px;
+    margin-left: 400px;
+    border-radius: 10 px;
+}
