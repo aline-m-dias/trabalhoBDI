@@ -3,10 +3,7 @@
     require "../CONEXAO/conexao.php";
     require "../CONEXAO/meta.php";
     require "../CONEXAO/servicos_meta.php";
-
-
-    //PAREI AQUI, FALTA COMPLETAR    
-    $meta = new Meta();
-    $meta->__set('meta',$_POST['meta']);
+   
+    
     
 ?> 

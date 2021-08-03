@@ -11,10 +11,21 @@ class Serviços_usuario {
 		$this->conexao = $conexao->conectar();
 		$this->usuario = $usuario;
 	}
+	
+	
 
 	public function inserirUsuario(){
-
+		$query = 'insert into usuario (login, senha, nome_familia, qtd_pessoas)
+		values(:login, :senha, :nome_familia, :qtd_pessoas)';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':login', $this->usuario->__get('login'));
+		$stmt->bindValue(':senha', $this->usuario->__get('senha'));
+		$stmt->bindValue(':nome_familia', $this->usuario->__get('nome_familia'));
+		$stmt->bindValue(':qtd_pessoas', $this->usuario->__get('qtd_pessoas'));
+		$stmt->execute();
 	}
+
+	
 
 	public function logar(){
 		
@@ -24,28 +35,7 @@ class Serviços_usuario {
 		
 	}
 
-	public function inserir() { //create
-		$query = 'insert into tb_tarefas(tarefa)values(:tarefa)'; //tarefa será especificado no bindValue
-		$stmt = $this->conexao->prepare($query); 
-		$stmt->bindValue(':tarefa', $this->tarefa->__get('tarefa')); //trata a inserção: remove injeções de SQL
-		$stmt->execute(); //executa a função de inserir uma nova tupla
-	}
 
-	public function recuperar() { //read
-		$query = '
-			select 
-				t.id, s.status, t.tarefa 
-			from 
-				tb_tarefas as t
-				left join tb_status as s on (t.id_status = s.id)
-		';
-		
-		$stmt = $this->conexao->prepare($query);
-		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_OBJ); // fetchall retorna todos os registros da consulta em forrma
-		// em forma de um array, para acessar indice especifico variavel[]->local 
-		//TECH_OBJ retorna a consulta em classes de objetos
-	}
 
 }
 

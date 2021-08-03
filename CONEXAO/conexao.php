@@ -1,11 +1,11 @@
 <?php
 
-class Conexao {
+class Conexao{
 
 	private $host = 'localhost';
 	private $dbname = 'poupemais';
 	private $user = 'postgres';
-	private $pass = '1234';
+	private $pass = '';
 
 	public function conectar() {
 		try {
