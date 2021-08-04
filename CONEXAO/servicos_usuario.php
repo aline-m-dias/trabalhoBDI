@@ -21,7 +21,7 @@ class Serviços_usuario {
 	
 	public function inserirUsuario(){
 		$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
-		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas )";
+		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
 		$this->conexao->exec($query);
 		
 	}
@@ -34,7 +34,11 @@ class Serviços_usuario {
 		$stmt->execute();*/
 
 	public function logar(){
-		
+		//EDITAR!!
+		$query = "select U.login from usuario U where '$this->login' = U.login and 
+		'$this->login' = U.senha;";
+		$retorno = $this->conexao->exec($query);
+		echo $retorno;
 	}
 
 	public function retornarUsuario(){
