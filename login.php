@@ -22,20 +22,20 @@
 	</div>
 
 	
-	<?php if( isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1 ) { /*verifico se na variavel GET 
+	<?php /*if( isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1 ) { /*verifico se na variavel GET 
 			tem inclusão, e se inclusão(variavel de retorno) é igual a 1, se for, apresentar mensagem
-			de erro de login*/
+			de erro de login
 			?> 
 			<div class="fundoAzul">
 				<h5>Login ou senha incorretos!</h5>
 			</div>
-		<?php } ?>
+		<?php }*/ ?>
 
 	<div class="fazerLogin">
 
 		<p class="logar">Login</p>
 
-		<form id="register-form" action="controle_servico_usuario.php">
+		<form id="register-form" action="controle_servico_usuario.php?acao=logar">
 
 			<div class="full-box">
 				<label for="name">Login</label>

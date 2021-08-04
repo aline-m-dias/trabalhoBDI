@@ -63,7 +63,7 @@
 				<input id="btn-submit" type="submit" value="Cadastre-se">
 			</div>
 		</form>
-		<form id="register-form" action="login.html" method="post" name="logar">
+		<form id="register-form" action="login.php" method="post" name="logar">
 			<div class="login">
 				Já tem cadastro?
 				<input id="btn-submitLogin" type="submit" value="Login" >

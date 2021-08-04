@@ -37,15 +37,17 @@ class Serviços_usuario {
 		$stmt->execute();*/
 
 	public function logar(){
-		//EDITAR!!
-		$query = "select U.login from usuario U where '$this->login' = U.login and 
-		'$this->login' = U.senha;";
+		//ESTÁ COM ERRO!!
+		$query = "select U.login from usuario U where '$this->login' = U.login and '$this->login' = U.senha;";
 		$retorno = $this->conexao->exec($query);
 		echo $retorno;
 
 		if($retorno == 0){
+			echo 'chegamos até aqui 3';
 			header('Location: login.php?loguinnegado=1');
-		}else{
+		}
+		if($retorno == 1){
+			echo 'chegamos até aqui 4';
 			header('Location: pagprincipal.html');
 		}
 		
