@@ -31,7 +31,7 @@
 
 		<p class="cadastrar">Cadastre-se</p>
 
-		<form id="register-form" action="controle_servico_usuario.php" method="post" name="cadastro">
+		<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
 
 			<div class="full-box">
 				<label for="name">Nome</label>

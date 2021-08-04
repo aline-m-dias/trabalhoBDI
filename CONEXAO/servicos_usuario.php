@@ -23,6 +23,9 @@ class Serviços_usuario {
 		$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
 		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
 		$this->conexao->exec($query);
+
+		//TRATAR A EXCEÇÃO QUANDO TIVER JÁ UM USUÁRIO COM AQUELE NOME
+		header('Location: pagprincipal.html'); //após a plicação do BD me direciona para essa página
 		
 	}
 
@@ -39,6 +42,13 @@ class Serviços_usuario {
 		'$this->login' = U.senha;";
 		$retorno = $this->conexao->exec($query);
 		echo $retorno;
+
+		if($retorno == 0){
+			header('Location: login.php?loguinnegado=1');
+		}else{
+			header('Location: pagprincipal.html');
+		}
+		
 	}
 
 	public function retornarUsuario(){

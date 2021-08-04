@@ -4,23 +4,26 @@
     require "../../CONEXAO/usuario.php";
     require "../../CONEXAO/servicos_usuario.php";
 
-    echo '<prep>';
+  /*  echo '<prep>';
     print_r($_POST);
-    echo '</prep>';
+    echo '</prep>';*/
 
     //setando os valores de usuario preencheidos pelo input Cadastro
-    $usuario = new Usuario();
-    $usuario->__set('login',$_POST['login']);
-    $usuario->__set('nome_familia',$_POST['nome_familia']);
-    $usuario->__set('qtd_pessoas',$_POST['qtd_pessoas']);
-    $usuario->__set('senha',$_POST['senha']);
+    if (isset($_GET['acao']) && $_GET['acao'] == 'inserirUsuario'){
+        $usuario = new Usuario();
+        $usuario->__set('login',$_POST['login']);
+        $usuario->__set('nome_familia',$_POST['nome_familia']);
+        $usuario->__set('qtd_pessoas',$_POST['qtd_pessoas']);
+        $usuario->__set('senha',$_POST['senha']);
+        
+        $conexao = new Conexao();
+        $servico_usuario = new Serviços_usuario($conexao, $usuario);
+        $servico_usuario->inserirUsuario();
+    }
     
-    $conexao = new Conexao();
-    $servico_usuario = new Serviços_usuario($conexao, $usuario);
-    $servico_usuario->inserirUsuario();
 
-    echo '<prep>';
+ /*   echo '<prep>';
     print_r($servico_usuario);
-    echo '</prep>';
+    echo '</prep>';*/
     
 ?> 
