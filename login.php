@@ -26,8 +26,8 @@
 			tem inclusão, e se inclusão(variavel de retorno) é igual a 1, se for, apresentar mensagem
 			de erro de login*/
 			?> 
-			<div class="fundoAzul">
-				<h5>Login ou senha incorretos!</h5>
+			<div class="msgErro">
+				<h5>Atenção: Login ou senha incorretos!</h5>
 			</div>
 		<?php } ?>
 

@@ -159,6 +159,13 @@ input[type="submit"] {
     height: 110px;
 }
 
+.msgErro{
+    background-color: #22d6b5;
+    color: black;
+    height: 110px;
+    text-align: center;
+}
+
 /* botão sair*/
 
 .sair {
