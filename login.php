@@ -22,14 +22,6 @@
 	</div>
 
 	
-	<?php if( isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1 ) { /*verifico se na variavel GET 
-			tem inclusão, e se inclusão(variavel de retorno) é igual a 1, se for, apresentar mensagem
-			de erro de login*/
-			?> 
-			<div class="msgErro">
-				<h5>Atenção: Login ou senha incorretos!</h5>
-			</div>
-		<?php } ?>
 
 	<div class="fazerLogin">
 
@@ -48,6 +40,15 @@
 			<div class="full-box">
 				<input id="btn-submit" type="submit" value="Entrar">
 			</div>
+			<?php if( isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1 ) { /*verifico se na variavel GET 
+			tem inclusão, e se inclusão(variavel de retorno) é igual a 1, se for, apresentar mensagem
+			de erro de login*/
+			?> 
+			<div class="msgErro">
+				<h5>Atenção: Login ou senha incorretos!</h5>
+			</div>
+		<?php } ?>
+
 	</div>
 
 	<div class="clear"></div>
