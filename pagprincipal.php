@@ -29,27 +29,27 @@
 
 	<div id="receita_despesa">
 
-		<form id="botão" action="pessoa.php" method="post" name="logar">
+		<form id="botão" action="pessoa.php" method="post" name="pagpessoa">
 			<div>
 				<input id="btn-submitLogin" type="submit" value="Pessoa" >
 			</div>
 		</form>
-		<form id="botão" action="receita.php" method="post" name="logar">
+		<form id="botão" action="receita.php" method="post" name="pagreceita">
 			<div>
 				<input id="btn-submitLogin" type="submit" value="Receita" >
 			</div>
 		</form>
-		<form id="botão" action="despesa.php" method="post" name="logar">
+		<form id="botão" action="despesa.php" method="post" name= "pagdespesa">
 			<div>
 				<input id="btn-submitLogin" type="submit" value="Despesa" >
 			</div>
 		</form>
-		<form id="botão" action="metaCurtoPrazo.php" method="post" name="logar">
+		<form id="botão" action="metaCurtoPrazo.php" method="post" name="pagmetacurto">
 			<div>
 				<input id="btn-submitLogin" type="submit" value="Meta Curto Prazo" >
 			</div>
 		</form>
-		<form id="botão" action="metaLongoPrazo.php" method="post" name="logar">
+		<form id="botão" action="metaLongoPrazo.php" method="post" name="pagmetalongo">
 			<div>
 				<input id="btn-submitLogin" type="submit" value="Meta Longo Prazo" >
 			</div>

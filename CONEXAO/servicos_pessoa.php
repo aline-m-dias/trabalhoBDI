@@ -25,10 +25,9 @@ class Serviços_pessoa {
 		values ('$this->cpf', '$this->nome_pessoa', '$this->data_nasc', '$this->parentesco', '$this->login');";
 		$this->conexao->exec($query);
 
-		header('Location: pessoa.php?pessoacadastrada=1'); //após a plicação do BD me direciona para essa página
+		header('Location: pessoa.php?pessoacadastrada=1'); //após aplicação do BD me direciona para essa página
 		
 	}
-
 
 	public function retornarPessoa(){
 		

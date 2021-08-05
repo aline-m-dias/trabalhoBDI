@@ -2,7 +2,7 @@
 
 class Conexao{
 
-	private $host = 'localhost';
+	private $host = '192.168.1.1';
 	private $dbname = 'poupemais';
 	private $user = 'postgres';
 	private $pass = '1234';

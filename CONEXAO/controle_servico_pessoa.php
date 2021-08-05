@@ -3,10 +3,14 @@
     require "../../CONEXAO/conexao.php";
     require "../../CONEXAO/pessoa.php";
     require "../../CONEXAO/servicos_pessoa.php";
+    require "../../CONEXAO/usuario.php";
 
     //setando os valores de pessoa preencheidos pelo input 
     if (isset($_GET['acao']) && $_GET['acao'] == 'inserirPessoa'){
         $pessoa = new Pessoa();
+        $usuario = new Usuario();
+        $login = $usuario->__get('login');
+        $pessoa->__set('login',$usuario->__get('login'));
         $pessoa->__set('cpf',$_POST['cpf']);
         $pessoa->__set('nome_pessoa',$_POST['nome_pessoa']);
         $pessoa->__set('data_nasc',$_POST['data_nasc']);

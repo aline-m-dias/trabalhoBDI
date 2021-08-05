@@ -26,11 +26,11 @@
         <form id="register-form-receita" action="controle_servico_pessoa.php?acao=inserirPessoa">
             <div class="full-box">
                 <label for="name">Nome</label>
-                <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome">
+                <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
             </div>
             <div class="full-box">
                 <label for="name">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o valor">
+                <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF (apenas números)">
             </div>
             <div class="full-box">
                 <label for="name">Parentesco</label>
@@ -39,7 +39,7 @@
             </div>
             <div class="full-box">
                 <label for="name">Data</label>
-                <input type="date" name="data_nasc" id="data" >
+                <input type="text" name="data_nasc" id="data" >
             </div>
 
             <div class="full-box">
