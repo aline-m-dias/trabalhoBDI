@@ -42,11 +42,10 @@
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>	
 		</form>		
-			</div>
-			<?php if( isset($_GET['receitacadastrada']) && $_GET['receitacadastrada'] == 1 ) { ?> 
-			<div class="msgForm">
+		<?php if( isset($_GET['receitacadastrada']) && $_GET['receitacadastrada'] == 1 ) { ?> 
+			<div class="logar">
 				<h5>Receita cadastrada com sucesso!</h5>
-			</div>
+			</div> 
 		<?php } ?>    
     </div>
 

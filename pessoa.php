@@ -23,10 +23,7 @@
 
     <div class="cadrastrarDespesa">
 
-        <p class="logar">Pessoa</p>
-
         <form id="register-form-receita" action="controle_servico_pessoa.php?acao=inserirPessoa">
-
             <div class="full-box">
                 <label for="name">Nome</label>
                 <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome">
@@ -48,13 +45,12 @@
             <div class="full-box">
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>	
-		</form>		
-			</div>
-			<?php if( isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1 ) { ?> 
-			<div class="msgForm">
+		</form>	
+        <?php if( isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1 ) { ?> 
+			<div class="logar">
 				<h5>Pessoa cadastrada com sucesso!</h5>
-			</div>
-		<?php } ?>
+			</div> 
+		<?php } ?>			
     </div>
 
     <div class="clear"></div>
