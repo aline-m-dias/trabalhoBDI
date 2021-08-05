@@ -27,10 +27,6 @@
 
         <form id="register-form-receita" action="controle_servico_receita.php?acao=inserirReceita">
             <div class="full-box">
-                <label for="name">CPF</label>
-                <input type="text" name="cpf" id="login" placeholder="Digite o cpf">
-            </div>
-            <div class="full-box">
                 <label for="name">Nome</label>
                 <input type="text" name="nome" id="login" placeholder="Digite a descrição da receita">
             </div>

@@ -11,6 +11,7 @@
     if (isset($_GET['acao']) && $_GET['acao'] == 'inserirUsuario'){
         $usuario = new Usuario();
         $pessoa = new Pessoa();
+        $receita = new Receita();
      // $despesa = new Despesa();
         $meta = new Meta();
 
@@ -20,6 +21,7 @@
         $usuario->__set('senha',$_POST['senha']);
 
         $pessoa->__set('login',$_POST['login']);
+        $receita->__set('login',$_POST['login']);
      // $despesa->__set('login',$_POST['login']);   
         $meta->__set('login',$_POST['login']);
         
@@ -30,13 +32,15 @@
     if(isset($_GET['acao']) && $_GET['acao'] == 'logar'){
         $usuario = new Usuario();
         $pessoa = new Pessoa();
+        // $receita = new Receita();
         // $despesa = new Despesa();
         //$meta = new Meta();
-
+        
         $usuario->__set('login',$_POST['login']);
         $usuario->__set('senha',$_POST['senha']);
 
         $pessoa->__set('login',$_POST['login']);
+        // $receita->__set('login',$_POST['login']);
         // $despesa->__set('login',$_POST['login']);   
         //$meta->__set('login',$_POST['login']);
         

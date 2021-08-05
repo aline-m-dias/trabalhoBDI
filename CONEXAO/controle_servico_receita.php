@@ -7,7 +7,6 @@
      //setando os valores de receita preencheidos pelo input 
      if (isset($_GET['acao']) && $_GET['acao'] == 'inserirReceita'){
         $receita = new Receita();
-        $receita->__set('cpf',$_POST['cpf']);
         $receita->__set('nome',$_POST['nome']);
         $receita->__set('data_rec',$_POST['data_rec']);
         $receita->__set('codigo',$_POST['codigo']);
