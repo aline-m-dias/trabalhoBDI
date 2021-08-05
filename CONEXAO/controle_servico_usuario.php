@@ -28,7 +28,6 @@
         $servico_usuario->inserirUsuario();
     }
     if(isset($_GET['acao']) && $_GET['acao'] == 'logar'){
-        //ESTÁ DANDO ERRO!!
         $usuario = new Usuario();
         $pessoa = new Pessoa();
         // $despesa = new Despesa();

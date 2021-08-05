@@ -37,7 +37,7 @@ class Serviços_usuario {
 		$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
 
 		if($cont == 0){
-			header('Location: login.php?loguinnegado=1');
+			header('Location: login.php?loginnegado=1');
 		}
 		if($cont == 1){
 			header('Location: pagprincipal.php');
