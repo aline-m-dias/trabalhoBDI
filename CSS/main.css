@@ -46,7 +46,8 @@ img {
 /*formulario*/
 
 input {
-    width: 100%;
+    width: 98%;
+    margin: 2px;
 }
 
 select {
@@ -90,7 +91,7 @@ input[type="checkbox"] {
 .cadastro {
     background-color: #D6A913;
     height: 350px;
-    width: 500px;
+    width: 502px;
     float: right;
     margin: 50px;
     border-radius: 10 px;

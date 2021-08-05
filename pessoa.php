@@ -25,10 +25,8 @@
         <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
             <div class="full-box">
                 <label for="name">Nome</label>
-                <<<<<<< HEAD <input type="text" name="nome_pessoa" id="nome_pessoa" placeholder="Digite o nome">
-                    =======
-                    <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
-                    >>>>>>> 05586a80cdde17f07001f99eb6df84335a58d307
+                <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
+
             </div>
             <div class="full-box">
                 <label for="name">CPF</label>
