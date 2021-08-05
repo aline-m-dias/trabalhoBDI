@@ -13,8 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
 	<header class="cabecalho">
-		<a class="logo" href="cadastrar.html"> <img
-				src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
+		<a class="logo" href="cadastrar.html"> <img src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
+		<button name="button">Sair</button>
 	</header>
 
 	<div id="ola">
@@ -23,8 +23,6 @@
 
 	<div class="mes">
 		<label class="textoReceita" for="mes">Selecione o ano/mês</label>
-		<input type="month" name="mes" id="mes">
-		
 	</div>
 
 	<div id="receita_despesa">
@@ -32,46 +30,50 @@
 		<div class="botão">
 			<p class="textoReceita"> Cadastre seus dados</p>
 			<button name="button">Pessoa</button>
-			<button name="button">Receita</button> 
-			<button name="button">Despesa</button> 
-			<button name="button">Meta Curto Prazo</button> 
+			<button name="button">Receita</button>
+			<button name="button">Despesa</button>
+			<button name="button">Meta Curto Prazo</button>
 			<button name="button">Meta longo Prazo</button>
 		</div>
 	</div>
 
-	
+
 	<div class="receita">
 		<p>Receita</p>
 		<div>
 			<ul>
-				<li> Nome da receita    -  R$ Valor</li> 	
-			</ul>	
+				<li> Nome da receita - R$ Valor</li>
+			</ul>
 			<ul>
-				<li> Nome da receita    -  R$ Valor</li> 	
-			</ul>	
+				<li> Nome da receita - R$ Valor</li>
+			</ul>
 			<ul>
-				<li> Nome da receita    -  R$ Valor</li> 	
-			</ul>	
+				<li> Nome da receita - R$ Valor</li>
+			</ul>
 		</div>
-		
+
 	</div>
 
-	<div class= "despesa">
+	<div class="despesa">
 		<p>Despesa</p>
-		<br>	
-		 R$ Valor
-			
+		<br>
+		R$ Valor
+
 	</div>
-	
-	<div class= "balanco">
+
+	<div class="balanco">
 		<p>Balanço</p>
-		<br>	
-		 R$ Valor
-			
+		<br>
+		R$ Valor
+
 	</div>
 
 
+	<div class="despesaCategorias">
+		<p>Despesa Categorias</p>
 
+
+	</div>
 
 
 

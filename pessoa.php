@@ -13,8 +13,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
     <header class="cabecalho">
-        <a class="logo" href="cadrastrar.html"> <img
-                src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
+        <a class="logo" href="cadrastrar.html"> <img src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
     </header>
 
     <div class="fundoPretoReceita">
@@ -29,7 +28,7 @@
 
             <div class="full-box">
                 <label for="name">Nome</label>
-                <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome">
+                <input type="text" name="nome_pessoa" id="nome_pessoa" placeholder="Digite o nome">
             </div>
             <div class="full-box">
                 <label for="name">CPF</label>
@@ -42,19 +41,19 @@
             </div>
             <div class="full-box">
                 <label for="name">Data</label>
-                <input type="date" name="data_nasc" id="data" >
+                <input type="date" name="data_nasc" id="data">
             </div>
 
             <div class="full-box">
                 <input id="btn-submit" type="submit" value="Enviar dados">
-            </div>	
-		</form>		
-			</div>
-			<?php if( isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1 ) { ?> 
-			<div class="msgForm">
-				<h5>Pessoa cadastrada com sucesso!</h5>
-			</div>
-		<?php } ?>
+            </div>
+        </form>
+    </div>
+    <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
+        <div class="msgForm">
+            <h5>Pessoa cadastrada com sucesso!</h5>
+        </div>
+    <?php } ?>
     </div>
 
     <div class="clear"></div>

@@ -45,11 +45,29 @@ img {
 
 /*formulario*/
 
+input {
+    width: 100%;
+}
+
+select {
+    width: 100%;
+}
+
 input[type="submit"] {
     border-radius: 10px;
     height: 30px;
     cursor: pointer;
     padding: 50 px;
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    border-radius: 10px;
+    height: 30px;
+    font-size: 18px;
+    text-align: left;
+    width: 0 px;
+    margin: 0px;
 }
 
 #register-form {
@@ -71,20 +89,20 @@ input[type="submit"] {
 
 .cadastro {
     background-color: #D6A913;
-    height: 250px;
-    width: 400px;
+    height: 350px;
+    width: 500px;
     float: right;
-    margin: 80px;
+    margin: 50px;
     border-radius: 10 px;
 }
 
 .login {
     background-color: #22d6b5;
-    height: 40px;
-    width: 400px;
+    height: 60px;
+    width: 500px;
     float: right;
-    margin-top: 110px;
-    padding-top: 10px;
+    margin-top: 60px;
+    padding-top: 5px;
     border-radius: 10 px;
     text-align: center;
 }
@@ -115,7 +133,7 @@ input[type="submit"] {
 
 .fazerLogin {
     background-color: #22d6b5;
-    height: 150px;
+    height: 200px;
     width: 500px;
     float: left;
     margin: 250px;
@@ -201,7 +219,7 @@ input[type="submit"] {
 button {
     border-radius: 10px;
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     margin-right: 50px;
 }
 
@@ -229,7 +247,7 @@ select {
 
 .cadrastrarReceita {
     background-color: #22d6b5;
-    height: 180px;
+    height: 300px;
     width: 500px;
     float: left;
     margin: 240px;
@@ -239,7 +257,7 @@ select {
 
 .cadrastrarDespesa {
     background-color: #22d6b5;
-    height: 200px;
+    height: 320px;
     width: 500px;
     float: left;
     margin: 240px;
@@ -249,7 +267,7 @@ select {
 
 .cadrastrarMeta {
     background-color: #22d6b5;
-    height: 180px;
+    height: 300px;
     width: 500px;
     float: left;
     margin: 100px;
@@ -282,6 +300,17 @@ select {
     color: black;
     width: 100%;
     height: 180px;
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.despesaCategorias {
+    background-color: #22d6b5;
+    color: black;
+    width: 100%;
+    height: 500px;
     margin-top: 0;
     padding-top: 5px;
     font-size: 25px;

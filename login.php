@@ -13,15 +13,14 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
 	<header class="cabecalho">
-		<a class="logo" href="cadrastrar.html"> <img
-				src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
+		<a class="logo" href="cadrastrar.html"> <img src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
 	</header>
 
 	<div class="fundoPretoLogin">
 		<br> Faça seu login
 	</div>
 
-	
+
 
 	<div class="fazerLogin">
 
@@ -39,17 +38,17 @@
 			</div>
 			<div class="full-box">
 				<input id="btn-submit" type="submit" value="Entrar">
-			</div>	
-		</form>		
 			</div>
-			<?php if( isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1 ) { /*verifico se na variavel GET 
+		</form>
+	</div>
+	<?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { /*verifico se na variavel GET 
 			tem inclusão, e se inclusão(variavel de retorno) é igual a 1, se for, apresentar mensagem
 			de erro de login*/
-			?> 
-			<div class="full-box">
-				<h5>Atenção: Login ou senha incorretos!</h5>
-			</div>
-		<?php } ?>
+	?>
+		<div class="full-box">
+			<h5>Atenção: Login ou senha incorretos!</h5>
+		</div>
+	<?php } ?>
 
 	</div>
 

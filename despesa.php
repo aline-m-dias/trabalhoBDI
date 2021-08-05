@@ -13,8 +13,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
     <header class="cabecalho">
-        <a class="logo" href="cadrastrar.html"> <img
-                src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
+        <a class="logo" href="cadrastrar.html"> <img src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
     </header>
 
     <div class="fundoPretoReceita">
@@ -50,12 +49,18 @@
             </div>
             <div class="full-box">
                 <label for="name">Data</label>
-                <input type="date" name="data" id="data" placeholder="Digite o valor">
+                <input type="date" name="data_desp" id="data_desp">
             </div>
 
             <div class="full-box">
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
+        </form>
+        <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Despesa cadastrada com sucesso!</h5>
+            </div>
+        <?php } ?>
     </div>
 
     <div class="clear"></div>
