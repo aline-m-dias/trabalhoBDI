@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Poupe Mais | Cadrastro pessoa</title>
+    <title>Poupe Mais | Cadastro pessoa</title>
     <meta charset="utf-8" />
 </head>
 
@@ -18,7 +18,7 @@
     </header>
 
     <div class="fundoPretoReceita">
-        <br> Cadrastre uma pessoa
+        <br> Cadastre uma pessoa
     </div>
 
     <div class="cadrastrarDespesa">
@@ -47,7 +47,14 @@
 
             <div class="full-box">
                 <input id="btn-submit" type="submit" value="Enviar dados">
-            </div>
+            </div>	
+		</form>		
+			</div>
+			<?php if( isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1 ) { ?> 
+			<div class="msgForm">
+				<h5>Pessoa cadastrada com sucesso!</h5>
+			</div>
+		<?php } ?>
     </div>
 
     <div class="clear"></div>
