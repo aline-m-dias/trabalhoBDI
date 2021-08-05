@@ -25,32 +25,24 @@ class Serviços_usuario {
 		$this->conexao->exec($query);
 
 		//TRATAR A EXCEÇÃO QUANDO TIVER JÁ UM USUÁRIO COM AQUELE NOME
-		header('Location: pagprincipal.html'); //após a plicação do BD me direciona para essa página
+		header('Location: pagprincipal.php'); //após a plicação do BD me direciona para essa página
 		
 	}
 
-	/*$stmt = $this->conexao->prepare($query);
-		$stmt->bindValue(':login', $this->usuario->__get('login'));
-		$stmt->bindValue(':senha', $this->usuario->__get('senha'));
-		$stmt->bindValue(':nome_familia', $this->usuario->__get('nome_familia'));
-		$stmt->bindValue(':qtd_pessoas', $this->usuario->__get('qtd_pessoas'));
-		$stmt->execute();*/
-
 	public function logar(){
 		//ESTÁ COM ERRO!!
-		$query = "select U.login from usuario U where '$this->login' = U.login and '$this->login' = U.senha;";
-		$retorno = $this->conexao->exec($query);
-		echo $retorno;
+		$query = "select U.login from usuario U where '$this->login' = U.login and '$this->senha' = U.senha;";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+		$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
 
-		if($retorno == 0){
-			echo 'chegamos até aqui 3';
+		if($cont == 0){
 			header('Location: login.php?loguinnegado=1');
 		}
-		if($retorno == 1){
-			echo 'chegamos até aqui 4';
-			header('Location: pagprincipal.html');
+		if($cont == 1){
+			header('Location: pagprincipal.php');
 		}
-		
+
 	}
 
 	public function retornarUsuario(){

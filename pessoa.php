@@ -25,11 +25,11 @@
 
         <p class="logar">Pessoa</p>
 
-        <form id="register-form-receita">
+        <form id="register-form-receita" action="controle_servico_pessoa.php?acao=inserirPessoa">
 
             <div class="full-box">
                 <label for="name">Nome</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite o nome">
+                <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome">
             </div>
             <div class="full-box">
                 <label for="name">CPF</label>
@@ -42,7 +42,7 @@
             </div>
             <div class="full-box">
                 <label for="name">Data</label>
-                <input type="date" name="data" id="data" placeholder="Digite o valor">
+                <input type="date" name="data_nasc" id="data" placeholder="Digite o valor">
             </div>
 
             <div class="full-box">
