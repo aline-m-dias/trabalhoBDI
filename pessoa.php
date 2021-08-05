@@ -42,7 +42,7 @@
             </div>
             <div class="full-box">
                 <label for="name">Data</label>
-                <input type="date" name="data_nasc" id="data" placeholder="Digite o valor">
+                <input type="date" name="data_nasc" id="data" >
             </div>
 
             <div class="full-box">

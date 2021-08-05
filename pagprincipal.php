@@ -22,25 +22,54 @@
 	</div>
 
 	<div class="mes">
-		<label for="mes">Selecione o ano/mês</label>
+		<label class="textoReceita" for="mes">Selecione o ano/mês</label>
 		<input type="month" name="mes" id="mes">
+		
 	</div>
 
 	<div id="receita_despesa">
 
 		<div class="botão">
-			<p class="textoReceita"> Registre suas receitas e despesas</p>
-
-			<button name="button">+</button> receita
-			<button name="button">-</button> despesa
-		</div>
-
-		<div class="botão">
-			<p class="textoReceita"> Registre suas metas</p>
-			<button name="button">+</button> metas curto prazo <button name="button"> -</button>
-			<button name="button">+</button> metas longo prazo <button name="button"> -</button>
+			<p class="textoReceita"> Cadastre seus dados</p>
+			<button name="button">Pessoa</button>
+			<button name="button">Receita</button> 
+			<button name="button">Despesa</button> 
+			<button name="button">Meta Curto Prazo</button> 
+			<button name="button">Meta longo Prazo</button>
 		</div>
 	</div>
+
+	
+	<div class="receita">
+		<p>Receita</p>
+		<div>
+			<ul>
+				<li> Nome da receita    -  R$ Valor</li> 	
+			</ul>	
+			<ul>
+				<li> Nome da receita    -  R$ Valor</li> 	
+			</ul>	
+			<ul>
+				<li> Nome da receita    -  R$ Valor</li> 	
+			</ul>	
+		</div>
+		
+	</div>
+
+	<div class= "despesa">
+		<p>Despesa</p>
+		<br>	
+		 R$ Valor
+			
+	</div>
+	
+	<div class= "balanco">
+		<p>Balanço</p>
+		<br>	
+		 R$ Valor
+			
+	</div>
+
 
 
 
