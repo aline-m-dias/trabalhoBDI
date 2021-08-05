@@ -30,7 +30,6 @@ class Serviços_usuario {
 	}
 
 	public function logar(){
-		//ESTÁ COM ERRO!!
 		$query = "select U.login from usuario U where '$this->login' = U.login and '$this->senha' = U.senha;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();

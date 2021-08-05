@@ -4,9 +4,9 @@ class Receita{
 	private $nome;
 	private $codigo;
 	private $valor;
-    private $cpf;
-	private $data_rec;
-
+    private $data_rec;
+	private $login;
+	
 	public function __get($atributo) {
 		return $this->$atributo;
 	}

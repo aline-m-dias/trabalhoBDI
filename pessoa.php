@@ -22,22 +22,21 @@
 
     <div class="cadrastrarDespesa">
 
-        <p class="logar">Pessoa</p>
-
-        <form id="register-form-receita" action="controle_servico_pessoa.php?acao=inserirPessoa">
-
+        <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
             <div class="full-box">
                 <label for="name">Nome</label>
-                <input type="text" name="nome_pessoa" id="nome_pessoa" placeholder="Digite o nome">
+                <<<<<<< HEAD <input type="text" name="nome_pessoa" id="nome_pessoa" placeholder="Digite o nome">
+                    =======
+                    <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
+                    >>>>>>> 05586a80cdde17f07001f99eb6df84335a58d307
             </div>
             <div class="full-box">
                 <label for="name">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o valor">
+                <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF (apenas números)">
             </div>
             <div class="full-box">
                 <label for="name">Parentesco</label>
                 <input type="text" name="parentesco" id="parentesco" placeholder="Digite o parentesco">
-
             </div>
             <div class="full-box">
                 <label for="name">Data</label>

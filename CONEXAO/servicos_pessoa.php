@@ -22,13 +22,12 @@ class Serviços_pessoa {
 	
 	public function inserirPessoa(){
 		$query = "insert into pessoa (cpf, nome_pessoa, data_nasc, parentesco, login)
-		values ('$this->cpf', '$this->nome_pessoa', '$this->data_nasc', '$this->parentesco', '$this->login');";
+		values ('13770130540', 'Gabriele Almeida', '04111998', 'filha', 'naalmeida98');";
 		$this->conexao->exec($query);
 
-		header('Location: pessoa.php?pessoacadastrada=1'); //após a plicação do BD me direciona para essa página
+		header('Location: pessoa.php?pessoacadastrada=1'); //após aplicação do BD me direciona para essa página
 		
 	}
-
 
 	public function retornarPessoa(){
 		
