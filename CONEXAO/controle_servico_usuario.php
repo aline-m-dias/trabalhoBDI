@@ -2,9 +2,9 @@
     //recupera cada informação digitada no 'input' pelo usuário com seus respectivos "name" e valores 
     require "../../CONEXAO/conexao.php";
     require "../../CONEXAO/usuario.php";
-//    require "../../CONEXAO/pessoa.php";
+    require "../../CONEXAO/pessoa.php";
 //    require "../../CONEXAO/despesa.php";
-    require "../../CONEXAO/meta.php";
+//   require "../../CONEXAO/meta.php";
     require "../../CONEXAO/servicos_usuario.php";
 
     //setando os valores de usuario preencheidos pelo input Cadastro
@@ -31,7 +31,7 @@
     }
     if(isset($_GET['acao']) && $_GET['acao'] == 'logar'){
         $usuario = new Usuario();
-    //    $pessoa = new Pessoa();
+        $pessoa = new Pessoa();
         // $receita = new Receita();
         // $despesa = new Despesa();
         //$meta = new Meta();
@@ -39,7 +39,7 @@
         $usuario->__set('login',$_POST['login']);
         $usuario->__set('senha',$_POST['senha']);
 
-    //    $pessoa->__set('login',$_POST['login']);
+        $pessoa->__set('login',$_POST['login']);
         // $receita->__set('login',$_POST['login']);
         // $despesa->__set('login',$_POST['login']);   
         //$meta->__set('login',$_POST['login']);

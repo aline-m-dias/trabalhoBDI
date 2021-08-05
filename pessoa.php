@@ -23,7 +23,7 @@
 
     <div class="cadrastrarDespesa">
 
-        <form id="register-form-receita" action="controle_servico_pessoa.php?acao=inserirPessoa">
+        <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
             <div class="full-box">
                 <label for="name">Nome</label>
                 <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
@@ -35,7 +35,6 @@
             <div class="full-box">
                 <label for="name">Parentesco</label>
                 <input type="text" name="parentesco" id="parentesco" placeholder="Digite o parentesco">
-
             </div>
             <div class="full-box">
                 <label for="name">Data</label>
