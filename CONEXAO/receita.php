@@ -5,6 +5,7 @@ class Receita{
 	private $codigo;
 	private $valor;
     private $cpf;
+	private $data_rec;
 
 	public function __get($atributo) {
 		return $this->$atributo;

@@ -42,7 +42,6 @@ class Serviços_usuario {
 		if($cont == 1){
 			header('Location: pagprincipal.php');
 		}
-
 	}
 
 	public function retornarUsuario(){
