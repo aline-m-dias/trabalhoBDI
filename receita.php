@@ -31,7 +31,7 @@
             </div>
             <div class="full-box">
                 <label for="name">Valor</label>
-                <input type="text" name="valor" id="valor" placeholder="Digite o valor">
+                <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
             </div>
             <div class="full-box">
                 <label for="name">Data</label>

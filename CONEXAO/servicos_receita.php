@@ -35,9 +35,9 @@ class Serviços_receita {
 
 			header('Location: receita.php?receitacadastrada=1'); 
 			
-		}else{
+		}if($cont == 0){
 			$query = "insert into receita_individual (nome, codigo, valor, data_rec, login)
-			values ('$this->nome', 000001, $this->valor, '$this->data_rec', '$this->login');";
+			values ('$this->nome', 1, $this->valor, '$this->data_rec', '$this->login');";
 			$this->conexao->exec($query);
 
 			header('Location: receita.php?receitacadastrada=1'); 
