@@ -1,5 +1,5 @@
-<?php  
-	session_start( );
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@
 
         <p class="logar">Despesa</p>
 
-        <form id="register-form-receita">
+        <form id="register-form-receita" action="controle_servico_despesa.php?acao=inserirDespesa" method="post">
 
             <div class="full-box">
                 <label for="name">Nome</label>
@@ -35,18 +35,18 @@
             </div>
             <div class="full-box">
                 <label for="name">Valor</label>
-                <input type="text" name="valor" id="valor" placeholder="Digite o valor">
+                <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
             </div>
             <div class="full-box">
                 <label for="name">Categorias</label>
-                <select>
-                    <option value="vazio">--</option>
-                    <option name='tipo' value="alimentação">Alimentação</option>
-                    <option value="saúde">Saúde</option>
-                    <option value="educação">Educação</option>
-                    <option value="moradia">Moradia</option>
-                    <option value="transporte">Transporte</option>
-                    <option value="diversos">Diversos</option>
+                <select name='tipo'>
+                    <option value="--">--</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Moradia">Moradia</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Diversos">Diversos</option>
 
                 </select>
             </div>
@@ -60,10 +60,10 @@
             </div>
         </form>
         <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
-			<div class="full-box">
-				<h5>Atenção: Despesa cadastrada com sucesso!</h5>
-			</div>
-		<?php } ?>
+            <div class="full-box">
+                <h5>Despesa cadastrada com sucesso!</h5>
+            </div>
+        <?php } ?>
     </div>
 
     <div class="clear"></div>
