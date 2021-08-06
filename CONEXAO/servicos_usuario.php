@@ -25,7 +25,7 @@ class Serviços_usuario {
 		$this->conexao->exec($query);
 
 		//TRATAR A EXCEÇÃO QUANDO TIVER JÁ UM USUÁRIO COM AQUELE NOME
-		header('Location: pagprincipal.php'); //após a plicação do BD me direciona para essa página
+		header('Location: login.php'); //após a plicação do BD me direciona para essa página
 		
 	}
 

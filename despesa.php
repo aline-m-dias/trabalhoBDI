@@ -38,7 +38,7 @@
                 <label for="name">Categorias</label>
                 <select>
                     <option value="vazio">--</option>
-                    <option value="alimentação">Alimentação</option>
+                    <option name='tipo' value="alimentação">Alimentação</option>
                     <option value="saúde">Saúde</option>
                     <option value="educação">Educação</option>
                     <option value="moradia">Moradia</option>
