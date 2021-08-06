@@ -2,22 +2,47 @@
 
 class Serviços_meta {
 
-	private $conexao;
-	private $despesa;
+	private $tipo; //tipo da meta
+	private $nome_meta;
+	private $codigo;
+	private $valor;
+    private $data_fim;
+    private $login;
 	
-
+	
 	public function __construct(Conexao $conexao, Meta $meta) { 
 		$this->conexao = $conexao->conectar();
-		$this->meta = $meta;
-	}
-
-	public function inserirMeta(){
-
+        $this->nome_meta = $meta->__get('nome_meta');
+		$this->valor = $meta->__get('valor');
+		$this->data_fim = $meta->__get('data_fim');
 	}
 	
-	public function retornarMeta(){
+	
+	public function inserirMeta(){
+		session_start( );
+		$this->login = $_SESSION["login"];
+		$this->tipo = $_SESSION["meta"];
+
+		$query = "select codigo from meta_curto_prazo;";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+		$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM)); 
+		$this->codigo++;
+
+		$query = "insert into $this->tipo (nome_meta, codigo, valor, data_fim, login)
+		values ('$this->nome_meta', $this->codigo, $this->valor, '$this->data_fim', '$this->login');";
+		$this->conexao->exec($query);
+
+		header('Location: meta.php?metacadastrada=1'); 
+		
 		
 	}
+
+
+	public function retornaRmeta(){
+		
+	}
+
 }
 
 ?>

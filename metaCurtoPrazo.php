@@ -20,14 +20,14 @@
     </header>
 
     <div class="fundoPretoReceita">
-        <br> Cadrastre sua meta curto prazo
+        <br> Cadastre sua meta curto prazo
     </div>
 
     <div class="cadrastrarMeta">
 
         <p class="logar">Meta curto prazo</p>
 
-        <form id="register-form-receita">
+        <form id="register-form-receita" action="controle_servico_meta.php?acao=inserirMetaCurtoPrazo" method="post" name="logar">
 
             <div class="full-box">
                 <label for="name">Nome</label>
@@ -35,7 +35,7 @@
             </div>
             <div class="full-box">
                 <label for="name">Valor</label>
-                <input type="text" name="valor" id="valor" placeholder="Digite o valor">
+                <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
             </div>
             <div class="full-box">
                 <label for="name">Data Fim</label>
