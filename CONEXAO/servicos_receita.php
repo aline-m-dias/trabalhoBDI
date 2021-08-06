@@ -26,14 +26,9 @@ class Serviços_receita {
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 		$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM)); 
-
-		//$this->codigo++;
-		/*$query = "insert into receita (nome, codigo, valor, data_rec, login)
-		values ('$this->nome', $this->codigo, $this->valor, '$this->data_rec', '$this->login');";
-		$this->conexao->exec($query);*/
-
+		$this->codigo++;
 		$query = "insert into receita (nome, codigo, valor, data_rec, login)
-		values ('Salário', 0, 899.23, '05/08/2021', 'naalmeida98');";
+		values ('$this->nome', $this->codigo, $this->valor, '$this->data_rec', '$this->login');";
 		$this->conexao->exec($query);
 
 		header('Location: receita.php?receitacadastrada=1'); 

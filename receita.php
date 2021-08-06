@@ -31,7 +31,7 @@
 
         <p class="logar">Receita</p>
 
-        <form id="register-form-receita" action="controle_servico_receita.php?acao=inserirReceita">
+        <form id="register-form-receita" action="controle_servico_receita.php?acao=inserirReceita" method="post" name="logar">
             <div class="full-box">
                 <label for="name">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite a descrição da receita">
@@ -48,7 +48,7 @@
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
-        <?php if (isset($_GET['receitaacadastrada']) && $_GET['receitaacadastrada'] == 1) { ?>
+        <?php if (isset($_GET['receitacadastrada']) && $_GET['receitacadastrada'] == 1) { ?>
             <div class="full-box">
                 <h5>Receita cadastrada com sucesso!</h5>
             </div>

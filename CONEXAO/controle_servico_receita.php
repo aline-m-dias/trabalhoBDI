@@ -10,6 +10,10 @@
         $receita->__set('nome',$_POST['nome']);
         $receita->__set('data_rec',$_POST['data_rec']);
         $receita->__set('valor',$_POST['valor']);
+
+        echo '<prep>';
+        print_r("chegou aqui");
+        echo '<prep>';
         
         $conexao = new Conexao();
         $servico_receita = new Serviços_receita($conexao, $receita);
