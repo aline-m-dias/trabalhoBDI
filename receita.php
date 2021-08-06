@@ -26,11 +26,6 @@
 
         <form id="register-form-receita" action="controle_servico_receita.php?acao=inserirReceita">
             <div class="full-box">
-                <label for="name">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o cpf">
-            </div>
-            <div class="full-box">
-
                 <label for="name">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite a descrição da receita">
             </div>
@@ -46,15 +41,13 @@
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
+        <?php if (isset($_GET['receitaacadastrada']) && $_GET['receitaacadastrada'] == 1) { ?>
+            <div class="full-box">
+                <h5>Receita cadastrada com sucesso!</h5>
+            </div>
+        <?php } ?>
     </div>
-    <?php if (isset($_GET['receitacadastrada']) && $_GET['receitacadastrada'] == 1) { ?>
-        <div class="msgForm">
-            <h5>Receita cadastrada com sucesso!</h5>
-        </div>
-    <?php } ?>
-    </div>
-
+    
     <div class="clear"></div>
 </body>
-
 </html>

@@ -21,7 +21,8 @@ class Serviços_pessoa {
 	
 	public function inserirPessoa(){ 
 		session_start( );
-		$this->login = $_SESSION["newsession"];
+		$this->login = $_SESSION["login"];
+
 		$query = "insert into pessoa (cpf, nome_pessoa, data_nasc, parentesco, login)
 		values ('$this->cpf', '$this->nome_pessoa', '$this->data_nasc', '$this->parentesco', '$this->login');";
 		$this->conexao->exec($query);

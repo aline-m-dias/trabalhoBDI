@@ -21,7 +21,7 @@
 	</header>
 
 	<div id="ola">
-		<p>Olá, <?php echo $_SESSION["newsession"]; ?></p>
+		<p>Olá, <?php echo $_SESSION["login"]; ?></p>
 	</div>
 
 	<div class="mes">

@@ -26,12 +26,7 @@
         $conexao = new Conexao();
         $servico_usuario = new Serviços_usuario($conexao, $usuario);
         $servico_usuario->logar();        
-    } else if($acao  == 'retornarusuario'){
-        //$usuario = new Usuario();
-        //$conexao = new Conexao();
-        //$servico_usuario = new Serviços_usuario($conexao, $usuario);
-        $login = $_SESSION['login'];
-    }
+    } 
     
     
 ?>
