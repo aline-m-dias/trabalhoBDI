@@ -10,7 +10,10 @@
         $meta->__set('nome_meta',$_POST['nome_meta']);
         $meta->__set('data_fim',$_POST['data_fim']);
         $meta->__set('valor',$_POST['valor']);
-        session_start( );
+        
+        if(!isset($_SESSION)){
+            session_start();
+        }
 		$_SESSION["meta"] = 'meta_curto_prazo';
         
         $conexao = new Conexao();
@@ -21,7 +24,10 @@
         $meta->__set('nome_meta',$_POST['nome_meta']);
         $meta->__set('data_fim',$_POST['data_fim']);
         $meta->__set('valor',$_POST['valor']);
-        session_start( );
+        
+        if(!isset($_SESSION)){
+            session_start();
+        }
 		$_SESSION["meta"] = 'meta_longo_prazo';
         
         $conexao = new Conexao();

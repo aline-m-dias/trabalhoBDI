@@ -19,7 +19,9 @@ class Serviços_meta {
 	
 	
 	public function inserirMeta(){
-		session_start( );
+		if(!isset($_SESSION)){
+			session_start();
+		}
 		$this->login = $_SESSION["login"];
 		$this->tipo = $_SESSION["meta"];
 
@@ -35,16 +37,14 @@ class Serviços_meta {
 
 		if($this->tipo == 'meta_curto_prazo'){
 			header('Location: metaCurtoPrazo.php?metacadastrada=1'); 
-		}else if($this->tipo == 'meta_curto_prazo'){
+		}else if($this->tipo == 'meta_longo_prazo'){
 			header('Location: metaLongoPrazo.php?metacadastrada=1');
-		}
-		
-		
+		}	
 		
 	}
 
 
-	public function retornaRmeta(){
+	public function retornarMeta(){
 		
 	}
 

@@ -38,7 +38,9 @@ class Serviços_usuario {
 		if($cont == 0){
 			header('Location: login.php?loginnegado=1');
 		}else if($cont == 1){
-			session_start( );
+			if(!isset($_SESSION)){
+				session_start();
+			};
 			$_SESSION["login"]=$this->login;
 			header('Location: pagprincipal.php');
 		}

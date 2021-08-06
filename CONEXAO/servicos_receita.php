@@ -19,7 +19,9 @@ class Serviços_receita {
 	
 	
 	public function inserirReceita(){
-		session_start( );
+		if(!isset($_SESSION)){
+            session_start();
+        }
 		$this->login = $_SESSION["login"];
 
 		$query = "select codigo from receita;";
