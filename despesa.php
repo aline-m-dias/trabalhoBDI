@@ -27,11 +27,9 @@ session_start();
 
         <p class="logar">Despesa</p>
 
-<<<<<<< HEAD
-        <form id="register-form-receita" action="controle_servico_despesa.php?acao=inserirDespesa" method="post">
-=======
+
         <form id="register-form-receita"  action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
->>>>>>> 93b6e03daaf2c282593a4c9b602231fc241f0150
+
 
             <div class="full-box">
                 <label for="name">Nome</label>
