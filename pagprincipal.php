@@ -1,3 +1,6 @@
+<?php  
+	session_start( );
+?>
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +21,7 @@
 	</header>
 
 	<div id="ola">
-		<p>Olá, Nome</p>
+		<p>Olá, <?php echo $_SESSION["newsession"]; ?></p>
 	</div>
 
 	<div class="mes">

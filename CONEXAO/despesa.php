@@ -1,5 +1,5 @@
 <?php
-/*
+
 class Despesa{
 	private $tipo; //tipo da tabela de despesa
 	private $nome;
@@ -15,6 +15,4 @@ class Despesa{
 	public function __set($atributo, $valor) {
 		$this->$atributo = $valor;
 	}
-}
-*/
-?>
+}?>

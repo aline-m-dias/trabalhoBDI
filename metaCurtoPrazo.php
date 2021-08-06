@@ -42,11 +42,11 @@
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
-        <?php if (isset($_GET['metacurtoprazocadastrada']) && $_GET['metaprazocadastrada'] == 1) { ?>
-            <div class="msgForm">
-                <h5>Meta longo prazo cadastrada com sucesso!</h5>
-            </div>
-        <?php } ?>
+        <?php if (isset($_GET['metacurtoprazocadastrada']) && $_GET['metacurtoprazocadastrada'] == 1) { ?>
+			<div class="full-box">
+				<h5>Atenção: Meta Curto Prazo cadastrada com sucesso!</h5>
+			</div>
+		<?php } ?>
 
     </div>
 

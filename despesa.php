@@ -57,10 +57,10 @@
             </div>
         </form>
         <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
-            <div class="msgForm">
-                <h5>Despesa cadastrada com sucesso!</h5>
-            </div>
-        <?php } ?>
+			<div class="full-box">
+				<h5>Atenção: Despesa cadastrada com sucesso!</h5>
+			</div>
+		<?php } ?>
     </div>
 
     <div class="clear"></div>

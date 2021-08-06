@@ -44,10 +44,10 @@
             </div>
         </form>
         <?php if (isset($_GET['metalongoprazocadastrada']) && $_GET['metalongoprazocadastrada'] == 1) { ?>
-            <div class="msgForm">
-                <h5>Meta longo prazo cadastrada com sucesso!</h5>
-            </div>
-        <?php } ?>
+			<div class="full-box">
+				<h5>Atenção: Meta Longo Prazo cadastrada com sucesso!</h5>
+			</div>
+		<?php } ?>
     </div>
 
     <div class="clear"></div>

@@ -1,3 +1,8 @@
+<?php
+	
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -40,13 +45,11 @@
 				<input id="btn-submit" type="submit" value="Entrar">
 			</div>
 		</form>
-	</div>
-	<?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { ?>
-		<div class="full-box">
-			<h5>Atenção: Login ou senha incorretos!</h5>
-		</div>
-	<?php } ?>
-
+		<?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { ?>
+			<div class="full-box">
+				<h5>Atenção: Login ou senha incorretos!</h5>
+			</div>
+		<?php } ?>
 	</div>
 
 	<div class="clear"></div>

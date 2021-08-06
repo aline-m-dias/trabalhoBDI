@@ -4,5 +4,6 @@
     require "../CONEXAO/despesa.php";
     require "../CONEXAO/servicos_despesa.php";
 
+    $despesa = new Despesa();
     
 ?> 

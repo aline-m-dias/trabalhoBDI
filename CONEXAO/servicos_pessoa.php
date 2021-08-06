@@ -13,16 +13,17 @@ class Serviços_pessoa {
 	public function __construct(Conexao $conexao, Pessoa $pessoa) { 
 		$this->conexao = $conexao->conectar();
 		$this->cpf = $pessoa->__get('cpf');
-        $this->login = $pessoa->__get('login');
 		$this->nome_pessoa = $pessoa->__get('nome_pessoa');
 		$this->data_nasc = $pessoa->__get('data_nasc');
 		$this->parentesco = $pessoa->__get('parentesco');
 	}
 	
 	
-	public function inserirPessoa(){
+	public function inserirPessoa(){ 
+		session_start( );
+		$this->login = $_SESSION["newsession"];
 		$query = "insert into pessoa (cpf, nome_pessoa, data_nasc, parentesco, login)
-		values ('$this->cpf', '$this->nome_pessoa', '$this->data_nasc', '$this->parentesco', 'naalmeida98');";
+		values ('$this->cpf', '$this->nome_pessoa', '$this->data_nasc', '$this->parentesco', '$this->login');";
 		$this->conexao->exec($query);
 
 		header('Location: pessoa.php?pessoacadastrada=1'); //após aplicação do BD me direciona para essa página

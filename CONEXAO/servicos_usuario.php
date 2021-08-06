@@ -39,12 +39,15 @@ class Serviços_usuario {
 			header('Location: login.php?loginnegado=1');
 		}
 		if($cont == 1){
+			session_start( );
+			$_SESSION["newsession"]=$this->login;
 			header('Location: pagprincipal.php');
 		}
+
 	}
 
 	public function retornarUsuario(){
-		
+		return $this->login;
 	}
 
 

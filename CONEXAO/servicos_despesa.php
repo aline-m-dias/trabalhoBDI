@@ -1,6 +1,6 @@
 <?php
 
-/*class Serviços_despesa {
+class Serviços_despesa {
 
 	private $conexao;
 	private $despesa;
@@ -20,5 +20,5 @@
 	}
 }
 
-*/
+
 ?>

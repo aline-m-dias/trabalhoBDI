@@ -45,12 +45,11 @@
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
-    </div>
-    <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
-        <div class="msgForm">
-            <h5>Pessoa cadastrada com sucesso!</h5>
-        </div>
-    <?php } ?>
+        <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
+            <div class="full-box">
+                <h5>Pessoa cadastrada com sucesso!</h5>
+            </div>
+        <?php } ?>
     </div>
 
     <div class="clear"></div>
