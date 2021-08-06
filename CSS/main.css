@@ -244,34 +244,34 @@ select {
     margin: 40px;
 }
 
-.cadrastrarReceita {
+.cadastrarReceita {
     background-color: #22d6b5;
     height: 350px;
     width: 500px;
     float: left;
     margin: 240px;
     margin-left: -80px;
-    border-radius: 10 px;
+    border-radius: 10px;
 }
 
 .cadrastrarDespesa {
     background-color: #22d6b5;
-    height: 320px;
+    height: 350px;
     width: 500px;
     float: left;
     margin: 240px;
     margin-left: -80px;
-    border-radius: 10 px;
+    border-radius: 10px;
 }
 
 .cadrastrarMeta {
     background-color: #22d6b5;
-    height: 300px;
+    height: 350px;
     width: 500px;
     float: left;
     margin: 100px;
     margin-left: 400px;
-    border-radius: 10 px;
+    border-radius: 10px;
 }
 
 .receita {
