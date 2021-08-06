@@ -25,24 +25,23 @@ class Serviços_receita {
 		$query = "select login from receita;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
-		$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
+		$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM)); 
 
-		if($cont != 0){
-			$this->cont = $this->cont+1;
-			$query = "insert into receita_individual (nome, codigo, valor, data_rec, login)
-			values ('$this->nome', $this->cont, $this->valor, '$this->data_rec', '$this->login');";
-			$this->conexao->exec($query);
+		$this->cont = $this->cont+1;
+		$query = "insert into receita_individual (nome, codigo, valor, data_rec, login)
+		values ('$this->nome', $this->codigo, $this->valor, '$this->data_rec', '$this->login');";
+		$this->conexao->exec($query);
 
-			header('Location: receita.php?receitacadastrada=1'); 
+		header('Location: receita.php?receitacadastrada=1'); 
 			
-		}if($cont == 0){
+		/*}if($cont == 0){
 			$query = "insert into receita_individual (nome, codigo, valor, data_rec, login)
 			values ('$this->nome', 1, $this->valor, '$this->data_rec', '$this->login');";
 			$this->conexao->exec($query);
 
 			header('Location: receita.php?receitacadastrada=1'); 
 			
-		}
+		}*/
 		
 	}
 

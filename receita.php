@@ -1,3 +1,6 @@
+<?php  
+	session_start( );
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,6 +18,10 @@
     <header class="cabecalho">
         <a class="logo" href="cadrastrar.html"> <img src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
     </header>
+
+    <div id="ola">
+		<p>Olá, <?php echo $_SESSION["login"]; ?></p>
+	</div>
 
     <div class="fundoPretoReceita">
         <br> Cadastre sua receita
