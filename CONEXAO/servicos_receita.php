@@ -22,14 +22,18 @@ class Serviços_receita {
 		session_start( );
 		$this->login = $_SESSION["login"];
 
-		$query = "select login from receita;";
+		$query = "select codigo from receita;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 		$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM)); 
 
-		$this->cont = $this->cont+1;
-		$query = "insert into receita_individual (nome, codigo, valor, data_rec, login)
+		//$this->codigo++;
+		/*$query = "insert into receita (nome, codigo, valor, data_rec, login)
 		values ('$this->nome', $this->codigo, $this->valor, '$this->data_rec', '$this->login');";
+		$this->conexao->exec($query);*/
+
+		$query = "insert into receita (nome, codigo, valor, data_rec, login)
+		values ('Salário', 0, 899.23, '05/08/2021', 'naalmeida98');";
 		$this->conexao->exec($query);
 
 		header('Location: receita.php?receitacadastrada=1'); 
