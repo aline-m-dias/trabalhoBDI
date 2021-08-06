@@ -23,7 +23,7 @@ class Serviços_meta {
 		$this->login = $_SESSION["login"];
 		$this->tipo = $_SESSION["meta"];
 
-		$query = "select codigo from meta_curto_prazo;";
+		$query = "select codigo from $this->tipo;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 		$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM)); 
@@ -33,7 +33,12 @@ class Serviços_meta {
 		values ('$this->nome_meta', $this->codigo, $this->valor, '$this->data_fim', '$this->login');";
 		$this->conexao->exec($query);
 
-		header('Location: meta.php?metacadastrada=1'); 
+		if($this->tipo == 'meta_curto_prazo'){
+			header('Location: metaCurtoPrazo.php?metacadastrada=1'); 
+		}else if($this->tipo == 'meta_curto_prazo'){
+			header('Location: metaLongoPrazo.php?metacadastrada=1');
+		}
+		
 		
 		
 	}

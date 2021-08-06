@@ -45,7 +45,7 @@
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
-        <?php if (isset($_GET['metacurtoprazocadastrada']) && $_GET['metacurtoprazocadastrada'] == 1) { ?>
+        <?php if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 1) { ?>
 			<div class="full-box">
 				<h5>Atenção: Meta Curto Prazo cadastrada com sucesso!</h5>
 			</div>
