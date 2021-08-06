@@ -27,7 +27,7 @@
         <br> Cadastre sua receita
     </div>
 
-    <div class="cadrastrarReceita">
+    <div class="cadastrarReceita">
 
         <p class="logar">Receita</p>
 

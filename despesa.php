@@ -27,7 +27,7 @@
 
         <p class="logar">Despesa</p>
 
-        <form id="register-form-receita">
+        <form id="register-form-receita"  action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
 
             <div class="full-box">
                 <label for="name">Nome</label>
