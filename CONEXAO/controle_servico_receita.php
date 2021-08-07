@@ -4,8 +4,9 @@
     require "../../CONEXAO/receita.php";
     require "../../CONEXAO/servicos_receita.php";
 
+    $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
      //setando os valores de receita preencheidos pelo input 
-     if (isset($_GET['acao']) && $_GET['acao'] == 'inserirReceita'){
+     if ($acao == 'inserirReceita'){
         $receita = new Receita();
         $receita->__set('nome',$_POST['nome']);
         $receita->__set('data_rec',$_POST['data_rec']);

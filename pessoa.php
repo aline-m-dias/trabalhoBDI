@@ -2,6 +2,10 @@
 	if(!isset($_SESSION)){
 		session_start();
 	}	
+
+    $acao = 'imprimirPessoas';
+    require_once 'controle_servico_pessoa.php';
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,8 +60,13 @@
             </div>
         <?php } ?>
     </div>
-
     <div class="clear"></div>
+    <div class="fundoPretoCadastro">
+        <div><h2>Pessoas cadastradas<h2><div>
+        <?foreach ($listaPessoas as $nome_pessoa){?>
+            <div><? print_r($listaPessoas);?></div>
+        <?}?>
+    </div>
 </body>
 
 </html>
