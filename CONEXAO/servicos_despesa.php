@@ -47,9 +47,42 @@ class Serviços_despesa
 		$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM));
 		$this->codigo++;
 
+<<<<<<< HEAD
+		if ($this->tipo == 'Alimentação') {
+			$query = "insert into alimentacao (nome, codigo, valor, data_desp, login)
+			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
+			$this->conexao->exec($query);
+		}
+		if ($this->tipo == 'Saúde') {
+			$query = "insert into saude (nome, codigo, valor, data_desp, login)
+			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
+			$this->conexao->exec($query);
+		}
+		if ($this->tipo == 'Educação') {
+			$query = "insert into educacao (nome, codigo, valor, data_desp, login)
+			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
+			$this->conexao->exec($query);
+		}
+		if ($this->tipo == 'Moradia') {
+			$query = "insert into moradia (nome, codigo, valor, data_desp, login)
+			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
+			$this->conexao->exec($query);
+		}
+		if ($this->tipo == 'Transporte') {
+			$query = "insert into transporte (nome, codigo, valor, data_desp, login)
+			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
+			$this->conexao->exec($query);
+		}
+		if ($this->tipo == 'Diversos') {
+			$query = "insert into diversos (nome, codigo, valor, data_desp, login)
+			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
+			$this->conexao->exec($query);
+		}
+=======
 		$query = "insert into $this->tipo (nome, codigo, valor, data_desp, login)
 		values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
 		$this->conexao->exec($query);
+>>>>>>> c2e690fbf9c1b44acc462e9eff68825dc57a6e56
 		header('Location: despesa.php?despesacadastrada=1');
 	}
 
