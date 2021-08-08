@@ -4,8 +4,9 @@
     require "../../CONEXAO/meta.php";
     require "../../CONEXAO/servicos_meta.php";
 
+    $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
      //setando os valores preencheidos pelo input 
-     if (isset($_GET['acao']) && $_GET['acao'] == 'inserirMetaCurtoPrazo'){
+     if ($acao == 'inserirMetaCurtoPrazo'){
         $meta = new Meta();
         $meta->__set('nome_meta',$_POST['nome_meta']);
         $meta->__set('data_fim',$_POST['data_fim']);
@@ -19,7 +20,7 @@
         $conexao = new Conexao();
         $servico_meta = new Serviços_meta($conexao, $meta);
         $servico_meta->inserirMeta();
-    } else if (isset($_GET['acao']) && $_GET['acao'] == 'inserirMetaLongoPrazo'){
+    } else if ($acao == 'inserirMetaLongoPrazo'){
         $meta = new Meta();
         $meta->__set('nome_meta',$_POST['nome_meta']);
         $meta->__set('data_fim',$_POST['data_fim']);

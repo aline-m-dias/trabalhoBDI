@@ -33,8 +33,16 @@ class Serviços_pessoa {
 		
 	}
 
-	public function retornarPessoa(){
-		
+	public function imprimirPessoas(){
+		if(!isset($_SESSION)){
+            session_start();
+        }
+		$this->login = $_SESSION["login"];
+
+		$query = "select P.nome_pessoa from pessoa P, usuario U where '$this->login' = U.login AND '$this->login' = P.login;";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 }

@@ -4,19 +4,14 @@ require "../../CONEXAO/conexao.php";
 require "../../CONEXAO/despesa.php";
 require "../../CONEXAO/servicos_despesa.php";
 
-
-
+$acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 //setando os valores de despesa preencheidos pelo input 
-if (isset($_GET['acao']) && $_GET['acao'] == 'inserirDespesa') {
+if ($acao == 'inserirDespesa') {
     $despesa = new Despesa();
     $despesa->__set('nome', $_POST['nome']);
     $despesa->__set('valor', $_POST['valor']);
     $despesa->__set('tipo', $_POST['tipo']);
     $despesa->__set('data_desp', $_POST['data_desp']);
-
-    echo '<prep>';
-    print_r("chegou aqui");
-    echo '<prep>';
 
     $conexao = new Conexao();
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
