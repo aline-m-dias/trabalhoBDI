@@ -29,16 +29,6 @@ class Serviços_despesa
 			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
 			$this->conexao->exec($query);
 		}
-		if ($this->tipo == 'Alimentação') {
-			$query = "insert into alimentacao (nome, codigo, valor, data_desp, login)
-			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
-			$this->conexao->exec($query);
-		}
-		if ($this->tipo == 'Alimentação') {
-			$query = "insert into alimentacao (nome, codigo, valor, data_desp, login)
-			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
-			$this->conexao->exec($query);
-		}
 		if ($this->tipo == 'Saúde') {
 			$query = "insert into saude (nome, codigo, valor, data_desp, login)
 			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";

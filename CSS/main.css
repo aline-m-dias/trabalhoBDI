@@ -198,12 +198,12 @@ input[type="checkbox"] {
 
 #receita_despesa {
     width: 100%;
-    height: 170px;
+    height: 200px;
     color: black;
     margin: 50 px;
     background-color: #22d6b5;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .botão {
@@ -314,4 +314,11 @@ select {
     padding-top: 5px;
     font-size: 25px;
     text-align: center;
+}
+
+.botão-sair {
+    float: right;
+    padding: 5px;
+    padding-right: 15px;
+    color: black;
 }

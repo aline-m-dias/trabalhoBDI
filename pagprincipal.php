@@ -1,7 +1,7 @@
-<?php 
-	if(!isset($_SESSION)){
-		session_start();
-	}	
+<?php
+if (!isset($_SESSION)) {
+	session_start();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,8 +18,10 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
 	<header class="cabecalho">
-		<a class="logo" href="cadastrar.html"> <img src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
-		<button name="button">Sair</button>
+		<a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+		<div class="botão-sair">
+			<ul><a href="index.php"> Sair </a></ul>
+		</div>
 	</header>
 
 	<div id="ola">
@@ -62,29 +64,6 @@
 	</div>
 
 
-	<div class="receita">
-		<p>Receita</p>
-		<div>
-			<ul>
-				<li> Nome da receita - R$ Valor</li>
-			</ul>
-			<ul>
-				<li> Nome da receita - R$ Valor</li>
-			</ul>
-			<ul>
-				<li> Nome da receita - R$ Valor</li>
-			</ul>
-		</div>
-
-	</div>
-
-	<div class="despesa">
-		<p>Despesa</p>
-		<br>
-		R$ Valor
-
-	</div>
-
 	<div class="balanco">
 		<p>Balanço</p>
 		<br>
@@ -93,11 +72,7 @@
 	</div>
 
 
-	<div class="despesaCategorias">
-		<p>Despesa Categorias</p>
 
-
-	</div>
 
 
 

@@ -1,7 +1,7 @@
-<?php 
-	if(!isset($_SESSION)){
-		session_start();
-	}	
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,12 +18,12 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
     <header class="cabecalho">
-        <a class="logo" href="cadrastrar.html"> <img src="IMG/WhatsApp_Image_2021-07-26_at_15.21.39-removebg-preview.png"> </a>
+        <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
 
     <div id="ola">
-		<p>Olá, <?php echo $_SESSION["login"]; ?></p>
-	</div>
+        <p>Olá, <?php echo $_SESSION["login"]; ?></p>
+    </div>
 
     <div class="fundoPretoReceita">
         <br> Cadastre sua meta curto prazo
@@ -52,10 +52,10 @@
             </div>
         </form>
         <?php if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 1) { ?>
-			<div class="full-box">
-				<h5>Atenção: Meta Curto Prazo cadastrada com sucesso!</h5>
-			</div>
-		<?php } ?>
+            <div class="full-box">
+                <h5>Atenção: Meta Curto Prazo cadastrada com sucesso!</h5>
+            </div>
+        <?php } ?>
 
     </div>
 
