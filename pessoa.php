@@ -62,15 +62,19 @@ require_once 'controle_servico_pessoa.php';
             </div>
         <?php } ?>
     </div>
-    <div class="clear"></div>
-    <div class="fundoPretoCadastro">
+
+
+    <div class="pessoacadastrada">
+        <p> Pessoas cadastradas </p>
         <div>
-            <h2>Pessoas cadastradas<h2>
-                    <div>
-                        <? foreach ($listaPessoas as $nome_pessoa) { ?>
-                            <div><? print_r($listaPessoas); ?></div>
-                        <? } ?>
-                    </div>
+            <? foreach ($listaPessoas as $nome_pessoa) { ?>
+                <div><? print_r($listaPessoas); ?></div>
+            <? } ?>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
 </body>
 
 </html>
