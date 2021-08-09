@@ -15,6 +15,11 @@
         $conexao = new Conexao();
         $servico_receita = new Serviços_receita($conexao, $receita);
         $servico_receita->inserirReceita();
+    } else if($acao == 'imprimirReceitas'){
+        $receita = new Receita();
+        $conexao = new Conexao();
+        $servico_receita = new Serviços_receita($conexao, $receita);
+        $listaReceitas = $servico_receita->imprimirReceitas();
     }
     
 ?> 

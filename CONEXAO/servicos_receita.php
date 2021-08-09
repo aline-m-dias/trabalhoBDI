@@ -37,9 +37,16 @@ class Serviços_receita {
 		
 	}
 
+	public function imprimirReceitas(){
+		if(!isset($_SESSION)){
+            session_start();
+        }
+		$this->login = $_SESSION["login"];
 
-	public function retornaRreceita(){
-		
+		$query = "select R.nome, R.valor, R.data_rec from receita R, usuario U where '$this->login' = U.login AND '$this->login' = R.login;";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 }
