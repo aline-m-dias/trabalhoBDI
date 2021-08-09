@@ -289,6 +289,17 @@ select {
     text-align: center;
 }
 
+.metas {
+    background-color: #22d6b5;
+    height: 350px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 400px;
+    text-align: center;
+}
+
 .cadrastrarMeta {
     background-color: #22d6b5;
     height: 350px;

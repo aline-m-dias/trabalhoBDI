@@ -33,7 +33,14 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
 
-    <div class="fundoPretoReceita">
+    <div class="clear"></div>
+
+    <div id="ola">
+        <p>Olá, <?php echo $_SESSION["login"]; ?></p>
+    </div>
+
+
+    <div class="fundoPretoLogin">
         <br> Cadastre uma pessoa
     </div>
 

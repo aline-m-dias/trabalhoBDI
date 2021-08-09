@@ -2,6 +2,15 @@
 if (!isset($_SESSION)) {
     session_start();
 }
+$acao = 'imprimirMetas';
+require_once 'controle_servico_meta.php';
+
+$nome_meta = $listaMetas;
+$i = isset($i) ? 0 : 0;
+for ($i = 0; $i < count($nome_meta); $i++) {
+    $nome_meta[$i]['nome_meta'] = isset($listaMeta[$i]['nome_meta']) ? $listaMeta[$i]['nome_meta'] : $listaMeta[$i]['nome_meta'];
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,12 +29,13 @@ if (!isset($_SESSION)) {
     <header class="cabecalho">
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
+    <div class="clear"></div>
 
     <div id="ola">
         <p>Olá, <?php echo $_SESSION["login"]; ?></p>
     </div>
 
-    <div class="fundoPretoReceita">
+    <div class="fundoPretoLogin">
         <br> Cadastre sua meta curto prazo
     </div>
 
@@ -60,6 +70,17 @@ if (!isset($_SESSION)) {
     </div>
 
     <div class="clear"></div>
+
+    <div class="metas">
+        <div>
+            <p class="logar">Metas curto prazo cadastradas</p>
+            <div>
+                <?php
+                $i = isset($i) ? 0 : 0;
+                for ($i = 0; $i < count($nome_meta); $i++) { ?>
+                    <div><?php echo $nome_meta[$i]['nome_meta']; ?></div>
+                <?php } ?>
+            </div>
 </body>
 
 </html>

@@ -21,17 +21,18 @@ if (!isset($_SESSION)) {
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
 
+    <div class="clear"></div>
+
     <div id="ola">
         <p>Olá, <?php echo $_SESSION["login"]; ?></p>
     </div>
-
-    <div class="fundoPretoReceita">
+    <div class="fundoPretoLogin">
         <br> Cadastre sua meta longo prazo
     </div>
 
     <div class="cadrastrarMeta">
 
-        <p class="logar">Meta Longo Prazo</p>
+
 
         <form id="register-form-receita" action="controle_servico_meta.php?acao=inserirMetaLongoPrazo" method="post" name="logar">
             <div class="full-box">
@@ -58,6 +59,19 @@ if (!isset($_SESSION)) {
     </div>
 
     <div class="clear"></div>
+
+
+
+    <div class="metas">
+        <div>
+            <p class="logar">Metas longo prazo cadastradas</p>
+            <div>
+                <?php
+                $i = isset($i) ? 0 : 0;
+                for ($i = 0; $i < count($nome_meta); $i++) { ?>
+                    <div><?php echo $nome_meta[$i]['nome_meta']; ?></div>
+                <?php } ?>
+            </div>
 </body>
 
 </html>
