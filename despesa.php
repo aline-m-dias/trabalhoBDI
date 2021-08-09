@@ -1,20 +1,20 @@
-<?php 
-	if(!isset($_SESSION)){
-		session_start();
-	}
-    if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { 
-        $acao = 'imprimirDespesas';
-        require_once 'controle_servico_despesa.php';
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
+    $acao = 'imprimirDespesas';
+    require_once 'controle_servico_despesa.php';
 
-        $nome_despesa = $listaDespesas;
-        $i = isset($i) ? 0 : 0;
-        for($i=0; $i<count($nome_despesa); $i++){
-            $nome_despesa[$i]['nome'] = isset( $listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
-            $nome_despesa[$i]['valor'] = isset( $listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
-            $nome_despesa[$i]['data_desp'] = isset( $listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
-        }
+    $nome_despesa = $listaDespesas;
+    $i = isset($i) ? 0 : 0;
+    for ($i = 0; $i < count($nome_despesa); $i++) {
+        $nome_despesa[$i]['nome'] = isset($listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
+        $nome_despesa[$i]['valor'] = isset($listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
+        $nome_despesa[$i]['data_desp'] = isset($listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
     }
-    ?>
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +33,7 @@
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
 
-    <div class="fundoPretodespesa">
+    <div class="fundoPretoLogin">
         <br> Cadastre sua despesa
     </div>
 
@@ -77,45 +77,48 @@
             </div>
         <?php } ?>
     </div>
-    <div class="clear"></div>
+
     <div class="cadrastrarDespesa">
-        <div><h2>Pesquise despesas cadastradas<h2><div>
-
-        <form action="despesa.php?pesquisaDespesa=1" method="post" name="logar">
-            <div class="full-box">
-                <label for="name">Categorias</label>
-                <select name='tipo'>
-                    <option value="--">Selecione a categoria</option>
-                    <option value="Alimentação">Alimentação</option>
-                    <option value="Saúde">Saúde</option>
-                    <option value="Educação">Educação</option>
-                    <option value="Moradia">Moradia</option>
-                    <option value="Transporte">Transporte</option>
-                    <option value="Diversos">Diversos</option>
-                </select>
-            </div>
-            <div class="full-box">
-                <input id="btn-submit" type="submit" value="Pesquisar">
-            </div>
-        </form>
-    </div>
-    <div class="clear"></div>
-
-    <div class="fundoPretoCadastro">
-    <?php
-    if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { ?>
-    <div><h2>Despesas cadastradas<h2><div>
-        <?php
-        $i = isset($i) ? 0 : 0;
-        for($i=0; $i<count($nome_despesa); $i++){ ?>
         <div>
-            <span><?php echo $nome_despesa[$i]['nome'];?></span>
-            <span>  |  R$ <?php echo $nome_despesa[$i]['valor'];?></span>
-            <span>  |  <?php echo $nome_despesa[$i]['data_desp'];?></span>       
-        </div>
-        <?php } ?>
-    <?php }?> 
-    </div>     
+            <p class="logar">Pesquise despesas cadastradas</p>
+            <div>
+
+                <form action="despesa.php?pesquisaDespesa=1" method="post" name="logar">
+                    <div class="full-box">
+                        <label for="name">Categorias</label>
+                        <select name='tipo'>
+                            <option value="--">Selecione a categoria</option>
+                            <option value="Alimentação">Alimentação</option>
+                            <option value="Saúde">Saúde</option>
+                            <option value="Educação">Educação</option>
+                            <option value="Moradia">Moradia</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Diversos">Diversos</option>
+                        </select>
+                    </div>
+                    <div class="full-box">
+                        <input id="btn-submit" type="submit" value="Pesquisar">
+                    </div>
+                </form>
+            </div>
+
+            <div class="despesas">
+                <?php
+                if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { ?>
+                    <div>
+                        <p class="logar">Despesas cadastradas </p>
+                        <div>
+                            <?php
+                            $i = isset($i) ? 0 : 0;
+                            for ($i = 0; $i < count($nome_despesa); $i++) { ?>
+                                <div>
+                                    <span><?php echo $nome_despesa[$i]['nome']; ?></span>
+                                    <span> | R$ <?php echo $nome_despesa[$i]['valor']; ?></span>
+                                    <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
+                        </div>
 </body>
 
 </html>

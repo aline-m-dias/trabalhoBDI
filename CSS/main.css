@@ -237,7 +237,7 @@ select {
     border-radius: 10 px;
 }
 
-.fundoPretoReceita {
+.PretoReceita {
     color: #22d6b5;
     height: 110px;
     float: left;
@@ -261,10 +261,20 @@ select {
     height: 350px;
     width: 500px;
     float: left;
-    margin: 240px;
-    margin-left: -80px;
+    margin: 70px;
+    margin-left: 450px;
     margin-bottom: 50px;
     border-radius: 10px;
+}
+
+.despesas {
+    background-color: #22d6b5;
+    height: 350px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 300px;
+    text-align: center;
 }
 
 .cadrastrarMeta {
