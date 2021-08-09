@@ -7,9 +7,11 @@
 
     $nome_pessoa = $listaPessoas;
     $i = isset($i) ? 0 : 0;
-    for($i=0; $i<4; $i++){
+    for($i=0; $i<count($nome_pessoa); $i++){
         $nome_pessoa[$i]['nome_pessoa'] = isset($listaPessoas[$i]['nome_pessoa']) ? $listaPessoas[$i]['nome_pessoa'] : $listaPessoas[$i]['nome_pessoa'];
     }
+    $tam = count($nome_pessoa);
+    echo $tam;
     echo '<prep>';
     print_r($listaPessoas);
     echo '</prep>'; ?>
@@ -69,10 +71,11 @@
     <div class="clear"></div>
     <div class="fundoPretoCadastro">
         <div><h2>Pessoas cadastradas<h2><div>
-        <?php $i = isset($i) ? 0 : 0;
-        for($i=0; $i<4; $i++){ ?>
+        <?php 
+        $i = isset($i) ? 0 : 0;
+        for($i=0; $i<count($nome_pessoa); $i++){ ?>
             <div><?php echo $nome_pessoa[$i]['nome_pessoa'];?></div>
-      <?php } ?>
+        <?php } ?>
     </div>
 </body>
 
