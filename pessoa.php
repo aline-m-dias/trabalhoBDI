@@ -1,4 +1,3 @@
-
 <?php 
 	if(!isset($_SESSION)){
 		session_start();
@@ -13,18 +12,7 @@
     }
     echo '<prep>';
     print_r($listaPessoas);
-    echo '</prep>';
-
-<?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-
-
-$acao = 'imprimirPessoas';
-require_once 'controle_servico_pessoa.php';
-
-?>
+    echo '</prep>'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -78,40 +66,14 @@ require_once 'controle_servico_pessoa.php';
             </div>
         <?php } ?>
     </div>
-<<<<<<< HEAD
-
-
-    <div class="pessoacadastrada">
-        <p> Pessoas cadastradas </p>
-        <div>
-            <? foreach ($listaPessoas as $nome_pessoa) { ?>
-                <div><? print_r($listaPessoas); ?></div>
-            <? } ?>
-        </div>
-    </div>
-
-    <div class="clear"></div>
-
-=======
     <div class="clear"></div>
     <div class="fundoPretoCadastro">
-<<<<<<< HEAD
         <div><h2>Pessoas cadastradas<h2><div>
-        <?$i = isset($i) ? 0 : 0;
-        for($i=0; $i<4; $i++){?>
+        <?php $i = isset($i) ? 0 : 0;
+        for($i=0; $i<4; $i++){ ?>
             <div><?php echo $nome_pessoa[$i]['nome_pessoa'];?></div>
-      <?}?>
+      <?php } ?>
     </div>
-=======
-        <div>
-            <h2>Pessoas cadastradas<h2>
-                    <div>
-                        <? foreach ($listaPessoas as $nome_pessoa) { ?>
-                            <div><? print_r($listaPessoas); ?></div>
-                        <? } ?>
-                    </div>
->>>>>>> d301f15900260cdb9bb512ca42a7727ab6c7efd1
->>>>>>> 59ae484114106af73184c8daf3833176853b5b5f
 </body>
 
 </html>
