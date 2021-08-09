@@ -19,6 +19,7 @@ if ($acao == 'inserirDespesa') {
 }else if($acao == 'imprimirDespesas'){
     $despesa = new Despesa();
     $conexao = new Conexao();
+    $despesa->__set('tipo', $_POST['tipo']);
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
     $listaDespesas = $servico_despesa->imprimirDespesas();
 }
