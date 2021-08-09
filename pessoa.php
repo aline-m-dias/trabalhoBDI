@@ -71,14 +71,14 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
     <div class="clear"></div>
     <div class="pessoacadastrada">
         <div>
-            <h2>Pessoas cadastradas<h2>
-                    <div>
-                        <?php
-                        $i = isset($i) ? 0 : 0;
-                        for ($i = 0; $i < count($nome_pessoa); $i++) { ?>
-                            <div><?php echo $nome_pessoa[$i]['nome_pessoa']; ?></div>
-                        <?php } ?>
-                    </div>
+            <p class="logar">Pessoas cadastradas</p>
+            <div>
+                <?php
+                $i = isset($i) ? 0 : 0;
+                for ($i = 0; $i < count($nome_pessoa); $i++) { ?>
+                    <div><?php echo $nome_pessoa[$i]['nome_pessoa']; ?></div>
+                <?php } ?>
+            </div>
 </body>
 
 </html>

@@ -32,6 +32,11 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
     <header class="cabecalho">
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
+    <div class="clear"></div>
+
+    <div id="ola">
+        <p>Olá, <?php echo $_SESSION["login"]; ?></p>
+    </div>
 
     <div class="fundoPretoLogin">
         <br> Cadastre sua despesa

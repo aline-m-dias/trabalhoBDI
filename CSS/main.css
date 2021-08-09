@@ -127,7 +127,8 @@ input[type="checkbox"] {
     float: left;
     font-size: 300%;
     text-align: left;
-    margin: 40px;
+    margin-left: 30px;
+    margin-top: 20 px;
 }
 
 .fazerLogin {
@@ -154,7 +155,7 @@ input[type="checkbox"] {
     font-size: 30px;
     text-align: center;
     font-family: "Noto Sans", sans-serif;
-    padding-top: 90px;
+    padding-top: 40px;
 }
 
 .clear {
@@ -252,7 +253,7 @@ select {
     width: 500px;
     float: left;
     margin: 240px;
-    margin-left: -80px;
+    margin-left: 450px;
     border-radius: 10px;
 }
 
@@ -274,6 +275,17 @@ select {
     float: left;
     border-radius: 10px;
     margin-top: 300px;
+    text-align: center;
+}
+
+.receitas {
+    background-color: #22d6b5;
+    height: 350px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 450px;
     text-align: center;
 }
 

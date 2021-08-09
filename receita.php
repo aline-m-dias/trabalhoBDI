@@ -1,22 +1,22 @@
-<?php 
-	if(!isset($_SESSION)){
-		session_start();
-	}	
-    $acao = 'imprimirReceitas';
-    require_once 'controle_servico_receita.php';
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+$acao = 'imprimirReceitas';
+require_once 'controle_servico_receita.php';
 
-    $nome_receita = $listaReceitas;
-    $i = isset($i) ? 0 : 0;
-    for($i=0; $i<count($nome_receita); $i++){
-        $nome_receita[$i]['nome'] = isset( $listaReceitas[$i]['nome']) ?  $listaReceitas[$i]['nome'] : $listareceitas[$i]['nome'];
-        $nome_receita[$i]['valor'] = isset( $listaReceitas[$i]['valor']) ?  $listaReceitas[$i]['valor'] : $listareceitas[$i]['valor'];
-        $nome_receita[$i]['data_rec'] = isset( $listaReceitas[$i]['data_rec']) ?  $listaReceitas[$i]['data_rec'] : $listareceitas[$i]['data_rec'];
-    }
-    /*$tam = count( $listaReceitas);
+$nome_receita = $listaReceitas;
+$i = isset($i) ? 0 : 0;
+for ($i = 0; $i < count($nome_receita); $i++) {
+    $nome_receita[$i]['nome'] = isset($listaReceitas[$i]['nome']) ?  $listaReceitas[$i]['nome'] : $listareceitas[$i]['nome'];
+    $nome_receita[$i]['valor'] = isset($listaReceitas[$i]['valor']) ?  $listaReceitas[$i]['valor'] : $listareceitas[$i]['valor'];
+    $nome_receita[$i]['data_rec'] = isset($listaReceitas[$i]['data_rec']) ?  $listaReceitas[$i]['data_rec'] : $listareceitas[$i]['data_rec'];
+}
+/*$tam = count( $listaReceitas);
     echo $tam;
     echo '<prep>';
     print_r( $listaReceitas);
-    echo '</prep>'; */?>
+    echo '</prep>'; */ ?>
 
 <!DOCTYPE html>
 <html>
@@ -36,15 +36,17 @@
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
 
+    <div class="clear"></div>
+
     <div id="ola">
         <p>Olá, <?php echo $_SESSION["login"]; ?></p>
     </div>
 
-    <div class="fundoPretoReceita">
+    <div class="fundoPretoLogin">
         <br> Cadastre sua receita
     </div>
 
-    <div class="cadastrarReceita">
+    <div class="cadrastrarDespesa">
 
         <p class="logar">Receita</p>
 
@@ -72,18 +74,20 @@
         <?php } ?>
     </div>
     <div class="clear"></div>
-    <div class="fundoPretoCadastro">
-        <div><h2>Receitas cadastradas<h2><div>
-        <?php 
-        $i = isset($i) ? 0 : 0;
-        for($i=0; $i<count($nome_receita); $i++){ ?>
+    <div class="receitas">
+        <div>
+            <p class="logar">Receitas cadastradas</p>
             <div>
-                <span><?php echo $nome_receita[$i]['nome'];?></span>
-                <span>  |  R$ <?php echo $nome_receita[$i]['valor'];?></span>
-                <span>  |  <?php echo $nome_receita[$i]['data_rec'];?></span>       
+                <?php
+                $i = isset($i) ? 0 : 0;
+                for ($i = 0; $i < count($nome_receita); $i++) { ?>
+                    <div>
+                        <span><?php echo $nome_receita[$i]['nome']; ?></span>
+                        <span> | R$ <?php echo $nome_receita[$i]['valor']; ?></span>
+                        <span> | <?php echo $nome_receita[$i]['data_rec']; ?></span>
+                    </div>
+                <?php } ?>
             </div>
-        <?php } ?>
-    </div>
 </body>
 
 </html>
