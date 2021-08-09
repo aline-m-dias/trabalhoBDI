@@ -81,7 +81,7 @@ for ($i = 0; $i < count($nome_meta); $i++) {
                     <div>
                         <span><?php echo $nome_meta[$i]['nome_meta']; ?></span>
                         <span> | R$ <?php echo $nome_meta[$i]['valor']; ?></span>
-                    /<div>
+                    </div>
                 <?php } ?>
             </div>
 </body>
