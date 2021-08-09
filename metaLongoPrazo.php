@@ -2,6 +2,15 @@
 if (!isset($_SESSION)) {
     session_start();
 }
+$acao = 'imprimirMetasLongoPrazo';
+require_once 'controle_servico_meta.php';
+
+$nome_meta = $listaMetas;
+$i = isset($i) ? 0 : 0;
+for ($i = 0; $i < count($nome_meta); $i++) {
+    $nome_meta[$i]['nome_meta'] = isset($listaMetas[$i]['nome_meta']) ? $listaMetas[$i]['nome_meta'] : $listaMetas[$i]['nome_meta'];
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,9 +68,6 @@ if (!isset($_SESSION)) {
     </div>
 
     <div class="clear"></div>
-
-
-
     <div class="metas">
         <div>
             <p class="logar">Metas longo prazo cadastradas</p>
@@ -69,7 +75,10 @@ if (!isset($_SESSION)) {
                 <?php
                 $i = isset($i) ? 0 : 0;
                 for ($i = 0; $i < count($nome_meta); $i++) { ?>
-                    <div><?php echo $nome_meta[$i]['nome_meta']; ?></div>
+                    <div>
+                        <span><?php echo $nome_meta[$i]['nome_meta']; ?></span>
+                        <span> | R$ <?php echo $nome_meta[$i]['valor']; ?></span>
+                    /<div>
                 <?php } ?>
             </div>
 </body>
