@@ -45,31 +45,18 @@ class Serviços_meta
 		}
 	}
 
-
-	public function retornarMeta()
-	{
-	}
-
-	public function imprimirMetas()
-	{
+	public function imprimirMetas(){
 		if (!isset($_SESSION)) {
 			session_start();
 		}
 		$this->login = $_SESSION["login"];
 		$this->tipo = $_SESSION["meta"];
 
-		if ($this->tipo == 'meta_curto_prazo') {
+		$query = "select M.nome_meta, M.valor, M.data_fim from $this->tipo M, usuario U where '$this->login' = U.login AND '$this->login' = M.login;";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		
 
-			$query = "select M.nome, M.valor, M.data_fim from meta_curto_prazo M, usuario U where '$this->login' = U.login AND '$this->login' = R.login;";
-			$stmt = $this->conexao->prepare($query);
-			$stmt->execute();
-			return $stmt->fetchAll(PDO::FETCH_ASSOC);
-		} else if ($this->tipo == 'meta_longo_prazo') {
-
-			$query = "select M.nome, M.valor, M.data_fim from meta_longo_prazo M, usuario U where '$this->login' = U.login AND '$this->login' = R.login;";
-			$stmt = $this->conexao->prepare($query);
-			$stmt->execute();
-			return $stmt->fetchAll(PDO::FETCH_ASSOC);
-		}
 	}
 }
