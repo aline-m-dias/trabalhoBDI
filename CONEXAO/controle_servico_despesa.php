@@ -16,4 +16,9 @@ if ($acao == 'inserirDespesa') {
     $conexao = new Conexao();
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
     $servico_despesa->inserirDespesa();
+}else if($acao == 'imprimirDespesas'){
+    $despesa = new Despesa();
+    $conexao = new Conexao();
+    $servico_despesa = new Serviços_despesa($conexao, $despesa);
+    $listaDespesas = $servico_despesa->imprimirDespesas();
 }

@@ -1,6 +1,22 @@
-<?php
-session_start();
-?>
+<?php 
+	if(!isset($_SESSION)){
+		session_start();
+	}	
+    $acao = 'imprimirDespesas';
+    require_once 'controle_servico_despesa.php';
+
+    $nome_despesa = $listaDespesas;
+    $i = isset($i) ? 0 : 0;
+    for($i=0; $i<count($nome_despesa); $i++){
+        $nome_despesa[$i]['nome'] = isset( $listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
+        $nome_despesa[$i]['valor'] = isset( $listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
+        $nome_despesa[$i]['data_desp'] = isset( $listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
+    }
+    $tam = count($listaDespesas);
+    echo $tam;
+    echo '<prep>';
+    print_r( $listadespesas);
+    echo '</prep>'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -19,20 +35,17 @@ session_start();
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
     </header>
 
-    <div class="fundoPretoReceita">
-        <br> Cadrastre sua despesa
+    <div class="fundoPretodespesa">
+        <br> Cadastre sua despesa
     </div>
 
     <div class="cadrastrarDespesa">
 
         <p class="logar">Despesa</p>
 
+        <form id="register-form-despesa" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
 
-
-        <form id="register-form-receita" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
-
-
-            <form id="register-form-receita" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
+            <form id="register-form-despesa" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
                 <div class="full-box">
                     <label for="name">Nome</label>
                     <input type="text" name="nome" id="nome" placeholder="Digite o nome">
@@ -51,7 +64,6 @@ session_start();
                         <option value="Moradia">Moradia</option>
                         <option value="Transporte">Transporte</option>
                         <option value="Diversos">Diversos</option>
-
                     </select>
                 </div>
                 <div class="full-box">
@@ -69,8 +81,19 @@ session_start();
                 </div>
             <?php } ?>
     </div>
-
     <div class="clear"></div>
+    <div class="fundoPretoCadastro">
+        <div><h2>Despesas cadastradas<h2><div>
+        <?php 
+        $i = isset($i) ? 0 : 0;
+        for($i=0; $i<count($nome_receita); $i++){ ?>
+            <div>
+                <span><?php echo $nome_receita[$i]['nome'];?></span>
+                <span>  |  R$ <?php echo $nome_receita[$i]['valor'];?></span>
+                <span>  |  <?php echo $nome_receita[$i]['data_rec'];?></span>       
+            </div>
+        <?php } ?>
+    </div>
 </body>
 
 </html>
