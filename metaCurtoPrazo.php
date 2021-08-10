@@ -6,8 +6,8 @@ $acao = 'imprimirMetasCurtoPrazo';
 //$acao2 = 'calcularTotal';
 require_once 'controle_servico_meta.php';
 
-$nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : $listaMetas[0]['nome_meta'];
-$nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : $listaMetas[0]['valor'];
+$nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : '';
+$nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : '';
 
 
 ?>
