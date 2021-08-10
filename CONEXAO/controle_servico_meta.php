@@ -5,6 +5,8 @@
     require_once "../../CONEXAO/servicos_meta.php";
 
     $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
+    //$acao2 = isset($_GET['acao2']) ? $_GET['acao2'] : $acao2;
+
      //setando os valores preencheidos pelo input 
      if ($acao == 'inserirMetaCurtoPrazo'){
         $meta = new Meta();
