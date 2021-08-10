@@ -21,15 +21,13 @@ if (!isset($_SESSION)) {
 	<header class="cabecalho">
 		<a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
 		<div class="botão-sair">
-            <ul><a href="index.php"> Sair </a></ul>
-        </div>
+			<ul><a href="index.php"> Sair </a></ul>
+		</div>
 	</header>
 
 	<div class="fundoPretoLogin">
 		<br> Faça seu login
 	</div>
-
-
 
 	<div class="fazerLogin">
 
@@ -45,12 +43,12 @@ if (!isset($_SESSION)) {
 				<label for="name">Senha</label>
 				<input type="text" name="senha" id="senha" placeholder="Digite sua senha">
 			</div>
-			<div class="full-box">
+			<div class="full">
 				<input id="btn-submit" type="submit" value="Entrar">
 			</div>
 		</form>
 		<?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { ?>
-			<div class="full-box">
+			<div class="msgForm">
 				<h5>Atenção: Login ou senha incorretos!</h5>
 			</div>
 		<?php } ?>

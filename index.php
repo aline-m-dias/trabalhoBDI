@@ -76,7 +76,7 @@ if (!isset($_SESSION)) {
 				<div class="full">
 					<input id="btn-submit" type="submit" value="Login">
 				</div>
-		
+
 			</div>
 		</form>
 
