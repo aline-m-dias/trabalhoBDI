@@ -3,13 +3,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $acao = 'imprimirMetasCurtoPrazo';
+//$acao2 = 'calcularTotal';
 require_once 'controle_servico_meta.php';
 
-$nome_meta = $listaMetas;
-$i = isset($i) ? 0 : 0;
-for ($i = 0; $i < count($nome_meta); $i++) {
-    $nome_meta[$i]['nome_meta'] = isset($listaMetas[$i]['nome_meta']) ? $listaMetas[$i]['nome_meta'] : $listaMetas[$i]['nome_meta'];
-}
+$nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : $listaMetas[0]['nome_meta'];
+$nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : $listaMetas[0]['valor'];
+
 
 ?>
 <!DOCTYPE html>
@@ -66,7 +65,12 @@ for ($i = 0; $i < count($nome_meta); $i++) {
         </form>
         <?php if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 1) { ?>
             <div class="full-box">
-                <h5>Atenção: Meta Curto Prazo cadastrada com sucesso!</h5>
+                <h5> Meta curto prazo cadastrada com sucesso!</h5>
+            </div>
+        <?php } else if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 0) { ?>
+            <div class="full-box">
+                <h5>Atenção: Não foi possível cadastrar, pois só é permitido cadastrar uma única meta
+                    de curto prazo por vez!</h5>
             </div>
         <?php } ?>
 
@@ -76,16 +80,12 @@ for ($i = 0; $i < count($nome_meta); $i++) {
 
     <div class="metas">
         <div>
-            <p class="logar">Metas curto prazo cadastradas</p>
+            <p class="logar">Meta curto prazo cadastrada</p>
             <div>
-                <?php
-                $i = isset($i) ? 0 : 0;
-                for ($i = 0; $i < count($nome_meta); $i++) { ?>
                     <div>
-                        <span><?php echo $nome_meta[$i]['nome_meta']; ?></span>
-                        <span> | R$ <?php echo $nome_meta[$i]['valor']; ?></span>
+                        <span><?php echo $nome_meta[0]['nome_meta']; ?></span>
+                        <span> | R$ <?php echo $nome_meta[0]['valor']; ?></span>
                     </div>
-                <?php } ?>
             </div>
 </body>
 
