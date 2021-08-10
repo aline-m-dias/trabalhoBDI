@@ -70,6 +70,9 @@ input[type="submit"] {
     cursor: pointer;
     padding: 50 px;
     text-align: center;
+    background-color: #D6A913;
+    margin-top: 5px;
+    font-weight: bold;
 }
 
 input[type="checkbox"] {
@@ -89,18 +92,19 @@ input[type="checkbox"] {
 }
 
 .cadastrar {
-    background-color: #22d6b5;
+    background-color: #D6A913;
     color: black;
     text-align: center;
     margin: 0 auto;
-    padding: 0 auto;
+    padding-top: 10px;
     border-radius: 10 px;
     font-size: 40 px;
+    font-weight: bold;
 }
 
 .cadastro {
-    background-color: #D6A913;
-    height: 350px;
+    background-color: #22d6b5;
+    height: 380px;
     width: 502px;
     float: right;
     margin: 50px;
@@ -116,12 +120,18 @@ input[type="checkbox"] {
     padding-top: 5px;
     border-radius: 10 px;
     text-align: center;
+    font-size: 20px;
 }
 
 .full-box {
     margin: 10px;
     flex: 1 1 100%;
     position: relative;
+}
+
+.full {
+    width: 25%;
+    margin-left: 180px;
 }
 
 .frase {
@@ -382,5 +392,9 @@ select {
     margin: 40 px;
     color: black;
     font-size: 200%;
+    text-align: center;
+}
+
+.msgForm {
     text-align: center;
 }

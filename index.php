@@ -33,7 +33,7 @@ if (!isset($_SESSION)) {
 
 	<div class="cadastro">
 
-		<p class="cadastrar">Cadastre-se</p>
+		<p class="cadastrar">CADASTRE-SE</p>
 
 		<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
 
@@ -61,7 +61,7 @@ if (!isset($_SESSION)) {
 				<input type="checkbox" name="agreement" id="agreement">
 				<label for="agreement" id="agreement-label"> Concordo em enviar meus dados</label>
 			</div>-->
-			<div class="full-box">
+			<div class="full">
 				<input id="btn-submit" type="submit" value="Cadastre-se">
 			</div>
 		</form>
@@ -73,7 +73,10 @@ if (!isset($_SESSION)) {
 		<form id="register-form" action="login.php" method="post" name="logar">
 			<div class="login">
 				Já tem cadastro?
-				<input id="btn-submitLogin" type="submit" value="Login">
+				<div class="full">
+					<input id="btn-submit" type="submit" value="Login">
+				</div>
+		
 			</div>
 		</form>
 
