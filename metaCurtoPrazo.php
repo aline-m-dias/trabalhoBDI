@@ -3,7 +3,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $acao = 'imprimirMetasCurtoPrazo';
-//$acao2 = 'calcularTotal';
 require_once 'controle_servico_meta.php';
 
 $nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : '';
@@ -82,10 +81,23 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
         <div>
             <p class="logar">Meta curto prazo cadastrada</p>
             <div>
+                <?php if ($nome_meta[0]['valor'] != NULL ){
+                    $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
+                    $concluido = $_SESSION["saldo"];
+                    if ($falta<=0){
+                        $falta = 0;
+                        $concluido = $nome_meta[0]['valor'];
+                    } 
+                    $porcentagem = ($concluido / $nome_meta[0]['valor'])*100;
+                    ?>
+
                     <div>
-                        <span><?php echo $nome_meta[0]['nome_meta']; ?></span>
-                        <span> | R$ <?php echo $nome_meta[0]['valor']; ?></span>
+                        <div><?php echo $nome_meta[0]['nome_meta']; ?></div>
+                        <div> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></div>
+                        <div> Já concluído: R$ <?php echo $concluido; ?></div>
+                        <div> Porcentagem de conclusão: <?php echo $porcentagem;?> %</div>
                     </div>
+                <?php } ?>
             </div>
 </body>
 

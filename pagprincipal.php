@@ -6,7 +6,8 @@ $acao = 'calcularTotal';
 require_once 'controle_servico_despesa.php';
 require_once 'controle_servico_receita.php';
 
-$saldo = $receitas_totais - $despesas_totais; ?>
+$_SESSION["saldo"] = $receitas_totais - $despesas_totais;?>
+
 <!DOCTYPE html>
 <html>
 
@@ -68,7 +69,7 @@ $saldo = $receitas_totais - $despesas_totais; ?>
 	</div>
 
 	<div class="balanco">
-		<p>Saldo | R$ <?php echo $saldo ?></p>
+		<p>Saldo | R$ <?php echo $_SESSION["saldo"] ?></p>
 		<br>
 		<p>Receitas totais | R$ <?php echo $receitas_totais ?></p>
 		<br>
