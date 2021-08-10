@@ -20,6 +20,11 @@
         $conexao = new Conexao();
         $servico_receita = new Serviços_receita($conexao, $receita);
         $listaReceitas = $servico_receita->imprimirReceitas();
+    }  else if($acao == 'imprimirSaldo'){
+        $receita = new Receita();
+        $conexao = new Conexao();
+        $servico_receita = new Serviços_receita($conexao, $receita);
+        $receitas_totais = $servico_receita->calcularReceitasTotais();
     }
     
 ?> 

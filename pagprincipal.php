@@ -6,11 +6,7 @@ $acao = 'imprimirSaldo';
 require_once 'controle_servico_despesa.php';
 require_once 'controle_servico_receita.php';
 
-//$saldo = $receitas_totais - $despesas_totais;
-
-echo '<prep>';
-print_r($despesas_totais);
-echo '</prep>'; ?>
+$saldo = $receitas_totais - $despesas_totais;?>
 <!DOCTYPE html>
 <html>
 
@@ -71,12 +67,13 @@ echo '</prep>'; ?>
 
 	</div>
 
-
 	<div class="balanco">
-		<p>Saldo</p>
+		<p>Saldo | R$ <?php echo $saldo ?></p>
 		<br>
-		R$ Valor
-
+		<p>Receitas totais | R$ <?php echo $receitas_totais ?></p>
+		<br>
+		<p>Despesas totais | R$ <?php echo $despesas_totais ?></p>
+		<br>
 	</div>
 
 </body>
