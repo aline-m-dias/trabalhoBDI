@@ -28,11 +28,14 @@ for ($i = 0; $i < count($nome_meta); $i++) {
 
     <header class="cabecalho">
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+        <div class="botão-sair">
+            <ul><a href="pagprincipal.php"> Sair </a></ul>
+        </div>
     </header>
 
     <div class="clear"></div>
 
-    <div id="ola">
+    <div class="ola">
         <p>Olá, <?php echo $_SESSION["login"]; ?></p>
     </div>
     <div class="fundoPretoLogin">

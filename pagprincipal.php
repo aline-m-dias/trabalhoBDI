@@ -1,12 +1,12 @@
 <?php
 if (!isset($_SESSION)) {
-    session_start();
+	session_start();
 }
 $acao = 'imprimirSaldo';
 require_once 'controle_servico_despesa.php';
 require_once 'controle_servico_receita.php';
 
-$saldo = $receitas_totais - $despesas_totais;?>
+$saldo = $receitas_totais - $despesas_totais; ?>
 <!DOCTYPE html>
 <html>
 
@@ -28,7 +28,7 @@ $saldo = $receitas_totais - $despesas_totais;?>
 		</div>
 	</header>
 
-	<div id="ola">
+	<div class="ola">
 		<p>Olá, <?php echo $_SESSION["login"]; ?></p>
 	</div>
 

@@ -26,14 +26,16 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
 
     <header class="cabecalho">
         <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+        <div class="botão-sair">
+            <ul><a href="pagprincipal.php"> Sair </a></ul>
+        </div>
     </header>
 
     <div class="clear"></div>
 
-    <div id="ola">
-        <p>Olá, <?php echo $_SESSION["login"]; ?></p>
-    </div>
-
+    <div class="ola">
+		<p>Olá, <?php echo $_SESSION["login"]; ?></p>
+	</div>
 
     <div class="fundoPretoLogin">
         <br> Cadastre uma pessoa

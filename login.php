@@ -20,6 +20,9 @@ if (!isset($_SESSION)) {
 
 	<header class="cabecalho">
 		<a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+		<div class="botão-sair">
+            <ul><a href="index.php"> Sair </a></ul>
+        </div>
 	</header>
 
 	<div class="fundoPretoLogin">
