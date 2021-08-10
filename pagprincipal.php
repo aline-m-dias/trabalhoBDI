@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
 	session_start();
 }
-$acao = 'imprimirSaldo';
+$acao = 'calcularTotal';
 require_once 'controle_servico_despesa.php';
 require_once 'controle_servico_receita.php';
 

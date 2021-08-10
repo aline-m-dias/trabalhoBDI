@@ -22,7 +22,7 @@ if ($acao == 'inserirDespesa') {
     $despesa->__set('tipo', $_POST['tipo']);
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
     $listaDespesas = $servico_despesa->imprimirDespesas();
-} else if($acao == 'imprimirSaldo'){
+} else if($acao == 'calcularTotal'){
     $despesa = new Despesa();
     $conexao = new Conexao();
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
