@@ -77,4 +77,29 @@ class Serviços_despesa
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
+
+	public function calcularDespesasTotais(){
+		if(!isset($_SESSION)){
+            session_start();
+        }
+		$this->login = $_SESSION["login"];
+
+		$categoria_despesa = ['alimentacao', 'saude', 'educacao', 'moradia','transporte','diversos'];
+		$despesas_totais = 0;
+
+		$i = isset($i) ? 0 : 0;
+    	for ($i = 0; $i < count($categoria_despesa); $i++) {
+			$query = "select sum (D.valor) as valor from $categoria_despesa[$i] D, usuario U
+					where D.login = '$this->login' AND U.login = '$this->login';";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			$despesa_total_categoria = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			if($despesa_total_categoria[0]['valor'] == NULL){
+				$despesas_totais = $despesas_totais + 0;
+			}else{
+				$despesas_totais = $despesas_totais + $despesa_total_categoria[0]['valor'];	
+			}	
+		}
+		return $despesas_totais;
+	}
 }

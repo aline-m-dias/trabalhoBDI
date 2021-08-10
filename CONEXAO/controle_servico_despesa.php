@@ -1,8 +1,8 @@
 <?php
 //recupera cada informação digitada no 'input' pelo usuário com seus respectivos "name" e valores 
-require "../../CONEXAO/conexao.php";
-require "../../CONEXAO/despesa.php";
-require "../../CONEXAO/servicos_despesa.php";
+require_once "../../CONEXAO/conexao.php";
+require_once "../../CONEXAO/despesa.php";
+require_once "../../CONEXAO/servicos_despesa.php";
 
 $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 //setando os valores de despesa preencheidos pelo input 
@@ -22,4 +22,9 @@ if ($acao == 'inserirDespesa') {
     $despesa->__set('tipo', $_POST['tipo']);
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
     $listaDespesas = $servico_despesa->imprimirDespesas();
+} else if($acao == 'imprimirSaldo'){
+    $despesa = new Despesa();
+    $conexao = new Conexao();
+    $servico_despesa = new Serviços_despesa($conexao, $despesa);
+    $despesas_totais = $servico_despesa->calcularDespesasTotais();
 }

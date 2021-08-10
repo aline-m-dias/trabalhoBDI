@@ -1,8 +1,8 @@
 <?php
     //recupera cada informação digitada no 'input' pelo usuário com seus respectivos "name" e valores 
-    require "../../CONEXAO/conexao.php";
-    require "../../CONEXAO/pessoa.php";
-    require "../../CONEXAO/servicos_pessoa.php";
+    require_once "../../CONEXAO/conexao.php";
+    require_once "../../CONEXAO/pessoa.php";
+    require_once "../../CONEXAO/servicos_pessoa.php";
 
     $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
     //setando os valores de pessoa preencheidos pelo input 

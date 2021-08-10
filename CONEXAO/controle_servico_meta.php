@@ -1,8 +1,8 @@
 <?php
     //recupera cada informação digitada no 'input' pelo usuário com seus respectivos "name" e valores 
-    require "../../CONEXAO/conexao.php";
-    require "../../CONEXAO/meta.php";
-    require "../../CONEXAO/servicos_meta.php";
+    require_once "../../CONEXAO/conexao.php";
+    require_once "../../CONEXAO/meta.php";
+    require_once "../../CONEXAO/servicos_meta.php";
 
     $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
      //setando os valores preencheidos pelo input 

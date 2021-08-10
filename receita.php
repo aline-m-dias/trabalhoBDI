@@ -11,12 +11,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
     $nome_receita[$i]['nome'] = isset($listaReceitas[$i]['nome']) ?  $listaReceitas[$i]['nome'] : $listareceitas[$i]['nome'];
     $nome_receita[$i]['valor'] = isset($listaReceitas[$i]['valor']) ?  $listaReceitas[$i]['valor'] : $listareceitas[$i]['valor'];
     $nome_receita[$i]['data_rec'] = isset($listaReceitas[$i]['data_rec']) ?  $listaReceitas[$i]['data_rec'] : $listareceitas[$i]['data_rec'];
-}
-/*$tam = count( $listaReceitas);
-    echo $tam;
-    echo '<prep>';
-    print_r( $listaReceitas);
-    echo '</prep>'; */ ?>
+} ?>
 
 <!DOCTYPE html>
 <html>

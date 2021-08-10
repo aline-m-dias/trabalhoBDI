@@ -9,12 +9,7 @@ $nome_pessoa = $listaPessoas;
 $i = isset($i) ? 0 : 0;
 for ($i = 0; $i < count($nome_pessoa); $i++) {
     $nome_pessoa[$i]['nome_pessoa'] = isset($listaPessoas[$i]['nome_pessoa']) ? $listaPessoas[$i]['nome_pessoa'] : $listaPessoas[$i]['nome_pessoa'];
-}
-/*$tam = count($nome_pessoa);
-    echo $tam;
-    echo '<prep>';
-    print_r($listaPessoas);
-    echo '</prep>'; */ ?>
+} ?>
 <!DOCTYPE html>
 <html>
 

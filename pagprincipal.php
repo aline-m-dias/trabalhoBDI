@@ -1,8 +1,16 @@
 <?php
 if (!isset($_SESSION)) {
-	session_start();
+    session_start();
 }
-?>
+$acao = 'imprimirSaldo';
+require_once 'controle_servico_despesa.php';
+require_once 'controle_servico_receita.php';
+
+//$saldo = $receitas_totais - $despesas_totais;
+
+echo '<prep>';
+print_r($despesas_totais);
+echo '</prep>'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -65,51 +73,11 @@ if (!isset($_SESSION)) {
 
 
 	<div class="balanco">
-		<p>Balanço</p>
+		<p>Saldo</p>
 		<br>
 		R$ Valor
 
 	</div>
-
-
-
-
-
-
-	<!--
-	
-	<div class="fundoAzul">
-		<br> + Receita - <br>
-		<br> + Despesa -
-	</div>
-	<div class="fundoPreto">
-		<br> Metas
-		<br> + Metas curto prazo - <br>
-		<br> + Metas longo prazo -
-	</div>
-	<div class="fundoAzul">
-		<br> Receita
-		<br> Lista de receita
-	</div>
-	<div class="fundoPreto">
-		<br> Despesas
-		<br> Valor R$xxx,xxx
-	</div>
-	<div class="fundoAzul">
-		<br> Balanço
-		<br> Valor R$xxx,xxx
-	</div>
-	<div class="fundoPreto">
-		<br> Despesas por categorias
-	</div>
-	<div class="fundoAzul">
-		<br> Meta curto prazo
-	</div>
-	<div class="fundoPreto">
-		<br> Meta longo prazo
-	</div>
---->
-
 
 </body>
 
