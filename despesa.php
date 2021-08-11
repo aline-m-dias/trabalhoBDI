@@ -47,12 +47,12 @@ if (isset($_GET['pesquisaDespesa']) == false){
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                     ['Despesa', 'Valor Total'],
-                    ['<?php echo $despesa_grafico[0]['tipo']?>', <?php echo $despesa_grafico[0]['valor'] ?>],
-                    ['<?php echo $despesa_grafico[1]['tipo']?>', <?php echo $despesa_grafico[1]['valor'] ?>],
-                    ['<?php echo $despesa_grafico[2]['tipo']?>', <?php echo $despesa_grafico[2]['valor'] ?>],
-                    ['<?php echo $despesa_grafico[3]['tipo']?>', <?php echo $despesa_grafico[3]['valor'] ?>],
-                    ['<?php echo $despesa_grafico[4]['tipo']?>', <?php echo $despesa_grafico[4]['valor'] ?>], 
-                    ['<?php echo $despesa_grafico[5]['tipo']?>', <?php echo $despesa_grafico[5]['valor'] ?>]               
+                    ['ALIMENTAÇÃO', <?php echo $despesa_grafico[0]['valor'] ?>],
+                    ['SAÚDE', <?php echo $despesa_grafico[1]['valor'] ?>],
+                    ['EDUCAÇÃO', <?php echo $despesa_grafico[2]['valor'] ?>],
+                    ['MORADIA', <?php echo $despesa_grafico[3]['valor'] ?>],
+                    ['TRANSPORTE', <?php echo $despesa_grafico[4]['valor'] ?>], 
+                    ['DIVERSOS', <?php echo $despesa_grafico[5]['valor'] ?>]               
             ]);    
 
             var options = {
