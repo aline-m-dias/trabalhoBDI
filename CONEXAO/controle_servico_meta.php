@@ -44,7 +44,7 @@
         $meta = new Meta();
         $conexao = new Conexao();
         $servico_meta = new Serviços_meta($conexao, $meta);
-        $listaMetas = $servico_meta-> imprimirMetas();
+        $listaMetas = $servico_meta-> imprimirMeta();
     } else if ($acao == 'imprimirMetasLongoPrazo'){
         if(!isset($_SESSION)){
             session_start();
@@ -54,7 +54,17 @@
         $meta = new Meta();
         $conexao = new Conexao();
         $servico_meta = new Serviços_meta($conexao, $meta);
-        $listaMetas = $servico_meta-> imprimirMetas();
+        $listaMetas = $servico_meta-> imprimirMeta();
+    } else if($acao == 'excluirMetaCurtoPrazo'){
+        if(!isset($_SESSION)){
+            session_start();
+        }
+		$_SESSION["meta"] = 'meta_longo_prazo';
+
+        $meta = new Meta();
+        $conexao = new Conexao();
+        $servico_meta = new Serviços_meta($conexao, $meta);
+        $servico_meta-> excluirMeta();
     }
     
 ?> 

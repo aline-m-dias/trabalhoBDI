@@ -58,7 +58,7 @@ class Serviços_meta
 		}
 	}
 
-	public function imprimirMetas(){
+	public function imprimirMeta(){
 		if (!isset($_SESSION)) {
 			session_start();
 		}
@@ -68,8 +68,19 @@ class Serviços_meta
 		$query = "select M.nome_meta, M.valor, M.data_fim from $this->tipo M, usuario U where '$this->login' = U.login AND '$this->login' = M.login;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
-		
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);	
+	}
 
+	public function excluirMeta(){
+		if (!isset($_SESSION)) {
+			session_start();
+		}
+		$this->login = $_SESSION["login"];
+		$this->tipo = $_SESSION["meta"];
+
+		$query = "delete from $this->tipo where '$this->login' = login;";
+		$this->conexao->exec($query);
+
+		header('Location: metaCurtoPrazo.php?metaexcluida=1');
 	}
 }
