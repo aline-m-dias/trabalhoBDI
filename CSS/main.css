@@ -1,5 +1,5 @@
 body {
-    /*background-color: ;*/
+    background-color: black;
     margin: 0;
     padding: 0;
     font-family: "Noto Sans", sans-serif;
@@ -64,31 +64,51 @@ select {
     width: 100%;
 }
 
-input[type="submit"] {
-    border-radius: 10px;
-    height: 30px;
-    cursor: pointer;
-    padding: 50 px;
-    text-align: center;
-    background-color: #D6A913;
-    margin-top: 5px;
+select[type="month"] {
+    margin-top: 10px;
+    width: 50%;
+    padding-top: 0px;
+}
+
+label[for="mes"] {
     font-weight: bold;
 }
 
-input[type="checkbox"] {
-    border-radius: 10px;
-    height: 30px;
-    font-size: 18px;
-    text-align: left;
-    width: 0 px;
-    margin: 0px;
+input[type="month"] {
+    width: 20%;
 }
 
+input[type="submit"] {
+    border-radius: 10px;
+    height: 30px;
+    text-align: center;
+    background-color: #D6A913;
+    font-weight: bold;
+}
+
+input[id="btn-submitLogin"] {
+    border-radius: 10px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    width: 150px;
+    margin-right: 60px;
+    margin-top: 10px;
+}
+
+/*
 #botão {
     float: left;
     margin: 0px;
     padding: 0px;
     width: 520px;
+}*/
+
+form[id="botão"] {
+    float: left;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #register-form {
@@ -96,6 +116,7 @@ input[type="checkbox"] {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 10 px;
+    vertical-align: middle;
 }
 
 .cadastrar {
@@ -228,24 +249,23 @@ input[type="checkbox"] {
     background-color: #D6A913;
     color: black;
     width: 100%;
-    height: 60px;
+    height: 30px;
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20 px;
+    padding-top: 10px;
+    padding-bottom: 10 px;
 }
 
 /*receita e despesa*/
 
 .receita_despesa {
     width: 100%;
-    height: 200px;
+    height: 50px;
     color: black;
     margin: 0px;
-    background-color: #22d6b5;
 }
 
 .textoReceita {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 select {
@@ -381,13 +401,13 @@ select {
 }
 
 .balanco {
-    background-color: #D6A913;
-    color: black;
-    width: 100%;
-    height: 350px;
-    margin-top: 0;
-    padding-top: 5px;
-    font-size: 25px;
+    background-color: #22d6b5;
+    height: 300px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 450px;
     text-align: center;
 }
 
