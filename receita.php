@@ -44,9 +44,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
         <br> Cadastre sua receita
     </div>
 
-    <div class="cadrastrarDespesa">
-
-        <p class="logar">Receita</p>
+    <div class="cadrastrarReceita">
 
         <form id="register-form-receita" action="controle_servico_receita.php?acao=inserirReceita" method="post" name="logar">
             <div class="full-box">
@@ -61,12 +59,12 @@ for ($i = 0; $i < count($nome_receita); $i++) {
                 <label for="name">Data</label>
                 <input type="date" name="data_rec" id="data_rec">
             </div>
-            <div class="full-box">
+            <div class="full">
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
         <?php if (isset($_GET['receitacadastrada']) && $_GET['receitacadastrada'] == 1) { ?>
-            <div class="full-box">
+            <div class="msgForm">
                 <h5>Receita cadastrada com sucesso!</h5>
             </div>
         <?php } ?>

@@ -47,8 +47,6 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
 
     <div class="cadrastrarDespesa">
 
-        <p class="logar">Despesa</p>
-
         <form id="register-form-despesa" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
             <div class="full-box">
                 <label for="name">Nome</label>
@@ -75,21 +73,21 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
                 <input type="date" name="data_desp" id="data_desp">
             </div>
 
-            <div class="full-box">
+            <div class="full">
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
         <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
-            <div class="full-box">
+            <div class="msgForm">
                 <h5>Despesa cadastrada com sucesso!</h5>
             </div>
         <?php } ?>
     </div>
 
-    <div class="cadrastrarDespesa">
+    <div class="pesquiseDespesa">
         <div>
             <p class="logar">Pesquise despesas cadastradas</p>
-            <div>
+            <div class="centralizar">
 
                 <form action="despesa.php?pesquisaDespesa=1" method="post" name="logar">
                     <div class="full-box">
@@ -104,7 +102,7 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
                             <option value="Diversos">Diversos</option>
                         </select>
                     </div>
-                    <div class="full-box">
+                    <div class="full">
                         <input id="btn-submit" type="submit" value="Pesquisar">
                     </div>
                 </form>
@@ -115,7 +113,7 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
                 if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { ?>
                     <div>
                         <p class="logar">Despesas cadastradas </p>
-                        <div>
+                        <div class="centralizar">
                             <?php
                             $i = isset($i) ? 0 : 0;
                             for ($i = 0; $i < count($nome_despesa); $i++) { ?>

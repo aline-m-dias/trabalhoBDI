@@ -34,8 +34,8 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
     <div class="clear"></div>
 
     <div class="ola">
-		<p>Olá, <?php echo $_SESSION["login"]; ?></p>
-	</div>
+        <p>Olá, <?php echo $_SESSION["login"]; ?></p>
+    </div>
 
     <div class="fundoPretoLogin">
         <br> Cadastre uma pessoa
@@ -62,7 +62,7 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
                 <input type="date" name="data_nasc" id="data">
             </div>
 
-            <div class="full-box">
+            <div class="full">
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>

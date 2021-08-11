@@ -42,8 +42,6 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
 
     <div class="cadrastrarMeta">
 
-        <p class="logar">Meta curto prazo</p>
-
         <form id="register-form-receita" action="controle_servico_meta.php?acao=inserirMetaCurtoPrazo" method="post" name="logar">
 
             <div class="full-box">
@@ -58,16 +56,16 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
                 <label for="name">Data Fim</label>
                 <input type="date" name="data_fim" id="data_fim">
             </div>
-            <div class="full-box">
+            <div class="full">
                 <input id="btn-submit" type="submit" value="Enviar dados">
             </div>
         </form>
         <?php if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 1) { ?>
-            <div class="full-box">
+            <div class="msgForm">
                 <h5> Meta curto prazo cadastrada com sucesso!</h5>
             </div>
         <?php } else if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 0) { ?>
-            <div class="full-box">
+            <div class="msgForm">
                 <h5>Atenção: Não foi possível cadastrar, pois só é permitido cadastrar uma única meta
                     de curto prazo por vez!</h5>
             </div>
@@ -77,27 +75,27 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
 
     <div class="clear"></div>
 
-    <?php if ($nome_meta[0]['valor'] != NULL ){
-    $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
-    $concluido = $_SESSION["saldo"];
-    if ($falta<=0){
-        $falta = 0;
-        $concluido = $nome_meta[0]['valor'];
-    } 
-    $porcentagem = ($concluido / $nome_meta[0]['valor'])*100;
-    $porcentagem = number_format($porcentagem, 2, '.', '');
+    <?php if ($nome_meta[0]['valor'] != NULL) {
+        $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
+        $concluido = $_SESSION["saldo"];
+        if ($falta <= 0) {
+            $falta = 0;
+            $concluido = $nome_meta[0]['valor'];
+        }
+        $porcentagem = ($concluido / $nome_meta[0]['valor']) * 100;
+        $porcentagem = number_format($porcentagem, 2, '.', '');
     ?>
         <div class="metas">
             <div>
                 <p class="logar"><?php echo $nome_meta[0]['nome_meta']; ?></p>
-            <div>
                 <div>
-                    <div> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></div>
-                    <div> Já concluído: R$ <?php echo $concluido; ?></div>
-                    <div> Porcentagem de conclusão: <?php echo $porcentagem;?> %</div>
-                </div>            
-            </div>
-    <?php } ?>
+                    <div>
+                        <div> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></div>
+                        <div> Já concluído: R$ <?php echo $concluido; ?></div>
+                        <div> Porcentagem de conclusão: <?php echo $porcentagem; ?> %</div>
+                    </div>
+                </div>
+            <?php } ?>
 </body>
 
 </html>

@@ -84,6 +84,13 @@ input[type="checkbox"] {
     margin: 0px;
 }
 
+#botão {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 520px;
+}
+
 #register-form {
     font-size: 18 px;
     box-sizing: border-box;
@@ -97,8 +104,8 @@ input[type="checkbox"] {
     text-align: center;
     margin: 0 auto;
     padding-top: 10px;
-    border-radius: 10 px;
-    font-size: 40 px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -108,7 +115,7 @@ input[type="checkbox"] {
     width: 502px;
     float: right;
     margin: 50px;
-    border-radius: 10 px;
+    border-radius: 10px;
 }
 
 .login {
@@ -116,9 +123,9 @@ input[type="checkbox"] {
     height: 60px;
     width: 500px;
     float: right;
-    margin-top: 60px;
+    margin-top: 40px;
     padding-top: 5px;
-    border-radius: 10 px;
+    border-radius: 10px;
     text-align: center;
     font-size: 20px;
 }
@@ -132,6 +139,11 @@ input[type="checkbox"] {
 .full {
     width: 25%;
     margin-left: 180px;
+}
+
+.ful {
+    width: 25%;
+    margin: 0;
 }
 
 .frase {
@@ -160,7 +172,7 @@ input[type="checkbox"] {
     float: left;
     margin: 250px;
     margin-left: 80px;
-    border-radius: 10 px;
+    border-radius: 10px;
 }
 
 .logar {
@@ -170,6 +182,7 @@ input[type="checkbox"] {
     margin: 0 auto;
     padding: 0 auto;
     font-size: 20px;
+    border-radius: 10px;
 }
 
 .ola {
@@ -223,30 +236,16 @@ input[type="checkbox"] {
 
 /*receita e despesa*/
 
-#receita_despesa {
+.receita_despesa {
     width: 100%;
     height: 200px;
     color: black;
-    margin: 50 px;
+    margin: 0px;
     background-color: #22d6b5;
-    text-align: center;
-    padding-top: 30px;
-}
-
-.botão {
-    margin: 20px;
-    font-size: 24px;
 }
 
 .textoReceita {
     font-size: 30px;
-}
-
-button {
-    border-radius: 10px;
-    text-align: center;
-    font-size: 20px;
-    margin-right: 50px;
 }
 
 select {
@@ -292,13 +291,39 @@ select {
     border-radius: 10px;
 }
 
+.cadrastrarReceita {
+    background-color: #22d6b5;
+    height: 300px;
+    width: 500px;
+    float: left;
+    margin: 70px;
+    margin-left: 450px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+
+.pesquiseDespesa {
+    background-color: #22d6b5;
+    height: 180px;
+    width: 500px;
+    float: left;
+    margin: 30px;
+    margin-left: 450px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+
+.centralizar {
+    transform: translate(0%, 25%)
+}
+
 .despesas {
     background-color: #22d6b5;
     height: 350px;
     width: 500px;
     float: left;
     border-radius: 10px;
-    margin-top: 300px;
+    margin-top: 120px;
     text-align: center;
 }
 
@@ -319,8 +344,8 @@ select {
     width: 500px;
     float: left;
     border-radius: 10px;
-    margin-top: 100px;
-    margin-left: 400px;
+    margin-top: 10px;
+    margin-left: 450px;
     text-align: center;
 }
 
@@ -329,8 +354,9 @@ select {
     height: 350px;
     width: 500px;
     float: left;
-    margin: 100px;
-    margin-left: 400px;
+    margin-top: 80px;
+    margin-left: 450px;
+    margin-bottom: 0px;
     border-radius: 10px;
 }
 
