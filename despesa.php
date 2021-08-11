@@ -3,16 +3,18 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
-    $acao = 'imprimirDespesas';
+    $acao = 'imprimirDespesas?totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
     $nome_despesa = $listaDespesas;
+    
     $i = isset($i) ? 0 : 0;
     for ($i = 0; $i < count($nome_despesa); $i++) {
         $nome_despesa[$i]['nome'] = isset($listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
         $nome_despesa[$i]['valor'] = isset($listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
         $nome_despesa[$i]['data_desp'] = isset($listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
     }
+
 }
 ?>
 <!DOCTYPE html>
@@ -31,16 +33,15 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work', 11],
-                ['Eat', 2],
-                ['Commute', 2],
-                ['Watch TV', 2],
-                ['Sleep', 7]
-            ]);
+                <?php 
+                    $i = isset($i) ? 0 : 0;
+                    for ($i; $i<5; $i++){ ?>
+                        [$despesa_total_grafico[$i][0],$despesa_total_grafico[$i][1]],
+                <?php } ?>
+                [$despesa_total_grafico[$i][0],$despesa_total_grafico[$i][1]]]);
 
             var options = {
-                title: 'My Daily Activities',
+                title: 'Gráfico de despesa',
                 pieHole: 0.4,
             };
 
@@ -112,6 +113,7 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
         <?php } ?>
     </div>
 
+
     <div class="pesquiseDespesa">
         <div>
             <p class="logar">Pesquise despesas cadastradas</p>
@@ -135,7 +137,9 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
                     </div>
                 </form>
             </div>
-
+            
+            <br><br><br>
+            GRÁFICO
             <div id="donutchart" style="width: 900px; height: 500px;"></div>
 
             <div class="despesas">

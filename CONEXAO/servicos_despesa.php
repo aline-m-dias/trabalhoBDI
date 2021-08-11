@@ -88,7 +88,7 @@ class Serviços_despesa
 		$despesas_totais = 0;
 
 		$i = isset($i) ? 0 : 0;
-    	for ($i = 0; $i < count($categoria_despesa); $i++) {
+    	for ($i = 0; $i < 6; $i++) {
 			$query = "select sum (D.valor) as valor from $categoria_despesa[$i] D, usuario U
 					where D.login = '$this->login' AND U.login = '$this->login';";
 			$stmt = $this->conexao->prepare($query);
@@ -101,5 +101,52 @@ class Serviços_despesa
 			}	
 		}
 		return $despesas_totais;
+	}
+
+	public function totalDespesaGrafico(){
+		if(!isset($_SESSION)){
+            session_start();
+        }
+		$this->login = $_SESSION["login"];
+
+		$categoria_despesa = [
+			0 => [
+				'tipo' => 'alimentacao',
+				'valor' => 0
+			],
+			1 => [
+				'tipo' => 'saude',
+				'valor' => 0
+			],
+			2 => [
+				'tipo' => 'educacao',
+				'valor' => 0
+			],
+			3 => [
+				'tipo' => 'moradia',
+				'valor' => 0
+			],
+			4 => [
+				'tipo' => 'transporte',
+				'valor' => 0
+			],
+			5 => [
+				'tipo' => 'diversos',
+				'valor' => 0
+			]];
+
+		$i = isset($i) ? 0 : 0;
+		for ($i = 0; $i < 6; $i++) {
+			$query = "select sum (D.valor) as valor from $categoria_despesa[$i]['tipo'] D, usuario U
+					where D.login = '$this->login' AND U.login = '$this->login';";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			$despesa_total_categoria = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			if($despesa_total_categoria[0]['valor'] != NULL){
+				$categoria_despesa[$i]['valor'] = $despesa_total_categoria[0]['valor'];	
+			}	
+		}
+		return $categoria_despesa;
+		
 	}
 }
