@@ -2,11 +2,21 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
+if (isset($_GET['pesquisaDespesa']) == false){
+    $acao = 'totalDespesaGrafico';
+    require_once 'controle_servico_despesa.php';
+    $despesa_grafico = $despesa_total_grafico;
+    $i = isset($i) ? 0 : 0;
+    for ($i = 0; $i < 6; $i++) {
+        $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
+        $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
+    }
+}else if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1){
     $acao = 'imprimirDespesas?totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
     $nome_despesa = $listaDespesas;
+    $despesa_grafico = $despesa_total_grafico;
     
     $i = isset($i) ? 0 : 0;
     for ($i = 0; $i < count($nome_despesa); $i++) {
@@ -14,7 +24,10 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
         $nome_despesa[$i]['valor'] = isset($listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
         $nome_despesa[$i]['data_desp'] = isset($listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
     }
-
+    for ($i = 0; $i < 6; $i++) {
+        $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
+        $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -33,12 +46,14 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                <?php 
-                    $i = isset($i) ? 0 : 0;
-                    for ($i; $i<5; $i++){ ?>
-                        [$despesa_total_grafico[$i][0],$despesa_total_grafico[$i][1]],
-                <?php } ?>
-                [$despesa_total_grafico[$i][0],$despesa_total_grafico[$i][1]]]);
+                    ['Despesa', 'Valor Total'],
+                    ['<?php echo $despesa_grafico[0]['tipo']?>', <?php echo $despesa_grafico[0]['valor'] ?>],
+                    ['<?php echo $despesa_grafico[1]['tipo']?>', <?php echo $despesa_grafico[1]['valor'] ?>],
+                    ['<?php echo $despesa_grafico[2]['tipo']?>', <?php echo $despesa_grafico[2]['valor'] ?>],
+                    ['<?php echo $despesa_grafico[3]['tipo']?>', <?php echo $despesa_grafico[3]['valor'] ?>],
+                    ['<?php echo $despesa_grafico[4]['tipo']?>', <?php echo $despesa_grafico[4]['valor'] ?>], 
+                    ['<?php echo $despesa_grafico[5]['tipo']?>', <?php echo $despesa_grafico[5]['valor'] ?>]               
+            ]);    
 
             var options = {
                 title: 'Gráfico de despesa',

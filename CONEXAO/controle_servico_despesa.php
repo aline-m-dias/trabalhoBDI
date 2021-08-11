@@ -30,7 +30,7 @@ if ($acao == 'inserirDespesa') {
     $despesas_totais = $servico_despesa->calcularDespesasTotais();
 }
 
-if($acao == 'imprimirDespesas?totalDespesaGrafico'){
+if($acao == 'imprimirDespesas?totalDespesaGrafico' or $acao == 'totalDespesaGrafico' ){
     $despesa = new Despesa();
     $conexao = new Conexao();
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
