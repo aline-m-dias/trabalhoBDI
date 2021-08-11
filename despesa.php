@@ -21,6 +21,34 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
 <head>
     <title>Poupe Mais | Despesa</title>
     <meta charset="utf-8" />
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 2],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
+            ]);
+
+            var options = {
+                title: 'My Daily Activities',
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+
 </head>
 
 <body>
@@ -107,6 +135,8 @@ if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
                     </div>
                 </form>
             </div>
+
+            <div id="donutchart" style="width: 900px; height: 500px;"></div>
 
             <div class="despesas">
                 <?php
