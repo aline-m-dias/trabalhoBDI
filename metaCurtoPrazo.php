@@ -77,28 +77,27 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
 
     <div class="clear"></div>
 
-    <div class="metas">
-        <div>
-            <p class="logar">Meta curto prazo cadastrada</p>
+    <?php if ($nome_meta[0]['valor'] != NULL ){
+    $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
+    $concluido = $_SESSION["saldo"];
+    if ($falta<=0){
+        $falta = 0;
+        $concluido = $nome_meta[0]['valor'];
+    } 
+    $porcentagem = ($concluido / $nome_meta[0]['valor'])*100;
+    $porcentagem = number_format($porcentagem, 2, '.', '');
+    ?>
+        <div class="metas">
             <div>
-                <?php if ($nome_meta[0]['valor'] != NULL ){
-                    $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
-                    $concluido = $_SESSION["saldo"];
-                    if ($falta<=0){
-                        $falta = 0;
-                        $concluido = $nome_meta[0]['valor'];
-                    } 
-                    $porcentagem = ($concluido / $nome_meta[0]['valor'])*100;
-                    ?>
-
-                    <div>
-                        <div><?php echo $nome_meta[0]['nome_meta']; ?></div>
-                        <div> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></div>
-                        <div> Já concluído: R$ <?php echo $concluido; ?></div>
-                        <div> Porcentagem de conclusão: <?php echo $porcentagem;?> %</div>
-                    </div>
-                <?php } ?>
+                <p class="logar"><?php echo $nome_meta[0]['nome_meta']; ?></p>
+            <div>
+                <div>
+                    <div> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></div>
+                    <div> Já concluído: R$ <?php echo $concluido; ?></div>
+                    <div> Porcentagem de conclusão: <?php echo $porcentagem;?> %</div>
+                </div>            
             </div>
+    <?php } ?>
 </body>
 
 </html>
