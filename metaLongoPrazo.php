@@ -91,9 +91,12 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
                         <h2> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></h2>
                         <h2> Já concluído: R$ <?php echo $concluido; ?></h2>
                         <h2> Porcentagem de conclusão: <?php echo $porcentagem; ?> %</h2>
-                        <div class="full">
-                            <input id="btn-submit" type="submit" value="Excluir meta">
-                        </div>
+                        <form id="" action="" method="" name="">
+                            <div class="full">
+                                <input id="btn-submit" type="submit" value="Excluir meta">
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             <?php } ?>
