@@ -8,14 +8,45 @@ require_once 'controle_servico_meta.php';
 $nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : '';
 $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : '';
 
-
-?>
+if ($nome_meta[0]['valor'] != NULL) {
+    $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
+    $concluido = $_SESSION["saldo"];
+    if ($falta <= 0) {
+        $falta = 0;
+        $concluido = $nome_meta[0]['valor'];
+    }
+}?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Poupe Mais | Meta Curto Prazo</title>
     <meta charset="utf-8" />
+    <!-- copyright: google chart-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Despesa', 'Valor Total'],
+                ['CONCLUÍDO', <?php echo $concluido ?>],
+                ['FALTA', <?php echo $falta?>],
+            ]);
+
+            var options = {
+                title: '<?php echo $nome_meta[0]['nome_meta'];?> | R$ <?php echo $nome_meta[0]['valor'];?>',
+                pieHole: 0.4,
+                colors: ['#86128A', '#22b6d4']
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 
 <body>
@@ -73,41 +104,21 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
 
     </div>
 
-    <div class="clear"></div>
+    <?php if ($nome_meta[0]['valor'] != NULL) {?>
+    <div class="grafico" id="donutchart" style="width: 900px; height: 500px; text-align:center"></div>
 
-    <?php if ($nome_meta[0]['valor'] != NULL) {
-        $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
-        $concluido = $_SESSION["saldo"];
-        if ($falta <= 0) {
-            $falta = 0;
-            $concluido = $nome_meta[0]['valor'];
-        }
-        $porcentagem = ($concluido / $nome_meta[0]['valor']) * 100;
-        $porcentagem = number_format($porcentagem, 2, '.', '');
-    ?>
-        <div class="metas">
-            <div>
-                <p class="logar"><?php echo $nome_meta[0]['nome_meta']; ?></p>
-                <div>
-                    <div>
-                        <h2> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></h2>
-                        <h2> Já concluído: R$ <?php echo $concluido; ?></h2>
-                        <h2> Porcentagem de conclusão: <?php echo $porcentagem; ?> %</h2>
-                        <form id="" action="controle_servico_meta.php?acao=excluirMetaCurtoPrazo" method="post" name="">
-                            <div class="full">
-                                <input id="btn-submit" type="submit" value="Excluir meta">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            <?php } ?>
+    <form id="" action="controle_servico_meta.php?acao=excluirMetaCurtoPrazo" method="post" name="">
+        <div class="full">
+            <input id="btn-submit" type="submit" value="Excluir meta">
+        </div>
+    </form>
 
-            <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Meta excluída com sucesso!!</h5>
-                </div>
-            <?php } ?>
-            </div>
+    <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
+        <div class="msgForm">
+            <h5>Meta excluída com sucesso!!</h5>
+        </div>
+    <?php } }?>
+            
 </body>
 
 </html>
