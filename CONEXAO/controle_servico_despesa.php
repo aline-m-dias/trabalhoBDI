@@ -28,6 +28,11 @@ if ($acao == 'inserirDespesa') {
     $conexao = new Conexao();
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
     $despesas_totais = $servico_despesa->calcularDespesasTotais();
+}else if($acao == 'excluirDespesa'){
+    $despesa = new Despesa();
+    $conexao = new Conexao();
+    $servico_despesa = new Serviços_despesa($conexao, $despesa);
+    $despesas_totais = $servico_despesa->excluirDespesa();
 }
 
 if($acao == 'imprimirDespesas?totalDespesaGrafico' or $acao == 'totalDespesaGrafico' ){

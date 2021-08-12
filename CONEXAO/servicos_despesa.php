@@ -43,8 +43,12 @@ class Serviços_despesa
 		$query = "select codigo from $this->tipo;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
-		$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM));
-		$this->codigo++;
+		$cont = count($stmt->fetchAll(PDO::FETCH_NUM));
+		if($cont == 0){
+			$_SESSION["geradorCodigoDespesa"] = 0;
+		}
+		$_SESSION["geradorCodigoDespesa"] = $_SESSION["geradorCodigoDespesa"] + 1;
+		$this->codigo = $_SESSION["geradorCodigoDespesa"];
 
 		$query = "insert into $this->tipo (nome, codigo, valor, data_desp, login)
 		values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
@@ -57,6 +61,7 @@ class Serviços_despesa
             session_start();
         }
 		$this->login = $_SESSION["login"];
+		$_SESSION["tipoDespesa"] = $this->tipo;
 
 		if ($this->tipo == 'Alimentação') {
 			$this->tipo = 'alimentacao';
@@ -72,7 +77,7 @@ class Serviços_despesa
 			$this->tipo = 'diversos';
 		}
 
-		$query = "select D.nome, D.valor, D.data_desp from $this->tipo D, usuario U where '$this->login' = U.login AND '$this->login' = D.login;";
+		$query = "select D.nome, D.valor, D.data_desp, D.codigo from $this->tipo D, usuario U where '$this->login' = U.login AND '$this->login' = D.login;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -129,7 +134,22 @@ class Serviços_despesa
 				$cat_despesa_total[$i]['valor'] = $despesa_total_categoria[0]['valor'];	
 			}	
 		}
-		return $cat_despesa_total;
-		
+		return $cat_despesa_total;	
+	}
+
+	public function excluirDespesa(){
+		if (!isset($_SESSION)) {
+			session_start();
+		}
+		$this->login = $_SESSION["login"];
+		$this->codigo = $_SESSION["codigoDespesa"];
+		$this->tipo = $_SESSION["tipoDespesa"];
+
+		$query = "delete from $this->tipo where '$this->login' = login and $this->codigo = codigo;";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+
+		header('Location: despesa.php?despesaexcluida=1');
+
 	}
 }

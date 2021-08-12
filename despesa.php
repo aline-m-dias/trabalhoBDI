@@ -23,6 +23,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         $nome_despesa[$i]['nome'] = isset($listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
         $nome_despesa[$i]['valor'] = isset($listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
         $nome_despesa[$i]['data_desp'] = isset($listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
+        $nome_despesa[$i]['codigo'] = isset($listaDespesas[$i]['codigo']) ?  $listaDespesas[$i]['codigo'] : $listaDespesas[$i]['codigo'];
     }
     for ($i = 0; $i < 6; $i++) {
         $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
@@ -172,15 +173,20 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
                                 </div>
                                 <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
-                                    <form id="" action="controle_servico_despesa.php?acao=excluirDespesa" method="post" name="">
+                                    <form id="" action="controle_servico_despesa.php?acao=excluirDespesa" 
+                                        action=<?php $_SESSION["codigoDespesa"] = $nome_despesa[$i]['codigo'];?>
+                                        action=<?php $_SESSION["tipoDespesa"] = $nome_despesa[$i]['tipo'];?> method="post" name="">
                                         <div class="full">
                                             <input id="btn-submit" type="submit" value="Excluir">
                                         </div>
                                     </form>
                                 </div>
                             <?php } ?>
-
-                        <?php } ?>
+                            <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
+                                <div class="msgForm">
+                                    <h5>Meta excluída com sucesso!!</h5>
+                                </div>
+                            <?php } }?>
 
                         </div>
 </body>
