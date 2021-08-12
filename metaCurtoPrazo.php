@@ -7,6 +7,7 @@ require_once 'controle_servico_meta.php';
 
 $nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : '';
 $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : '';
+$nome_meta[0]['data_fim'] = isset($listaMetas[0]['data_fim']) ? $listaMetas[0]['data_fim'] : '';
 
 if ($nome_meta[0]['valor'] != NULL) {
     $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
@@ -38,7 +39,7 @@ if ($nome_meta[0]['valor'] != NULL) {
             ]);
 
             var options = {
-                title: '<?php echo $nome_meta[0]['nome_meta'];?> | R$ <?php echo $nome_meta[0]['valor'];?>',
+                title: '<?php echo $nome_meta[0]['nome_meta'];?> | R$ <?php echo $nome_meta[0]['valor'];?> | Data fim: <?php echo $nome_meta[0]['data_fim'];?>',
                 pieHole: 0.4,
                 colors: ['#86128A', '#22b6d4']
             };
