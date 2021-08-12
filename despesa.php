@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-if (isset($_GET['pesquisaDespesa']) == false){
+if (isset($_GET['pesquisaDespesa']) == false) {
     $acao = 'totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
     $despesa_grafico = $despesa_total_grafico;
@@ -11,13 +11,13 @@ if (isset($_GET['pesquisaDespesa']) == false){
         $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
         $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
     }
-}else if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1){
+} else if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
     $acao = 'imprimirDespesas?totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
     $nome_despesa = $listaDespesas;
     $despesa_grafico = $despesa_total_grafico;
-    
+
     $i = isset($i) ? 0 : 0;
     for ($i = 0; $i < count($nome_despesa); $i++) {
         $nome_despesa[$i]['nome'] = isset($listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
@@ -36,7 +36,7 @@ if (isset($_GET['pesquisaDespesa']) == false){
 <head>
     <title>Poupe Mais | Despesa</title>
     <meta charset="utf-8" />
-
+    <!-- copyright: google chart-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load("current", {
@@ -46,18 +46,20 @@ if (isset($_GET['pesquisaDespesa']) == false){
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                    ['Despesa', 'Valor Total'],
-                    ['ALIMENTAÇÃO', <?php echo $despesa_grafico[0]['valor'] ?>],
-                    ['SAÚDE', <?php echo $despesa_grafico[1]['valor'] ?>],
-                    ['EDUCAÇÃO', <?php echo $despesa_grafico[2]['valor'] ?>],
-                    ['MORADIA', <?php echo $despesa_grafico[3]['valor'] ?>],
-                    ['TRANSPORTE', <?php echo $despesa_grafico[4]['valor'] ?>], 
-                    ['DIVERSOS', <?php echo $despesa_grafico[5]['valor'] ?>]               
-            ]);    
+                ['Despesa', 'Valor Total'],
+                ['ALIMENTAÇÃO', <?php echo $despesa_grafico[0]['valor'] ?>],
+                ['SAÚDE', <?php echo $despesa_grafico[1]['valor'] ?>],
+                ['EDUCAÇÃO', <?php echo $despesa_grafico[2]['valor'] ?>],
+                ['MORADIA', <?php echo $despesa_grafico[3]['valor'] ?>],
+                ['TRANSPORTE', <?php echo $despesa_grafico[4]['valor'] ?>],
+                ['DIVERSOS', <?php echo $despesa_grafico[5]['valor'] ?>]
+            ]);
 
             var options = {
                 title: 'Gráfico de despesa',
                 pieHole: 0.4,
+                colors: ['#86128A', '#22b6d4', '#22d6b5', '#f205cb', '#f20', '#eaf205', '#d14d']
+
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
@@ -127,6 +129,7 @@ if (isset($_GET['pesquisaDespesa']) == false){
             </div>
         <?php } ?>
     </div>
+    <div class="grafico" id="donutchart" style="width: 900px; height: 500px; text-align:center"></div>
 
 
     <div class="pesquiseDespesa">
@@ -152,10 +155,7 @@ if (isset($_GET['pesquisaDespesa']) == false){
                     </div>
                 </form>
             </div>
-            
-            <br><br><br>
-            GRÁFICO
-            <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
 
             <div class="despesas">
                 <?php

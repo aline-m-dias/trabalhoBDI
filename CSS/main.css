@@ -443,3 +443,12 @@ select {
 .msgForm {
     text-align: center;
 }
+
+#donutchart {
+    float: right;
+}
+
+.grafico {
+    margin-top: 80px;
+    margin-right: 150px;
+}
