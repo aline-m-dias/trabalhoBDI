@@ -67,6 +67,13 @@ if (isset($_GET['pesquisaDespesa']) == false) {
             chart.draw(data, options);
         }
     </script>
+    <script>
+        function acao(){
+            <?php $_SESSION["codigoDespesa"] = $nome_despesa[$i]['codigo'];
+                 $_SESSION["tipoDespesa"] = $nome_despesa[$i]['tipo'];
+                ?>
+        }
+    </script>
 
 </head>
 
@@ -173,9 +180,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
                                 </div>
                                 <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
-                                    <form id="" action="controle_servico_despesa.php?acao=excluirDespesa" 
-                                        action=<?php $_SESSION["codigoDespesa"] = $nome_despesa[$i]['codigo'];?>
-                                        action=<?php $_SESSION["tipoDespesa"] = $nome_despesa[$i]['tipo'];?> method="post" name="">
+                                    <form id="" onclick="acao()" action="controle_servico_despesa.php?acao=excluirDespesa" method="post" name="">
                                         <div class="full">
                                             <input id="btn-submit" type="submit" value="Excluir">
                                         </div>
