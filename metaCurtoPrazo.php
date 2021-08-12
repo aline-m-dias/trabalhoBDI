@@ -101,12 +101,13 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
                     </div>
                 </div>
             <?php } ?>
-            
-    <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
-            <div class="msgForm">
-                <h5>Meta excluida com sucesso!!</h5>
+
+            <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
+                <div class="msgForm">
+                    <h5>Meta excluída com sucesso!!</h5>
+                </div>
+            <?php } ?>
             </div>
-    <?php } ?>
 </body>
 
 </html>

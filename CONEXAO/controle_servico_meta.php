@@ -75,6 +75,4 @@
         $conexao = new Conexao();
         $servico_meta = new Serviços_meta($conexao, $meta);
         $servico_meta-> excluirMeta();
-    } 
-    
-?> 
+    }

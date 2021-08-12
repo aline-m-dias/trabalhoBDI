@@ -333,7 +333,16 @@ select {
 }
 
 .centralizar {
-    transform: translate(0%, 25%)
+    transform: translate(0%, 25%);
+}
+
+.centro {
+    padding-top: 20px;
+    margin-left: 30px;
+}
+
+.espaco {
+    padding-bottom: 30px;
 }
 
 .despesas {
@@ -343,7 +352,6 @@ select {
     float: left;
     border-radius: 10px;
     margin-top: 120px;
-    text-align: center;
 }
 
 .receitas {
@@ -359,7 +367,7 @@ select {
 
 .metas {
     background-color: #22d6b5;
-    height: 350px;
+    height: 250px;
     width: 500px;
     float: left;
     border-radius: 10px;

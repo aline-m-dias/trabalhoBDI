@@ -162,17 +162,26 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { ?>
                     <div>
                         <p class="logar">Despesas cadastradas </p>
-                        <div class="centralizar">
+                        <div class="centro">
                             <?php
                             $i = isset($i) ? 0 : 0;
                             for ($i = 0; $i < count($nome_despesa); $i++) { ?>
-                                <div>
+                                <div class="espaco">
                                     <span><?php echo $nome_despesa[$i]['nome']; ?></span>
                                     <span> | R$ <?php echo $nome_despesa[$i]['valor']; ?></span>
                                     <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
                                 </div>
+                                <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
+                                    <form id="" action="controle_servico_despesa.php?acao=excluirDespesa" method="post" name="">
+                                        <div class="full">
+                                            <input id="btn-submit" type="submit" value="Excluir">
+                                        </div>
+                                    </form>
+                                </div>
                             <?php } ?>
+
                         <?php } ?>
+
                         </div>
 </body>
 
