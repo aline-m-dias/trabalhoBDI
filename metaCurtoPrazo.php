@@ -98,14 +98,15 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
                                 <input id="btn-submit" type="submit" value="Excluir meta">
                             </div>
                         </form>
-                        <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
-                            <div class="msgForm">
-                                <h5>Meta excluida com sucesso!!</h5>
-                            </div>
-                        <?php } ?>
                     </div>
                 </div>
             <?php } ?>
+            
+    <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Meta excluida com sucesso!!</h5>
+            </div>
+    <?php } ?>
 </body>
 
 </html>

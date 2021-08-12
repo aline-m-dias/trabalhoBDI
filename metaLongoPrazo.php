@@ -91,15 +91,19 @@ $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'
                         <h2> Valor para atingir: R$ <?php echo $nome_meta[0]['valor']; ?></h2>
                         <h2> Já concluído: R$ <?php echo $concluido; ?></h2>
                         <h2> Porcentagem de conclusão: <?php echo $porcentagem; ?> %</h2>
-                        <form id="" action="" method="" name="">
+                        <form id="" action="controle_servico_meta.php?acao=excluirMetaLongoPrazo" method="post" name="">
                             <div class="full">
                                 <input id="btn-submit" type="submit" value="Excluir meta">
                             </div>
                         </form>
-
                     </div>
                 </div>
             <?php } ?>
+    <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Meta excluida com sucesso!!</h5>
+            </div>
+    <?php } ?>
 </body>
 
 </html>
