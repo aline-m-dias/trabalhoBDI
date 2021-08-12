@@ -59,7 +59,7 @@
         if(!isset($_SESSION)){
             session_start();
         }
-		$_SESSION["meta"] = 'meta_longo_prazo';
+		$_SESSION["meta"] = 'meta_curto_prazo';
 
         $meta = new Meta();
         $conexao = new Conexao();

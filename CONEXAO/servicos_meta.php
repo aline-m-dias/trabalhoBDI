@@ -79,7 +79,8 @@ class Serviços_meta
 		$this->tipo = $_SESSION["meta"];
 
 		$query = "delete from $this->tipo where '$this->login' = login;";
-		$this->conexao->exec($query);
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
 
 		header('Location: metaCurtoPrazo.php?metaexcluida=1');
 	}
