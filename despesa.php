@@ -189,7 +189,6 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                 <h5>Despesa excluída com sucesso!!</h5>
                             </div>
                         <?php } ?>
-
                         </div>
 </body>
 
