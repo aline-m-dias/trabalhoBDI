@@ -25,6 +25,12 @@
         $conexao = new Conexao();
         $servico_receita = new Serviços_receita($conexao, $receita);
         $receitas_totais = $servico_receita->calcularReceitasTotais();
+    } else if($acao == 'excluirReceita'){
+        $receita = new Receita();
+        $conexao = new Conexao();
+        $receita->__set('codigo',$_GET['codigo']);
+        $servico_receita = new Serviços_receita($conexao, $receita);
+        $servico_receita->excluirReceita();
     }
     
 ?> 

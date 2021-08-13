@@ -31,8 +31,9 @@ if ($acao == 'inserirDespesa') {
 }else if($acao == 'excluirDespesa'){
     $despesa = new Despesa();
     $conexao = new Conexao();
+    $despesa->__set('codigo',$_GET['codigo']);
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
-    $despesas_totais = $servico_despesa->excluirDespesa();
+    $servico_despesa->excluirDespesa();
 }
 
 if($acao == 'imprimirDespesas?totalDespesaGrafico' or $acao == 'totalDespesaGrafico' ){
