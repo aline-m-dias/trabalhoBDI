@@ -68,8 +68,8 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         }
     </script>
     <script>
-        function acao(codigo){
-            location.href = 'controle_servico_despesa.php?acao=excluirDespesa&codigo='+codigo;
+        function acao(codigo) {
+            location.href = 'controle_servico_despesa.php?acao=excluirDespesa&codigo=' + codigo;
         }
     </script>
 
@@ -165,7 +165,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
 
             <div class="despesas">
                 <?php
-                if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1)  { ?>
+                if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { ?>
                     <div>
                         <p class="logar">Despesas cadastradas </p>
                         <div class="centro">
@@ -176,14 +176,15 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <span><?php echo $nome_despesa[$i]['nome']; ?></span>
                                     <span> | R$ <?php echo $nome_despesa[$i]['valor']; ?></span>
                                     <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
-                                    <span> <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo']?>)" type="submit" value="Excluir"> </span>
+                                    <span> <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir"> </span>
                                 </div>
                                 <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
-                                        <div class="full">
-                                           
-                                        </div>         
+                                    <div class="full">
+
+                                    </div>
                                 </div>
-                            <?php } }?>
+                        <?php }
+                        } ?>
                         <?php if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
                             <div class="msgForm">
                                 <h5>Despesa excluída com sucesso!!</h5>

@@ -143,7 +143,7 @@ form[id="botão"] {
     height: 60px;
     width: 500px;
     float: right;
-    margin-top: 40px;
+    margin-top: 70px;
     padding-top: 5px;
     border-radius: 10px;
     text-align: center;
@@ -193,6 +193,10 @@ form[id="botão"] {
     margin: 250px;
     margin-left: 80px;
     border-radius: 10px;
+}
+
+.login-center {
+    padding-top: 20px;
 }
 
 .logar {

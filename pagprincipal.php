@@ -66,8 +66,8 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 	<div class="balanco">
 		<div>
 			<h1 class="logar"> BALANÇO </h1>
-			<label for="mes">Selecione o ano/mês</label>
-			<select type="month" name="mes" id="mes"> </select>
+			<!--- <label for="mes">Selecione o ano/mês</label>
+			<select type="month" name="mes" id="mes"> </select> -->
 			<h2>Saldo | R$ <?php echo $_SESSION["saldo"] ?></h2>
 			<br>
 			<h2>Receitas totais | R$ <?php echo $receitas_totais ?></h2>
