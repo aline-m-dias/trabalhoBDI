@@ -164,6 +164,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                     <div>
                         <p class="logar">Despesas cadastradas </p>
                         <div class="centro">
+
                             <?php
                             $i = isset($i) ? 0 : 0;
                             for ($i = 0; $i < count($nome_despesa); $i++) { ?>
@@ -173,20 +174,20 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
                                 </div>
                                 <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
-                                    <form id="" action="controle_servico_despesa.php?acao=excluirDespesa" 
-                                        action=<?php $_SESSION["codigoDespesa"] = $nome_despesa[$i]['codigo'];?>
-                                        action=<?php $_SESSION["tipoDespesa"] = $nome_despesa[$i]['tipo'];?> method="post" name="">
+                                    <form id="" action="controle_servico_despesa.php?acao=excluirDespesa" action=<?php $_SESSION["codigoDespesa"] = $nome_despesa[$i]['codigo']; ?> action=<?php $_SESSION["tipoDespesa"] = $nome_despesa[$i]['tipo']; ?> method="post" name="">
                                         <div class="full">
                                             <input id="btn-submit" type="submit" value="Excluir">
                                         </div>
                                     </form>
                                 </div>
                             <?php } ?>
+
                             <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
                                 <div class="msgForm">
                                     <h5>Meta excluída com sucesso!!</h5>
                                 </div>
-                            <?php } }?>
+                        <?php }
+                        } ?>
 
                         </div>
 </body>
