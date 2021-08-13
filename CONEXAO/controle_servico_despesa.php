@@ -33,12 +33,12 @@ if ($acao == 'inserirDespesa') {
     $conexao = new Conexao();
     $despesa->__set('codigo',$_GET['codigo']);
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
-    $despesas_totais = $servico_despesa->excluirDespesa();
+    $servico_despesa->excluirDespesa();
 }
 
 if($acao == 'imprimirDespesas?totalDespesaGrafico' or $acao == 'totalDespesaGrafico' ){
     $despesa = new Despesa();
     $conexao = new Conexao();
     $servico_despesa = new Serviços_despesa($conexao, $despesa);
-    $despesa_total_grafico = $servico_despesa->totalDespesaGrafico();   
+    $despesa_total_grafico = $servico_despesa->totalDespesaGrafico();
 }

@@ -11,6 +11,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
     $nome_receita[$i]['nome'] = isset($listaReceitas[$i]['nome']) ?  $listaReceitas[$i]['nome'] : $listareceitas[$i]['nome'];
     $nome_receita[$i]['valor'] = isset($listaReceitas[$i]['valor']) ?  $listaReceitas[$i]['valor'] : $listareceitas[$i]['valor'];
     $nome_receita[$i]['data_rec'] = isset($listaReceitas[$i]['data_rec']) ?  $listaReceitas[$i]['data_rec'] : $listareceitas[$i]['data_rec'];
+    $nome_receita[$i]['codigo'] = isset($listaReceitas[$i]['codigo']) ?  $listaReceitas[$i]['codigo'] : $listareceitas[$i]['codigo'];
 } ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,12 @@ for ($i = 0; $i < count($nome_receita); $i++) {
 <head>
     <title>Poupe Mais | Receita</title>
     <meta charset="utf-8" />
+
+    <script>
+        function acao(codigo){
+            location.href = 'controle_servico_receita.php?acao=excluirReceita&codigo='+codigo;
+        }
+    </script>
 </head>
 
 <body>
@@ -81,13 +88,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
                         <span><?php echo $nome_receita[$i]['nome']; ?></span>
                         <span> | R$ <?php echo $nome_receita[$i]['valor']; ?></span>
                         <span> | <?php echo $nome_receita[$i]['data_rec']; ?></span>
-                    </div>
-                    <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
-                        <form id="" action="controle_servico_despesa.php?acao=excluirDespesa" method="post" name="">
-                            <div class="full">
-                                <input id="btn-submit" type="submit" value="Excluir">
-                            </div>
-                        </form>
+                        <span> <input id="btn-submit" onclick="acao(<?php echo $nome_receita[$i]['codigo']?>)" type="submit" value="Excluir"> </span>
                     </div>
                 <?php } ?>
             </div>

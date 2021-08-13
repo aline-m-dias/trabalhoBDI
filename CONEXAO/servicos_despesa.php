@@ -146,8 +146,6 @@ class Serviços_despesa
 		$this->login = $_SESSION["login"];
 		$this->tipo = $_SESSION["tipoDespesa"];
 
-		echo $this->codigo;
-
 		$query = "delete from $this->tipo where '$this->login' = login and $this->codigo = codigo;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
