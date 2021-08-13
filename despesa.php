@@ -68,10 +68,8 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         }
     </script>
     <script>
-        function acao(){
-            <?php $_SESSION["codigoDespesa"] = $nome_despesa[$i]['codigo'];
-                 $_SESSION["tipoDespesa"] = $nome_despesa[$i]['tipo'];
-                ?>
+        function acao(codigo){
+            location.href = 'controle_servico_despesa.php?acao=excluirDespesa&codigo='+codigo;
         }
     </script>
 
@@ -178,13 +176,14 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <span><?php echo $nome_despesa[$i]['nome']; ?></span>
                                     <span> | R$ <?php echo $nome_despesa[$i]['valor']; ?></span>
                                     <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
+                                    <span> <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo']?>)" type="submit" value="Excluir"> </span>
                                 </div>
                                 <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
-                                    <form id="" onclick="acao()" action="controle_servico_despesa.php?acao=excluirDespesa" method="post" name="">
+                                    
                                         <div class="full">
-                                            <input id="btn-submit" type="submit" value="Excluir">
+                                           
                                         </div>
-                                    </form>
+                                    
                                 </div>
                             <?php } ?>
                             <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>

@@ -18,6 +18,7 @@ class Serviços_despesa
 		$this->nome = $despesa->__get('nome');
 		$this->valor = $despesa->__get('valor');
 		$this->data_desp = $despesa->__get('data_desp');
+		$this->codigo = $despesa->__get('codigo');
 	}
 
 	public function inserirDespesa(){
@@ -62,7 +63,6 @@ class Serviços_despesa
             session_start();
         }
 		$this->login = $_SESSION["login"];
-		$_SESSION["tipoDespesa"] = $this->tipo;
 
 		if ($this->tipo == 'Alimentação') {
 			$this->tipo = 'alimentacao';
@@ -77,6 +77,7 @@ class Serviços_despesa
 		}else if ($this->tipo == 'Diversos') {
 			$this->tipo = 'diversos';
 		}
+		$_SESSION["tipoDespesa"] = $this->tipo;
 
 		$query = "select D.nome, D.valor, D.data_desp, D.codigo from $this->tipo D, usuario U where '$this->login' = U.login AND '$this->login' = D.login;";
 		$stmt = $this->conexao->prepare($query);
@@ -143,8 +144,9 @@ class Serviços_despesa
 			session_start();
 		}
 		$this->login = $_SESSION["login"];
-		$this->codigo = $_SESSION["codigoDespesa"];
 		$this->tipo = $_SESSION["tipoDespesa"];
+
+		echo $this->codigo;
 
 		$query = "delete from $this->tipo where '$this->login' = login and $this->codigo = codigo;";
 		$stmt = $this->conexao->prepare($query);
