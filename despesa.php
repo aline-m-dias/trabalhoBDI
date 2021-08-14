@@ -59,7 +59,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
             var options = {
                 title: 'Gráfico de despesa',
                 pieHole: 0.4,
-                colors: ['#86128A', '#22b6d4', '#22d6b5', '#f205cb', '#f20', '#eaf205', '#d14d']
+                colors: ['#86128A', '#22b6d4', '#22d6b5', '#f205cb', '#D33AD8', '#eaf205', '#d14d']
 
             };
 
@@ -92,52 +92,81 @@ if (isset($_GET['pesquisaDespesa']) == false) {
     <div class="ola">
         <p>Olá, <?php echo $_SESSION["login"]; ?></p>
     </div>
+    <div class="receita_despesa">
+
+        <form id="botão" action="pessoa.php" method="post" name="pagpessoa">
+            <div class="full">
+                <input id="btn-submitLogin" type="submit" value="Pessoa">
+            </div>
+        </form>
+        <form id="botão" action="receita.php" method="post" name="pagreceita">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Receita">
+            </div>
+        </form>
+        <form id="botão" action="despesa.php" method="post" name="pagdespesa">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Despesa">
+            </div>
+        </form>
+        <form id="botão" action="metaCurtoPrazo.php" method="post" name="pagmetacurto">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Meta Curto Prazo">
+            </div>
+        </form>
+        <form id="botão" action="metaLongoPrazo.php" method="post" name="pagmetalongo">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Meta Longo Prazo">
+            </div>
+        </form>
+
+    </div>
+    <div class="clear"></div>
 
     <div class="fundoPretoLogin">
         <br> Cadastre sua despesa
     </div>
 
     <div class="cadrastrarDespesa">
+        <div class="receita-center">
+            <form id="register-form-despesa" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
+                <div class="full-box">
+                    <label for="name">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome">
+                </div>
+                <div class="full-box">
+                    <label for="name">Valor</label>
+                    <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
+                </div>
+                <div class="full-box">
+                    <label for="name">Categorias</label>
+                    <select name='tipo'>
+                        <option value="--">--</option>
+                        <option value="Alimentação">Alimentação</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Moradia">Moradia</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Diversos">Diversos</option>
+                    </select>
+                </div>
+                <div class="full-box">
+                    <label for="name">Data</label>
+                    <input type="date" name="data_desp" id="data_desp">
+                </div>
 
-        <form id="register-form-despesa" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
-            <div class="full-box">
-                <label for="name">Nome</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite o nome">
-            </div>
-            <div class="full-box">
-                <label for="name">Valor</label>
-                <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
-            </div>
-            <div class="full-box">
-                <label for="name">Categorias</label>
-                <select name='tipo'>
-                    <option value="--">--</option>
-                    <option value="Alimentação">Alimentação</option>
-                    <option value="Saúde">Saúde</option>
-                    <option value="Educação">Educação</option>
-                    <option value="Moradia">Moradia</option>
-                    <option value="Transporte">Transporte</option>
-                    <option value="Diversos">Diversos</option>
-                </select>
-            </div>
-            <div class="full-box">
-                <label for="name">Data</label>
-                <input type="date" name="data_desp" id="data_desp">
-            </div>
-
-            <div class="full">
-                <input id="btn-submit" type="submit" value="Enviar dados">
-            </div>
-        </form>
-        <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
-            <div class="msgForm">
-                <h5>Despesa cadastrada com sucesso!</h5>
-            </div>
-        <?php } ?>
+                <div class="full">
+                    <input id="btn-submit" type="submit" value="Enviar dados">
+                </div>
+            </form>
+            <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
+                <div class="msgForm">
+                    <h5>Despesa cadastrada com sucesso!</h5>
+                </div>
+            <?php } ?>
+        </div>
     </div>
     <div class="grafico" id="donutchart" style="width: 900px; height: 500px; text-align:center"></div>
-
-
     <div class="pesquiseDespesa">
         <div>
             <p class="logar">Pesquise despesas cadastradas</p>
@@ -162,35 +191,38 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 </form>
             </div>
 
-
+            <div class="clear"></div>
             <div class="despesas">
-                <?php
-                if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { ?>
-                    <div>
+                <div>
+                    <?php
+                    if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) { ?>
+
                         <p class="logar">Despesas cadastradas </p>
                         <div class="centro">
+
                             <?php
                             $i = isset($i) ? 0 : 0;
                             for ($i = 0; $i < count($nome_despesa); $i++) { ?>
-                                <div class="espaco">
-                                    <span><?php echo $nome_despesa[$i]['nome']; ?></span>
-                                    <span> | R$ <?php echo $nome_despesa[$i]['valor']; ?></span>
-                                    <span> | <?php echo $nome_despesa[$i]['data_desp']; ?></span>
-                                    <span> <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir"> </span>
-                                </div>
-                                <div style="float:right; margin-top:-75px; margin-right:30px; padding-top:20px;  ">
-                                    <div class="full">
 
+                                <div class="espaco">
+
+                                    <span>| Descrição:<?php echo $nome_despesa[$i]['nome']; ?></span>
+                                    <span> | R$: <?php echo $nome_despesa[$i]['valor']; ?></span>
+                                    <span> | Data: <?php echo $nome_despesa[$i]['data_desp']; ?></span>
+                                    <div style="float:right; margin-top:-26px; margin-right:30px; padding-top:20px;  ">
+                                        <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
                                     </div>
-                                </div>
-                        <?php }
+
+
+
+                            <?php }
                         } ?>
-                        <?php if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
-                            <div class="msgForm">
-                                <h5>Despesa excluída com sucesso!!</h5>
-                            </div>
-                        <?php } ?>
-                        </div>
+                            <?php if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
+                                <div class="msgForm">
+                                    <h5>Despesa excluída com sucesso!!</h5>
+                                </div>
+                            <?php } ?>
+                                </div>
 </body>
 
 </html>

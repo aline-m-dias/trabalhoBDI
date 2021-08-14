@@ -199,6 +199,10 @@ form[id="botão"] {
     padding-top: 20px;
 }
 
+.receita-center {
+    padding-top: 30px;
+}
+
 .logar {
     background-color: #D6A913;
     color: black;
@@ -341,17 +345,24 @@ select {
 }
 
 .centro {
-    padding-top: 20px;
+    padding-top: 35px;
     margin-left: 30px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .espaco {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
+    padding-top: 30px;
+}
+
+.espacopessoa {
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .despesas {
     background-color: #22d6b5;
-    height: 350px;
     width: 500px;
     float: left;
     border-radius: 10px;
@@ -360,12 +371,13 @@ select {
 
 .receitas {
     background-color: #22d6b5;
-    height: 350px;
     width: 500px;
     float: left;
     border-radius: 10px;
     margin-top: 100px;
     margin-left: 450px;
+    min-height: 250px;
+    max-height: 500px;
 }
 
 .metas {
@@ -419,6 +431,11 @@ select {
     margin-top: 10px;
     margin-left: 450px;
     text-align: center;
+    padding-top: 0px;
+}
+
+.centrobalanco {
+    padding-top: 20px;
 }
 
 .despesaCategorias {
@@ -441,14 +458,16 @@ select {
 }
 
 .pessoacadastrada {
+    background-color: #22d6b5;
+    width: 500px;
     float: left;
-    background-color: #D6A913;
-    width: 100%;
-    height: 180 px;
-    margin: 40 px;
-    color: black;
-    font-size: 200%;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 450px;
+    min-height: 250px;
+    max-height: 500px;
     text-align: center;
+    padding-bottom: 25px;
 }
 
 .msgForm {

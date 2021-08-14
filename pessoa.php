@@ -36,51 +36,82 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
     <div class="ola">
         <p>Olá, <?php echo $_SESSION["login"]; ?></p>
     </div>
+    <div class="receita_despesa">
+
+        <form id="botão" action="pessoa.php" method="post" name="pagpessoa">
+            <div class="full">
+                <input id="btn-submitLogin" type="submit" value="Pessoa">
+            </div>
+        </form>
+        <form id="botão" action="receita.php" method="post" name="pagreceita">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Receita">
+            </div>
+        </form>
+        <form id="botão" action="despesa.php" method="post" name="pagdespesa">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Despesa">
+            </div>
+        </form>
+        <form id="botão" action="metaCurtoPrazo.php" method="post" name="pagmetacurto">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Meta Curto Prazo">
+            </div>
+        </form>
+        <form id="botão" action="metaLongoPrazo.php" method="post" name="pagmetalongo">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Meta Longo Prazo">
+            </div>
+        </form>
+
+    </div>
+    <div class="clear"></div>
 
     <div class="fundoPretoLogin">
         <br> Cadastre uma pessoa
     </div>
 
     <div class="cadrastrarDespesa">
+        <div class="receita-center">
+            <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
+                <div class="full-box">
+                    <label for="name">Nome</label>
+                    <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
 
-        <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
-            <div class="full-box">
-                <label for="name">Nome</label>
-                <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
+                </div>
+                <div class="full-box">
+                    <label for="name">CPF</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF (apenas números)">
+                </div>
+                <div class="full-box">
+                    <label for="name">Parentesco</label>
+                    <input type="text" name="parentesco" id="parentesco" placeholder="Digite o parentesco">
+                </div>
+                <div class="full-box">
+                    <label for="name">Data</label>
+                    <input type="date" name="data_nasc" id="data">
+                </div>
 
-            </div>
-            <div class="full-box">
-                <label for="name">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF (apenas números)">
-            </div>
-            <div class="full-box">
-                <label for="name">Parentesco</label>
-                <input type="text" name="parentesco" id="parentesco" placeholder="Digite o parentesco">
-            </div>
-            <div class="full-box">
-                <label for="name">Data</label>
-                <input type="date" name="data_nasc" id="data">
-            </div>
-
-            <div class="full">
-                <input id="btn-submit" type="submit" value="Enviar dados">
-            </div>
-        </form>
-        <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
-            <div class="full-box">
-                <h5>Pessoa cadastrada com sucesso!</h5>
-            </div>
-        <?php } ?>
+                <div class="full">
+                    <input id="btn-submit" type="submit" value="Enviar dados">
+                </div>
+            </form>
+            <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
+                <div class="msgForm">
+                    <h5>Pessoa cadastrada com sucesso!</h5>
+                </div>
+            <?php } ?>
+        </div>
     </div>
     <div class="clear"></div>
     <div class="pessoacadastrada">
         <div>
             <p class="logar">Pessoas cadastradas</p>
-            <div>
+            <div class="centro">
                 <?php
                 $i = isset($i) ? 0 : 0;
                 for ($i = 0; $i < count($nome_pessoa); $i++) { ?>
-                    <div><?php echo $nome_pessoa[$i]['nome_pessoa']; ?></div>
+                    <div class="espacopessoa"><?php echo $nome_pessoa[$i]['nome_pessoa']; ?></div>
                 <?php } ?>
             </div>
 </body>
