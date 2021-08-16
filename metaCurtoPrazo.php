@@ -106,11 +106,11 @@ if ($nome_meta[0]['valor'] != NULL) {
             <form id="register-form-receita" action="controle_servico_meta.php?acao=inserirMetaCurtoPrazo" method="post" name="logar">
 
                 <div class="full-box">
-                    <label  class="required" for="name">Nome</label>
+                    <label class="required" for="name">Nome</label>
                     <input type="text" name="nome_meta" id="nome_meta" placeholder="Digite o nome da meta">
                 </div>
                 <div class="full-box">
-                    <label  class="required" for="name">Valor*</label>
+                    <label class="required" for="name">Valor</label>
                     <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
                 </div>
                 <div class="full-box">
