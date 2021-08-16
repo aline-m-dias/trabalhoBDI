@@ -22,40 +22,45 @@ class Serviços_despesa
 	}
 
 	public function inserirDespesa(){
-		if(!isset($_SESSION)){
-			session_start();
+		
+		try{
+			if(!isset($_SESSION)){
+				session_start();
+			}
+			$this->login = $_SESSION["login"];
+	
+			if ($this->tipo == 'Alimentação') {
+				$this->tipo = 'alimentacao';
+			} else if ($this->tipo == 'Saúde') {
+				$this->tipo = 'saude';
+			}else if ($this->tipo == 'Educação') {
+				$this->tipo = 'educacao';
+			}else if ($this->tipo == 'Moradia') {
+				$this->tipo = 'moradia';
+			}else if ($this->tipo == 'Transporte') {
+				$this->tipo = 'transporte';
+			}else if ($this->tipo == 'Diversos') {
+				$this->tipo = 'diversos';
+			}
+	
+			$query = "select count(codigo) as cont, max(codigo) as max from $this->tipo;";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			$despesa = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			if($despesa[0]['cont'] == 0){
+				$this->codigo = 0;
+			}else{
+				$this->codigo = $despesa[0]['max']; 
+			}
+			$this->codigo ++; 
+	
+			$query = "insert into $this->tipo (nome, codigo, valor, data_desp, login)
+			values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
+			$this->conexao->exec($query);
+			header('Location: despesa.php?despesacadastrada=1');
+		}catch (PDOException $e){
+			header('Location: despesa.php?erro=1');
 		}
-		$this->login = $_SESSION["login"];
-
-		if ($this->tipo == 'Alimentação') {
-			$this->tipo = 'alimentacao';
-		} else if ($this->tipo == 'Saúde') {
-			$this->tipo = 'saude';
-		}else if ($this->tipo == 'Educação') {
-			$this->tipo = 'educacao';
-		}else if ($this->tipo == 'Moradia') {
-			$this->tipo = 'moradia';
-		}else if ($this->tipo == 'Transporte') {
-			$this->tipo = 'transporte';
-		}else if ($this->tipo == 'Diversos') {
-			$this->tipo = 'diversos';
-		}
-
-		$query = "select count(codigo) as cont, max(codigo) as max from $this->tipo;";
-		$stmt = $this->conexao->prepare($query);
-		$stmt->execute();
-		$despesa = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		if($despesa[0]['cont'] == 0){
-			$this->codigo = 0;
-		}else{
-			$this->codigo = $despesa[0]['max']; 
-		}
-		$this->codigo ++; 
-
-		$query = "insert into $this->tipo (nome, codigo, valor, data_desp, login)
-		values ('$this->nome', $this->codigo, $this->valor, '$this->data_desp', '$this->login');";
-		$this->conexao->exec($query);
-		header('Location: despesa.php?despesacadastrada=1');
 	}
 
 	public function imprimirDespesas(){
@@ -83,6 +88,10 @@ class Serviços_despesa
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function erro(){
+		header('Location: despesa.php?inputEmBranco=1');
 	}
 
 	public function calcularDespesasTotais(){
