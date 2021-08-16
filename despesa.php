@@ -164,7 +164,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 <div class="msgForm">
                     <h5>Despesa cadastrada com sucesso!</h5>
                 </div>
-            <?php } if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
+            <?php } if (isset($_GET['erroCadastro']) && $_GET['erroCadastro'] == 1) { ?>
                 <div class="msgForm">
                     <h5>Erro ao cadastrar, tente novamente!</h5>
                 </div>
@@ -222,14 +222,20 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <div style="float:right; margin-top:-26px; margin-right:30px; padding-top:20px;  ">
                                         <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
                                     </div>
-                            <?php }
-                        } ?>
-                            <?php if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
+                            <?php } }
+                            if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
                                 <div class="msgForm">
                                     <h5>Despesa excluída com sucesso!!</h5>
-                                </div>
-                            <?php } ?>
-                                </div>
+                                </div> <?php } 
+                            if (isset($_GET['erroImprimir']) && $_GET['erroImprimir'] == 1) { ?>
+                                <div class="msgForm">
+                                    <h5>Erro ao imprimir, tente novamente!</h5>
+                                </div><?php }
+                            if (isset($_GET['erroExcluir']) && $_GET['erroExcluir'] == 1) { ?>
+                                <div class="msgForm">
+                                    <h5>Erro ao excluir, tente novamente!</h5>
+                                </div> <?php } ?>
+                        </div>
 </body>
 
 </html>
