@@ -37,16 +37,17 @@ if (!isset($_SESSION)) {
 			<form id="register-form" action="controle_servico_usuario.php?acao=logar" method="post" name="logar">
 
 				<div class="full-box">
-					<label for="name">Login</label>
+					<label for="name">Login*</label>
 					<input type="text" name="login" id="login" placeholder="Digite seu login">
 				</div>
 				<div class="full-box">
-					<label for="name">Senha</label>
+					<label for="name">Senha*</label>
 					<input type="text" name="senha" id="senha" placeholder="Digite sua senha">
 				</div>
 				<div class="full">
 					<input id="btn-submit" type="submit" value="Entrar">
 				</div>
+				<div>* Itens obrigatórios</div>
 			</form>
 			<?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { ?>
 				<div class="msgForm">

@@ -20,6 +20,7 @@ class Serviços_usuario {
 	
 	
 	public function inserirUsuario(){
+		
 		$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
 		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
 		$this->conexao->exec($query);
@@ -30,7 +31,7 @@ class Serviços_usuario {
 	}
 
 	public function logar(){
-		$query = "select U.login from usuario U where '$this->login' = U.login and '$this->senha' = U.senha;";
+		$query = "select U.login, U.nome_familia from usuario U where '$this->login' = U.login and '$this->senha' = U.senha;";
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 		$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
@@ -38,10 +39,15 @@ class Serviços_usuario {
 		if($cont == 0){
 			header('Location: login.php?loginnegado=1');
 		}else if($cont == 1){
+			$query = "select U.nome_familia from usuario U where '$this->login' = U.login and '$this->senha' = U.senha;";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			$aux = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if(!isset($_SESSION)){
 				session_start();
 			};
-			$_SESSION["login"]=$this->login;
+			$_SESSION["login"] = $this->login;
+			$_SESSION["nome_familia"] = $aux[0]['nome_familia'];
 			header('Location: pagprincipal.php');
 		}
 

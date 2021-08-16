@@ -119,7 +119,6 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 <input id="btn-submitLogin" type="submit" value="Meta Longo Prazo">
             </div>
         </form>
-
     </div>
     <div class="clear"></div>
 
@@ -131,15 +130,15 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         <div class="receita-center">
             <form id="register-form-despesa" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
                 <div class="full-box">
-                    <label for="name">Nome</label>
+                    <label for="name">Nome*</label>
                     <input type="text" name="nome" id="nome" placeholder="Digite o nome">
                 </div>
                 <div class="full-box">
-                    <label for="name">Valor</label>
+                    <label for="name">Valor*</label>
                     <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
                 </div>
                 <div class="full-box">
-                    <label for="name">Categorias</label>
+                    <label for="name">Categorias*</label>
                     <select name='tipo'>
                         <option value="--">--</option>
                         <option value="Alimentação">Alimentação</option>
@@ -154,10 +153,10 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                     <label for="name">Data</label>
                     <input type="date" name="data_desp" id="data_desp">
                 </div>
-
                 <div class="full">
                     <input id="btn-submit" type="submit" value="Enviar dados">
                 </div>
+                <div>* Itens obrigatórios</div>
             </form>
             <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
                 <div class="msgForm">
@@ -212,9 +211,6 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <div style="float:right; margin-top:-26px; margin-right:30px; padding-top:20px;  ">
                                         <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
                                     </div>
-
-
-
                             <?php }
                         } ?>
                             <?php if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
