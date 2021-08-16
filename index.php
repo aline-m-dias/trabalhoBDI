@@ -38,8 +38,8 @@ if (!isset($_SESSION)) {
 		<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
 
 			<div class="full-box">
-				<label for="name">Login*</label>
-				<input type="text" name="login" id="login" placeholder="Digite seu nome" >
+				<label for="name" class="required"> Login</label>
+				<input type="text" name="login" id="login" placeholder="Digite seu nome">
 			</div>
 			<div class="full-box">
 				<label for="name">Nome da Família*</label>
@@ -47,7 +47,7 @@ if (!isset($_SESSION)) {
 			</div>
 			<div class="full-box">
 				<label for="name">Quantidade de Pessoas*</label>
-				<input type="text" name="qtd_pessoas" id="qtd_pessoas" placeholder="Digite o número de pessoas" >
+				<input type="text" name="qtd_pessoas" id="qtd_pessoas" placeholder="Digite o número de pessoas">
 			</div>
 			<div class="full-box">
 				<label for="name">Senha*</label>
@@ -55,28 +55,30 @@ if (!isset($_SESSION)) {
 			</div>
 			<div class="full-box">
 				<label for="passconfirmation">Confirmação de senha</label>
-				<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha" >
+				<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha">
 			</div>
 			<div class="full">
 				<input id="btn-submit" type="submit" value="Cadastre-se">
 			</div>
 			<div>* Itens obrigatórios</div>
 		</form>
-
-		<?php if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
-			<div class="msgForm">
-				<h5>Preencha todos os campos obrigatórios</h5>
-			</div> 
-		<?php } if (isset($_GET['usuarioexistente']) && $_GET['usuarioexistente'] == 1) { ?>
-			<div class="msgForm">
-				<h5>Usuário existente já, escolha um outro login</h5>
-			</div>
-		<?php }	if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
-			<div class="msgForm">
-				<h5>Erro ao cadastrar, tente novamente!!</h5>
-			</div>
-		<?php }	?>
-
+		<div style="background-color:#D6A913; border-radius:10px;">
+			<?php if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
+				<div class="msgForm">
+					<h5>Preencha todos os campos obrigatórios</h5>
+				</div>
+			<?php }
+			if (isset($_GET['usuarioexistente']) && $_GET['usuarioexistente'] == 1) { ?>
+				<div class="msgForm">
+					<h5>Usuário existente já, escolha um outro login</h5>
+				</div>
+			<?php }
+			if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
+				<div class="msgForm">
+					<h5>Erro ao cadastrar, tente novamente!!</h5>
+				</div>
+			<?php }	?>
+		</div>
 		<form id="register-form" action="login.php" method="post" name="logar">
 			<div class="login">
 				Já tem cadastro?
@@ -85,7 +87,6 @@ if (!isset($_SESSION)) {
 				</div>
 			</div>
 		</form>
-
 	</div>
 
 	<script src="JS/scripts.js"></script>

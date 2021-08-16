@@ -34,7 +34,7 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
     <div class="clear"></div>
 
     <div class="ola">
-        <p>Olá, Família <?php echo $_SESSION["nome_familia"];?></p>
+        <p>Olá, Família <?php echo $_SESSION["nome_familia"]; ?></p>
     </div>
     <div class="receita_despesa">
 

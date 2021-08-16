@@ -143,7 +143,7 @@ form[id="botão"] {
     height: 60px;
     width: 500px;
     float: right;
-    margin-top: 70px;
+    margin-top: 50px;
     padding-top: 5px;
     border-radius: 10px;
     text-align: center;
@@ -482,4 +482,15 @@ select {
 .grafico {
     margin-top: 80px;
     margin-right: 150px;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
+
+.copyright {
+    background-color: #D6A913;
+    width: 100%;
+    margin-bo: 700px;
 }
