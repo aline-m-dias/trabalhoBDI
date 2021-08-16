@@ -23,7 +23,7 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
 	<header class="cabecalho">
-		<a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+		<a class="logo" href="pagprincipal.php"> <img src="IMG/logo.jpeg"> </a>
 		<div class="botão-sair">
 			<ul><a href="index.php"> Sair </a></ul>
 		</div>
@@ -66,7 +66,7 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 	<div class="balanco">
 
 		<h1 class="logar"> BALANÇO </h1>
-		<div class= "centrobalanco">
+		<div class="centrobalanco">
 			<!--- <label for="mes">Selecione o ano/mês</label>
 			<select type="month" name="mes" id="mes"> </select> -->
 			<h2>Saldo | R$ <?php echo $_SESSION["saldo"] ?></h2>

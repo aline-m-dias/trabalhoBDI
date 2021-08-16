@@ -22,10 +22,8 @@ ul {
 
 img {
     width: 115px;
-    height: 67px;
+    height: 60px;
     position: relative;
-    margin: 0 auto;
-    padding: 0 auto;
 }
 
 .cabecalho {
@@ -140,7 +138,8 @@ form[id="botão"] {
 
 .login {
     background-color: #22d6b5;
-    height: 60px;
+    min-height: 40px;
+    max-height: 60px;
     width: 500px;
     float: right;
     margin-top: 50px;
@@ -171,6 +170,11 @@ form[id="botão"] {
     font-size: 18px;
     margin-top: 60px;
     padding: 0 auto;
+}
+
+.required:after {
+    content: " *";
+    color: red;
 }
 
 /*tela login*/
@@ -398,7 +402,8 @@ select {
 
 .cadrastrarMeta {
     background-color: #22d6b5;
-    height: 350px;
+    min-height: 250px;
+    max-height: 350px;
     width: 500px;
     float: left;
     margin-top: 80px;

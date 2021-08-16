@@ -32,12 +32,7 @@ if (!isset($_SESSION)) {
 	<div class="cadastro">
 
 		<p class="cadastrar">CADASTRE-SE</p>
-		<style>
-			.required:after {
-				content: " *";
-				color: red;
-			}
-		</style>
+		
 		<div class="centro-cadastro">
 			<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
 

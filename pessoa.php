@@ -75,11 +75,11 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
         <div class="receita-center">
             <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
                 <div class="full-box">
-                    <label for="name">Nome*</label>
+                    <label class="required" for="name">Nome</label>
                     <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
                 </div>
                 <div class="full-box">
-                    <label for="name">CPF*</label>
+                    <label class="required" for="name">CPF</label>
                     <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF (apenas números)">
                 </div>
                 <div class="full-box">
@@ -90,10 +90,11 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
                     <label for="name">Data</label>
                     <input type="date" name="data_nasc" id="data">
                 </div>
+                <div class="required" style="padding-left:10px;"> Itens obrigatórios</div>
                 <div class="full">
                     <input id="btn-submit" type="submit" value="Enviar dados">
                 </div>
-                <div>* Itens obrigatórios</div>
+
             </form>
             <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
                 <div class="msgForm">

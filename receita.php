@@ -86,21 +86,22 @@ for ($i = 0; $i < count($nome_receita); $i++) {
         <div class="receita-center">
             <form id="register-form-receita" action="controle_servico_receita.php?acao=inserirReceita" method="post" name="logar">
                 <div class="full-box">
-                    <label for="name">Nome*</label>
+                    <label class="required" for="name">Nome</label>
                     <input type="text" name="nome" id="nome" placeholder="Digite a descrição da receita">
                 </div>
                 <div class="full-box">
-                    <label for="name">Valor*</label>
+                    <label class="required" for="name">Valor</label>
                     <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
                 </div>
                 <div class="full-box">
                     <label for="name">Data</label>
                     <input type="date" name="data_rec" id="data_rec">
                 </div>
+                <div class="required" style="padding-left:10px;"> Itens obrigatórios</div>
                 <div class="full">
                     <input id="btn-submit" type="submit" value="Enviar dados">
                 </div>
-                <div>* Itens obrigatórios</div>
+
             </form>
             <?php if (isset($_GET['receitacadastrada']) && $_GET['receitacadastrada'] == 1) { ?>
                 <div class="msgForm">

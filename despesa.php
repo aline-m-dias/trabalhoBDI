@@ -82,7 +82,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+        <a class="logo" href="pagprincipal.php"> <img src="IMG/logo.jpeg"> </a>
         <div class="botão-sair">
             <ul><a href="pagprincipal.php"> Sair </a></ul>
         </div>
@@ -90,7 +90,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
     <div class="clear"></div>
 
     <div class="ola">
-        <p>Olá, Família <?php echo $_SESSION["nome_familia"];?></p>
+        <p>Olá, Família <?php echo $_SESSION["nome_familia"]; ?></p>
     </div>
     <div class="receita_despesa">
 
@@ -130,15 +130,15 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         <div class="receita-center">
             <form id="register-form-despesa" action="controle_servico_despesa.php?acao=inserirDespesa" method="post" name="logar">
                 <div class="full-box">
-                    <label for="name">Nome*</label>
+                    <label class="required" for="name">Nome</label>
                     <input type="text" name="nome" id="nome" placeholder="Digite o nome">
                 </div>
                 <div class="full-box">
-                    <label for="name">Valor*</label>
+                    <label class="required" for="name">Valor</label>
                     <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
                 </div>
                 <div class="full-box">
-                    <label for="name">Categorias*</label>
+                    <label class="required" for="name">Categorias</label>
                     <select name='tipo'>
                         <option value="--">--</option>
                         <option value="Alimentação">Alimentação</option>
@@ -153,10 +153,11 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                     <label for="name">Data</label>
                     <input type="date" name="data_desp" id="data_desp">
                 </div>
+                <div class="required" style="padding-left:10px;"> Itens obrigatórios</div>
                 <div class="full">
                     <input id="btn-submit" type="submit" value="Enviar dados">
                 </div>
-                <div>* Itens obrigatórios</div>
+
             </form>
             <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
                 <div class="msgForm">
