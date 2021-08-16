@@ -32,7 +32,7 @@ if (!isset($_SESSION)) {
 	<div class="cadastro">
 
 		<p class="cadastrar">CADASTRE-SE</p>
-		
+
 		<div class="centro-cadastro">
 			<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
 
@@ -89,7 +89,8 @@ if (!isset($_SESSION)) {
 			</div>
 		</form>
 	</div>
-
+	<div class="clear"></div>
+	<div id="copyright"> Desenvolvido por Aline Dias e Natália Almeida</div>
 	<script src="JS/scripts.js"></script>
 
 </body>
