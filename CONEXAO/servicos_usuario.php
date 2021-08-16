@@ -21,13 +21,20 @@ class Serviços_usuario {
 	
 	public function inserirUsuario(){
 		try{
-			$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
-			values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
-			$this->conexao->exec($query);
+			$query = "select U.login from usuario U where '$this->login' = U.login;";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
 
-			header('Location: login.php'); 
+			if($cont == 1){
+				header('Location: index.php?usuarioexistente=1');
+			}else if($cont == 0){
+				$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
+				values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
+				$this->conexao->exec($query);
+				header('Location: login.php');}
 		}catch(PDOException $e){
-			header('Location: index.php?erro');
+			header('Location: index.php?erro=1');
 		}	
 	}
 

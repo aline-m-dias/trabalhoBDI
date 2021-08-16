@@ -13,8 +13,7 @@
             $conexao = new Conexao();
             $servico_usuario = new Serviços_usuario($conexao, $usuario);
             $servico_usuario->erro();
-        }else /*if( $_POST['login'] != '' && $_POST['nome_familia'] != '' && $_POST['qtd_pessoas'] != ''
-            && $_POST['senha'] = '')*/{
+        }else{
             $usuario = new Usuario();
             $usuario->__set('login',$_POST['login']);
             $usuario->__set('nome_familia',$_POST['nome_familia']);
