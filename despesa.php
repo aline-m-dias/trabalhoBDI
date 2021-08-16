@@ -135,7 +135,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Valor</label>
-                    <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
+                    <input type="number" step="0.01" min=0.01 name="valor" id="valor" placeholder="Digite o valor">
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Categorias</label>

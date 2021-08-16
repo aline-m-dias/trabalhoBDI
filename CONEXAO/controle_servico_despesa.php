@@ -8,8 +8,7 @@ $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
 //setando os valores de despesa preencheidos pelo input 
 if ($acao == 'inserirDespesa') {
-    if( $_POST['nome'] == '' || $_POST['valor'] == '' || $_POST['tipo'] == '' ||
-        $_POST['valor'] <= 0 ){
+    if( $_POST['nome'] == '' || $_POST['valor'] == '' || $_POST['tipo'] == ''){
         $despesa = new Despesa();
         $conexao = new Conexao();
         $servico_despesa = new Serviços_despesa($conexao, $despesa);
