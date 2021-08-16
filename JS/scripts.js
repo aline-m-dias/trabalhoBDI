@@ -1,12 +1,8 @@
-function verificar(){
-    var inputs = document.querySelectorAll("input.inputCadastro");
-    var nulo = false;
-    inputs.forEach(item =>{  
-    if (item.value == false) // se o valor do input for valido (não vazio, nem espacos em branco, nem NaN, etc
-        nulo = true });	
-    if (nulo == true){
-        location.href = 'index.php?inputEmBranco=1';
-    }else{
-        location.href = 'controle_servico_usuario.php?acao=inserirUsuario';
-    }
+function verifica(){
+    var input = document.getElementsByClassName("inputCadastro").value;
+      
+    if (input == '' || input == null) 
+        
+        alert("Campo obrigatório");	
 }
+

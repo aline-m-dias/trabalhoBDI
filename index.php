@@ -35,11 +35,11 @@ if (!isset($_SESSION)) {
 
 		<p class="cadastrar">CADASTRE-SE</p>
 
-		<form id="register-form" method="post" name="cadastro">
+		<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
 
 			<div class="full-box">
 				<label for="name">Login*</label>
-				<input type="text" name="login" id="login" placeholder="Digite seu nome">
+				<input type="text" name="login" id="login" placeholder="Digite seu nome" >
 			</div>
 			<div class="full-box">
 				<label for="name">Nome da Família*</label>
@@ -47,7 +47,7 @@ if (!isset($_SESSION)) {
 			</div>
 			<div class="full-box">
 				<label for="name">Quantidade de Pessoas*</label>
-				<input type="text" name="qtd_pessoas" id="qtd_pessoas" placeholder="Digite o número de pessoas">
+				<input type="text" name="qtd_pessoas" id="qtd_pessoas" placeholder="Digite o número de pessoas" >
 			</div>
 			<div class="full-box">
 				<label for="name">Senha*</label>
@@ -55,10 +55,10 @@ if (!isset($_SESSION)) {
 			</div>
 			<div class="full-box">
 				<label for="passconfirmation">Confirmação de senha</label>
-				<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha">
+				<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha" >
 			</div>
 			<div class="full">
-				<input class="inputCadastro" onclick="verificar()" type="submit" value="Cadastre-se">
+				<input id="btn-submit" type="submit" value="Cadastre-se">
 			</div>
 			<div>* Itens obrigatórios</div>
 		</form>

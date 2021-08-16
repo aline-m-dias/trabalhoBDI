@@ -20,14 +20,19 @@ class Serviços_usuario {
 	
 	
 	public function inserirUsuario(){
-		
-		$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
-		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
-		$this->conexao->exec($query);
+		try{
+			$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
+			values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
+			$this->conexao->exec($query);
 
-		//TRATAR A EXCEÇÃO QUANDO TIVER JÁ UM USUÁRIO COM AQUELE NOME
-		header('Location: login.php'); //após a plicação do BD me direciona para essa página
-		
+			header('Location: login.php'); 
+		}catch(PDOException $e){
+			header('Location: index.php?erro');
+		}	
+	}
+
+	public function erro(){
+		header('Location: index.php?inputEmBranco=1');
 	}
 
 	public function logar(){
