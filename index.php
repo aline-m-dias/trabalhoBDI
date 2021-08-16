@@ -58,7 +58,7 @@ if (!isset($_SESSION)) {
 				<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha">
 			</div>
 			<div class="full">
-				<input id="inputCadastro" onclick="verificar()" type="submit" value="Cadastre-se">
+				<input class="inputCadastro" onclick="verificar()" type="submit" value="Cadastre-se">
 			</div>
 			<div>* Itens obrigatórios</div>
 		</form>

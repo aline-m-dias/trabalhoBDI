@@ -1,5 +1,5 @@
 function verificar(){
-    var inputs = document.querySelectorAll('#inputCadastro');
+    var inputs = document.querySelectorAll("input.inputCadastro");
     var nulo = false;
     inputs.forEach(item =>{  
     if (item.value == false) // se o valor do input for valido (não vazio, nem espacos em branco, nem NaN, etc
