@@ -354,6 +354,7 @@ select {
 .espaco {
     padding-bottom: 60px;
     padding-top: 30px;
+    line-height: 130%;
 }
 
 .espacopessoa {

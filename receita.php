@@ -35,7 +35,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+        <a class="logo" href="pagprincipal.php"> <img src="IMG/logo.jpeg"> </a>
         <div class="botão-sair">
             <ul><a href="pagprincipal.php"> Sair </a></ul>
         </div>
@@ -44,7 +44,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
     <div class="clear"></div>
 
     <div class="ola">
-        <p>Olá, Família <?php echo $_SESSION["nome_familia"];?></p>
+        <p>Olá, Família <?php echo $_SESSION["nome_familia"]; ?></p>
     </div>
     <div class="receita_despesa">
 

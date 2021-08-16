@@ -25,7 +25,7 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+        <a class="logo" href="pagprincipal.php"> <img src="IMG/logo.jpeg"> </a>
         <div class="botão-sair">
             <ul><a href="pagprincipal.php"> Sair </a></ul>
         </div>
