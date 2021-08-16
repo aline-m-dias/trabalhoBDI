@@ -135,7 +135,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Valor</label>
-                    <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
+                    <input type="number" step="0.01" min=0.01 name="valor" id="valor" placeholder="Digite o valor">
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Categorias</label>
@@ -159,11 +159,21 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 </div>
 
             </form>
+
             <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
                 <div class="msgForm">
                     <h5>Despesa cadastrada com sucesso!</h5>
                 </div>
-            <?php } ?>
+            <?php } if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
+                <div class="msgForm">
+                    <h5>Erro ao cadastrar, tente novamente!</h5>
+                </div>
+            <?php } if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
+				<div class="msgForm">
+					<h5>Preencha todos os campos obrigatórios!</h5>
+				</div>
+			<?php }?>
+
         </div>
     </div>
     <div class="grafico" id="donutchart" style="width: 900px; height: 500px; text-align:center"></div>

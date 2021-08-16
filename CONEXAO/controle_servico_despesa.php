@@ -8,15 +8,21 @@ $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
 //setando os valores de despesa preencheidos pelo input 
 if ($acao == 'inserirDespesa') {
-    $despesa = new Despesa();
-    $despesa->__set('nome', $_POST['nome']);
-    $despesa->__set('valor', $_POST['valor']);
-    $despesa->__set('tipo', $_POST['tipo']);
-    $despesa->__set('data_desp', $_POST['data_desp']);
-
-    $conexao = new Conexao();
-    $servico_despesa = new Serviços_despesa($conexao, $despesa);
-    $servico_despesa->inserirDespesa();
+    if( $_POST['nome'] == '' || $_POST['valor'] == '' || $_POST['tipo'] == ''){
+        $despesa = new Despesa();
+        $conexao = new Conexao();
+        $servico_despesa = new Serviços_despesa($conexao, $despesa);
+        $servico_despesa->erro();
+    } else{
+        $despesa = new Despesa();
+        $despesa->__set('nome', $_POST['nome']);
+        $despesa->__set('valor', $_POST['valor']);
+        $despesa->__set('tipo', $_POST['tipo']);
+        $despesa->__set('data_desp', $_POST['data_desp']);
+        $conexao = new Conexao();
+        $servico_despesa = new Serviços_despesa($conexao, $despesa);
+        $servico_despesa->inserirDespesa();
+    }    
 }else if($acao == 'imprimirDespesas?totalDespesaGrafico'){
     $despesa = new Despesa();
     $conexao = new Conexao();
