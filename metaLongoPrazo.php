@@ -66,7 +66,7 @@ if ($nome_meta[0]['valor'] != NULL) {
     <div class="clear"></div>
 
     <div class="ola">
-        <p>Olá, <?php echo $_SESSION["login"]; ?></p>
+        <p>Olá, Família <?php echo $_SESSION["nome_familia"]; ?></p>
     </div>
     <div class="receita_despesa">
 
