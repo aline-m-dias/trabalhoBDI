@@ -71,7 +71,7 @@ if (!isset($_SESSION)) {
 			<?php }
 			if (isset($_GET['usuarioexistente']) && $_GET['usuarioexistente'] == 1) { ?>
 				<div class="msgForm">
-					<h5>Usuário existente já, escolha um outro login</h5>
+					<h5>Usuário já existente, escolha um outro login</h5>
 				</div>
 			<?php }
 			if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>

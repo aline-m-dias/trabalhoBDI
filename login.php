@@ -54,6 +54,10 @@ if (!isset($_SESSION)) {
 				<div class="msgForm">
 					<h5>Atenção: Login ou senha incorretos!</h5>
 				</div>
+			<?php } if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
+				<div class="msgForm">
+					<h5>Erro ao logar, tente novamente!</h5>
+				</div>
 			<?php } ?>
 		</div>
 
