@@ -21,8 +21,8 @@ ul {
 }
 
 img {
-    width: 120 px;
-    height: 60px;
+    width: 115px;
+    height: 67px;
     position: relative;
     margin: 0 auto;
     padding: 0 auto;
@@ -351,6 +351,10 @@ select {
     margin-bottom: 50px;
 }
 
+.centro-cadastro {
+    padding-top: 10px;
+}
+
 .espaco {
     padding-bottom: 60px;
     padding-top: 30px;
@@ -482,15 +486,4 @@ select {
 .grafico {
     margin-top: 80px;
     margin-right: 150px;
-}
-
-.required:after {
-    content: " *";
-    color: red;
-}
-
-.copyright {
-    background-color: #D6A913;
-    width: 100%;
-    margin-bo: 700px;
 }

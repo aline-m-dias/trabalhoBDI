@@ -10,13 +10,11 @@ if (!isset($_SESSION)) {
 	<title>Poupe Mais | Cadastrar</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale 1">
+	<link rel="stylesheet" href="./css/main.css">
+
 </head>
 
 <body>
-
-	<link rel="stylesheet" href="./css/main.css">
-	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
 	<header class="cabecalho">
 		<a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
@@ -34,34 +32,42 @@ if (!isset($_SESSION)) {
 	<div class="cadastro">
 
 		<p class="cadastrar">CADASTRE-SE</p>
+		<style>
+			.required:after {
+				content: " *";
+				color: red;
+			}
+		</style>
+		<div class="centro-cadastro">
+			<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
 
-		<form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
+				<div class="full-box">
+					<label for="name" class="required"> Login</label>
+					<input type="text" name="login" id="login" placeholder="Digite seu nome">
+				</div>
+				<div class="full-box">
+					<label for="name" class="required"> Nome da Família</label>
+					<input type="text" name="nome_familia" id="name_familia" placeholder="Digite o nome da família">
+				</div>
+				<div class="full-box">
+					<label for="name" class="required">Quantidade de Pessoas</label>
+					<input type="text" name="qtd_pessoas" id="qtd_pessoas" placeholder="Digite o número de pessoas">
+				</div>
+				<div class="full-box">
+					<label for="name" class="required">Senha</label>
+					<input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+				</div>
+				<div class="full-box">
+					<label for="passconfirmation">Confirmação de senha</label>
+					<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha">
+				</div>
+				<div style="padding-left:10px;" class="required"> Itens obrigatórios</div>
+				<div class="full">
+					<input id="btn-submit" type="submit" value="Cadastre-se">
+				</div>
 
-			<div class="full-box">
-				<label for="name" class="required"> Login</label>
-				<input type="text" name="login" id="login" placeholder="Digite seu nome">
-			</div>
-			<div class="full-box">
-				<label for="name">Nome da Família*</label>
-				<input type="text" name="nome_familia" id="name_familia" placeholder="Digite o nome da família">
-			</div>
-			<div class="full-box">
-				<label for="name">Quantidade de Pessoas*</label>
-				<input type="text" name="qtd_pessoas" id="qtd_pessoas" placeholder="Digite o número de pessoas">
-			</div>
-			<div class="full-box">
-				<label for="name">Senha*</label>
-				<input type="password" name="senha" id="senha" placeholder="Digite sua senha">
-			</div>
-			<div class="full-box">
-				<label for="passconfirmation">Confirmação de senha</label>
-				<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha">
-			</div>
-			<div class="full">
-				<input id="btn-submit" type="submit" value="Cadastre-se">
-			</div>
-			<div>* Itens obrigatórios</div>
-		</form>
+			</form>
+		</div>
 		<div style="background-color:#D6A913; border-radius:10px;">
 			<?php if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
 				<div class="msgForm">
