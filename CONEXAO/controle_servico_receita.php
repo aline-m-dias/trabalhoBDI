@@ -7,14 +7,21 @@
     $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
      //setando os valores de receita preencheidos pelo input 
      if ($acao == 'inserirReceita'){
-        $receita = new Receita();
-        $receita->__set('nome',$_POST['nome']);
-        $receita->__set('data_rec',$_POST['data_rec']);
-        $receita->__set('valor',$_POST['valor']);
-        
-        $conexao = new Conexao();
-        $servico_receita = new Serviços_receita($conexao, $receita);
-        $servico_receita->inserirReceita();
+        if( $_POST['nome'] == '' || $_POST['valor'] == ''){
+            $receita = new Receita();
+            $conexao = new Conexao();
+            $servico_receita = new Serviços_receita($conexao, $receita);
+            $servico_receita->erro();
+        }else{
+            $receita = new Receita();
+            $receita->__set('nome',$_POST['nome']);
+            $receita->__set('data_rec',$_POST['data_rec']);
+            $receita->__set('valor',$_POST['valor']);
+            
+            $conexao = new Conexao();
+            $servico_receita = new Serviços_receita($conexao, $receita);
+            $servico_receita->inserirReceita();
+        }        
     } else if($acao == 'imprimirReceitas'){
         $receita = new Receita();
         $conexao = new Conexao();

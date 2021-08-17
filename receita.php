@@ -91,7 +91,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Valor</label>
-                    <input type="number" step="0.01" name="valor" id="valor" placeholder="Digite o valor">
+                    <input type="number" step="0.01" min=0.01 name="valor" id="valor" placeholder="Digite o valor">
                 </div>
                 <div class="full-box">
                     <label for="name">Data</label>
@@ -101,15 +101,24 @@ for ($i = 0; $i < count($nome_receita); $i++) {
                 <div class="full">
                     <input id="btn-submit" type="submit" value="Enviar dados">
                 </div>
-
             </form>
+
             <?php if (isset($_GET['receitacadastrada']) && $_GET['receitacadastrada'] == 1) { ?>
                 <div class="msgForm">
                     <h5>Receita cadastrada com sucesso!</h5>
                 </div>
-            <?php } ?>
+            <?php } else if (isset($_GET['erroCadastro']) && $_GET['erroCadastro'] == 1) { ?>
+                <div class="msgForm">
+                    <h5>Erro ao cadastrar, tente novamente!</h5>
+                </div>
+            <?php } else if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
+				<div class="msgForm">
+					<h5>Preencha todos os campos obrigatórios!</h5>
+				</div>
+			<?php }?>
         </div>
     </div>
+
     <div class="clear"></div>
     <div class="receitas">
         <div>
@@ -127,6 +136,19 @@ for ($i = 0; $i < count($nome_receita); $i++) {
                         </div>
                     <?php } ?>
                     </div>
+                <?php 
+                if (isset($_GET['receitaexcluida']) && $_GET['receitaexcluida'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Receita excluída com sucesso!!</h5>
+                    </div> <?php } 
+                if (isset($_GET['erroImprimir']) && $_GET['erroImprimir'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Erro ao imprimir, tente novamente!</h5>
+                    </div><?php } 
+                if (isset($_GET['erroExcluir']) && $_GET['erroExcluir'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Erro ao excluir, tente novamente!</h5>
+                    </div> <?php } ?>
 </body>
 
 </html>

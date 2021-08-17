@@ -177,7 +177,5 @@ class Serviços_despesa
 		}catch (PDOException $e){
 			header('Location: despesa.php?erroExcluir=1');
 		}
-		
-
 	}
 }
