@@ -6,6 +6,8 @@ $acao = 'calcularTotal';
 require_once 'controle_servico_despesa.php';
 require_once 'controle_servico_receita.php';
 
+
+
 $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 
 <!DOCTYPE html>

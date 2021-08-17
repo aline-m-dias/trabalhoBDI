@@ -5,32 +5,45 @@ if (!isset($_SESSION)) {
 if (isset($_GET['pesquisaDespesa']) == false) {
     $acao = 'totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
-    $despesa_grafico = $despesa_total_grafico;
-    $i = isset($i) ? 0 : 0;
-    for ($i = 0; $i < 6; $i++) {
-        $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
-        $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
+
+    if ($despesa_total_grafico == null){
+        header('Location: despesa.php?erroGrafico=1');
+    }else{
+        $despesa_grafico = $despesa_total_grafico;
+        $i = isset($i) ? 0 : 0;
+        for ($i = 0; $i < 6; $i++) {
+            $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
+            $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
+        }
     }
 } else if (isset($_GET['pesquisaDespesa']) && $_GET['pesquisaDespesa'] == 1) {
     $acao = 'imprimirDespesas?totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
-    $nome_despesa = $listaDespesas;
-    $despesa_grafico = $despesa_total_grafico;
+    if ($despesa_total_grafico == null && $listaDespesas != null){
+        header('Location: despesa.php?erroGrafico=1');
+    }else if($despesa_total_grafico == null && $listaDespesas == null ){
+        header('Location: despesa.php?erroImprimir=1?erroGrafico=1');
+    }else if($despesa_total_grafico != null && $listaDespesas == null){
+        header('Location: despesa.php?erroImprimir=1');
+    }else{
+        $nome_despesa = $listaDespesas;
+        $despesa_grafico = $despesa_total_grafico;
 
-    $i = isset($i) ? 0 : 0;
-    for ($i = 0; $i < count($nome_despesa); $i++) {
-        $nome_despesa[$i]['nome'] = isset($listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
-        $nome_despesa[$i]['valor'] = isset($listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
-        $nome_despesa[$i]['data_desp'] = isset($listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
-        $nome_despesa[$i]['codigo'] = isset($listaDespesas[$i]['codigo']) ?  $listaDespesas[$i]['codigo'] : $listaDespesas[$i]['codigo'];
+        $i = isset($i) ? 0 : 0;
+        for ($i = 0; $i < count($nome_despesa); $i++) {
+            $nome_despesa[$i]['nome'] = isset($listaDespesas[$i]['nome']) ?  $listaDespesas[$i]['nome'] : $listaDespesas[$i]['nome'];
+            $nome_despesa[$i]['valor'] = isset($listaDespesas[$i]['valor']) ?  $listaDespesas[$i]['valor'] : $listaDespesas[$i]['valor'];
+            $nome_despesa[$i]['data_desp'] = isset($listaDespesas[$i]['data_desp']) ?  $listaDespesas[$i]['data_desp'] : $listaDespesas[$i]['data_desp'];
+            $nome_despesa[$i]['codigo'] = isset($listaDespesas[$i]['codigo']) ?  $listaDespesas[$i]['codigo'] : $listaDespesas[$i]['codigo'];
+        }
+        for ($i = 0; $i < 6; $i++) {
+            $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
+            $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
+        }
     }
-    for ($i = 0; $i < 6; $i++) {
-        $despesa_grafico[$i]['tipo'] = isset($despesa_total_grafico[$i]['tipo']) ?  $despesa_total_grafico[$i]['tipo'] : $despesa_total_grafico[$i]['tipo'];
-        $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
-    }
-}
-?>
+}?>
+
 <!DOCTYPE html>
 <html>
 
@@ -177,6 +190,12 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         </div>
     </div>
     <div class="grafico" id="donutchart" style="width: 900px; height: 500px; text-align:center"></div>
+
+    <?php if (isset($_GET['erroGrafico']) && $_GET['erroGrafico'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Erro ao imprimir o gráfico, tente mais tarde!</h5>
+            </div> <?php } ?>
+
     <div class="pesquiseDespesa">
         <div>
             <p class="logar">Pesquise despesas cadastradas</p>
@@ -229,7 +248,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                 </div> <?php } 
                             if (isset($_GET['erroImprimir']) && $_GET['erroImprimir'] == 1) { ?>
                                 <div class="msgForm">
-                                    <h5>Erro ao imprimir, tente novamente!</h5>
+                                    <h5>Erro ao imprimir, tente novamente mais tarde!</h5>
                                 </div><?php }
                             if (isset($_GET['erroExcluir']) && $_GET['erroExcluir'] == 1) { ?>
                                 <div class="msgForm">

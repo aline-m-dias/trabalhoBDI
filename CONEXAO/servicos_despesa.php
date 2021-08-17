@@ -63,35 +63,31 @@ class Serviços_despesa
 		}
 	}
 
-	public function imprimirDespesas(){
-		try{	
-			if(!isset($_SESSION)){
-				session_start();
-			}
-			$this->login = $_SESSION["login"];
-
-			if ($this->tipo == 'Alimentação') {
-				$this->tipo = 'alimentacao';
-			} else if ($this->tipo == 'Saúde') {
-				$this->tipo = 'saude';
-			}else if ($this->tipo == 'Educação') {
-				$this->tipo = 'educacao';
-			}else if ($this->tipo == 'Moradia') {
-				$this->tipo = 'moradia';
-			}else if ($this->tipo == 'Transporte') {
-				$this->tipo = 'transporte';
-			}else if ($this->tipo == 'Diversos') {
-				$this->tipo = 'diversos';
-			}
-			$_SESSION["tipoDespesa"] = $this->tipo;
-
-			$query = "select D.nome, D.valor, D.data_desp, D.codigo from $this->tipo D, usuario U where '$this->login' = U.login AND '$this->login' = D.login;";
-			$stmt = $this->conexao->prepare($query);
-			$stmt->execute();
-			return $stmt->fetchAll(PDO::FETCH_ASSOC);
-		}catch (PDOException $e){
-			header('Location: despesa.php?erroImprimir=1');
+	public function imprimirDespesas(){	
+		if(!isset($_SESSION)){
+			session_start();
 		}
+		$this->login = $_SESSION["login"];
+		if ($this->tipo == 'Alimentação') {
+			$this->tipo = 'alimentacao';
+		} else if ($this->tipo == 'Saúde') {
+			$this->tipo = 'saude';
+		}else if ($this->tipo == 'Educação') {
+			$this->tipo = 'educacao';
+		}else if ($this->tipo == 'Moradia') {
+			$this->tipo = 'moradia';
+		}else if ($this->tipo == 'Transporte') {
+			$this->tipo = 'transporte';
+		}else if ($this->tipo == 'Diversos') {
+			$this->tipo = 'diversos';
+		}
+		$_SESSION["tipoDespesa"] = $this->tipo;
+
+		$query = "select D.nome, D.valor, D.data_desp, D.codigo from $this->tipo D, usuario U where '$this->login' = U.login AND '$this->login' = D.login;";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		
 	}
 
 	public function erro(){
