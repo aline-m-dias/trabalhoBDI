@@ -13,6 +13,8 @@
             $conexao = new Conexao();
             $servico_usuario = new Serviços_usuario($conexao, $usuario);
             $servico_usuario->erro();
+        }else if($_POST['senha'] != $_POST['passconfirmation']){
+            header('Location: index.php?senhaIncorreta=1');
         }else{
             $usuario = new Usuario();
             $usuario->__set('login',$_POST['login']);

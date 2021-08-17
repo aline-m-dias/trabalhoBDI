@@ -75,6 +75,11 @@ if (!isset($_SESSION)) {
 					<h5>Usuário já existente, escolha um outro login</h5>
 				</div>
 			<?php }
+			if (isset($_GET['senhaIncorreta']) && $_GET['senhaIncorreta'] == 1) { ?>
+				<div class="msgForm">
+					<h5>Senhas desiguais, refaça o cadastro!</h5>
+				</div>
+			<?php }
 			if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
 				<div class="msgForm">
 					<h5>Erro ao cadastrar, tente novamente!!</h5>
