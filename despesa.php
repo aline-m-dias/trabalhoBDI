@@ -6,7 +6,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
     $acao = 'totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
-    if ($despesa_total_grafico == null){
+    if ($despesa_total_grafico == -1){
         header('Location: despesa.php?erroGrafico=1');
     }else{
         $despesa_grafico = $despesa_total_grafico;
@@ -20,11 +20,11 @@ if (isset($_GET['pesquisaDespesa']) == false) {
     $acao = 'imprimirDespesas?totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
-    if ($despesa_total_grafico == null && $listaDespesas != null){
+    if ($despesa_total_grafico == -1 && $listaDespesas != -1){
         header('Location: despesa.php?erroGrafico=1');
-    }else if($despesa_total_grafico == null && $listaDespesas == null ){
+    }else if($despesa_total_grafico == -1 && $listaDespesas == -1){
         header('Location: despesa.php?erroImprimir=1?erroGrafico=1');
-    }else if($despesa_total_grafico != null && $listaDespesas == null){
+    }else if($despesa_total_grafico != -1 && $listaDespesas == -1){
         header('Location: despesa.php?erroImprimir=1');
     }else{
         $nome_despesa = $listaDespesas;
@@ -81,8 +81,8 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         }
     </script>
     <script>
-        function acao(codigo) {
-            location.href = 'controle_servico_despesa.php?acao=excluirDespesa&codigo=' + codigo;
+        function acao(codigo,tipo) {
+            location.href = 'controle_servico_despesa.php?acao=excluirDespesa&codigo='+codigo;
         }
     </script>
 

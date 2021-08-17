@@ -24,6 +24,9 @@ if ($acao == 'inserirDespesa') {
         $servico_despesa->inserirDespesa();
     }    
 }else if($acao == 'imprimirDespesas?totalDespesaGrafico'){
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     $despesa = new Despesa();
     $conexao = new Conexao();
     $despesa->__set('tipo', $_POST['tipo']);

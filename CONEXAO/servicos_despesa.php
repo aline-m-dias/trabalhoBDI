@@ -63,30 +63,35 @@ class Serviços_despesa
 		}
 	}
 
-	public function imprimirDespesas(){	
-		if(!isset($_SESSION)){
-			session_start();
+	public function imprimirDespesas(){
+		try{
+			if(!isset($_SESSION)){
+				session_start();
+			}
+			$this->login = $_SESSION["login"];
+	
+			if ($this->tipo == 'Alimentação') {
+				$this->tipo = 'alimentacao';
+			} else if ($this->tipo == 'Saúde') {
+				$this->tipo = 'saude';
+			}else if ($this->tipo == 'Educação') {
+				$this->tipo = 'educacao';
+			}else if ($this->tipo == 'Moradia') {
+				$this->tipo = 'moradia';
+			}else if ($this->tipo == 'Transporte') {
+				$this->tipo = 'transporte';
+			}else if ($this->tipo == 'Diversos') {
+				$this->tipo = 'diversos';
+			}
+			$_SESSION["tipoDespesa"] = $this->tipo;
+	
+			$query = "select D.nome, D.valor, D.data_desp, D.codigo from $this->tipo D, usuario U where '$this->login' = U.login AND '$this->login' = D.login;";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);			
+		}catch (PDOException $e){
+			return -1;
 		}
-		$this->login = $_SESSION["login"];
-		if ($this->tipo == 'Alimentação') {
-			$this->tipo = 'alimentacao';
-		} else if ($this->tipo == 'Saúde') {
-			$this->tipo = 'saude';
-		}else if ($this->tipo == 'Educação') {
-			$this->tipo = 'educacao';
-		}else if ($this->tipo == 'Moradia') {
-			$this->tipo = 'moradia';
-		}else if ($this->tipo == 'Transporte') {
-			$this->tipo = 'transporte';
-		}else if ($this->tipo == 'Diversos') {
-			$this->tipo = 'diversos';
-		}
-		$_SESSION["tipoDespesa"] = $this->tipo;
-
-		$query = "select D.nome, D.valor, D.data_desp, D.codigo from $this->tipo D, usuario U where '$this->login' = U.login AND '$this->login' = D.login;";
-		$stmt = $this->conexao->prepare($query);
-		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		
 	}
 
@@ -95,33 +100,29 @@ class Serviços_despesa
 	}
 
 	public function calcularDespesasTotais(){
-		try{
-			if(!isset($_SESSION)){
-				session_start();
-			}
-			$this->login = $_SESSION["login"];
-	
-			$categoria_despesa = ['alimentacao', 'saude', 'educacao', 'moradia','transporte','diversos'];
-			$despesas_totais = 0;
-	
-			$i = isset($i) ? 0 : 0;
-			for ($i = 0; $i < 6; $i++) {
-				$query = "select sum (D.valor) as valor from $categoria_despesa[$i] D, usuario U
-						where D.login = '$this->login' AND U.login = '$this->login';";
-				$stmt = $this->conexao->prepare($query);
-				$stmt->execute();
-				$despesa_total_categoria = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				if($despesa_total_categoria[0]['valor'] == NULL){
-					$despesas_totais = $despesas_totais + 0;
-				}else{
-					$despesas_totais = $despesas_totais + $despesa_total_categoria[0]['valor'];	
-				}	
-			}
-			return $despesas_totais;
-		}catch (PDOException $e){
-			return null;
-		}
 		
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		$this->login = $_SESSION["login"];
+
+		$categoria_despesa = ['alimentacao', 'saude', 'educacao', 'moradia','transporte','diversos'];
+		$despesas_totais = 0;
+
+		$i = isset($i) ? 0 : 0;
+		for ($i = 0; $i < 6; $i++) {
+			$query = "select sum (D.valor) as valor from $categoria_despesa[$i] D, usuario U
+					where D.login = '$this->login' AND U.login = '$this->login';";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			$despesa_total_categoria = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			if($despesa_total_categoria[0]['valor'] == NULL){
+				$despesas_totais = $despesas_totais + 0;
+			}else{
+				$despesas_totais = $despesas_totais + $despesa_total_categoria[0]['valor'];	
+			}	
+		}
+		return $despesas_totais;	
 	}
 
 	public function totalDespesaGrafico(){
@@ -153,7 +154,7 @@ class Serviços_despesa
 			}
 			return $cat_despesa_total;
 		}catch (PDOException $e){
-			return null;
+			return -1;
 		}			
 	}
 
