@@ -25,7 +25,7 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 	<header class="cabecalho">
 		<a class="logo" href="pagprincipal.php"> <img src="IMG/logo.jpeg"> </a>
 		<div class="botão-sair">
-			<ul><a href="index.php"> Sair </a></ul>
+			<ul><a href="controle_servico_logout.php"> Sair </a></ul>
 		</div>
 	</header>
 

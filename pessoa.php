@@ -27,7 +27,7 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
     <header class="cabecalho">
         <a class="logo" href="pagprincipal.php"> <img src="IMG/logo.jpeg"> </a>
         <div class="botão-sair">
-            <ul><a href="pagprincipal.php"> Sair </a></ul>
+            <ul><a href="controle_servico_logout.php"> Sair </a></ul>
         </div>
     </header>
 
