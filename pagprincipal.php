@@ -36,12 +36,12 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 	</div>
 
 	<div class="receita_despesa">
-
+		<!--
 		<form id="botão" action="pessoa.php" method="post" name="pagpessoa">
 			<div class="full">
 				<input id="btn-submitLogin" type="submit" value="Pessoa">
 			</div>
-		</form>
+		</form> -->
 		<form id="botão" action="receita.php" method="post" name="pagreceita">
 			<div class="ful">
 				<input id="btn-submitLogin" type="submit" value="Receita">
@@ -71,7 +71,7 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 		<div class="centrobalanco">
 			<!--- <label for="mes">Selecione o ano/mês</label>
 			<select type="month" name="mes" id="mes"> </select> -->
-			<h2>Saldo | R$ <?php echo $_SESSION["saldo"] ?></h2>
+			<h1>Saldo | R$ <?php echo $_SESSION["saldo"] ?></h1>
 			<br>
 			<h2>Receitas totais | R$ <?php echo $receitas_totais ?></h2>
 			<br>

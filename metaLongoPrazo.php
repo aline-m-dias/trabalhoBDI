@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 $acao = 'imprimirMetasLongoPrazo';
 require_once 'controle_servico_meta.php';
 
-if (!isset($_GET['erroImprimir'])){
+if (!isset($_GET['erroImprimir'])) {
     $nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : '';
     $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : '';
     $nome_meta[0]['data_fim'] = isset($listaMetas[0]['data_fim']) ? $listaMetas[0]['data_fim'] : '';
@@ -71,18 +71,18 @@ if (!isset($_GET['erroImprimir'])){
     <div class="ola">
         <p>Olá, Família <?php echo $_SESSION["nome_familia"]; ?></p>
     </div>
-    <div class="receita_despesa">
+    <div class="receita_despes">
         <form id="botão" action="pagprincipal.php" method="post" name="pagprincipal">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Página principal">
             </div>
         </form>
-
+        <!--
         <form id="botão" action="pessoa.php" method="post" name="pagpessoa">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Pessoa">
             </div>
-        </form>
+        </form>-->
         <form id="botão" action="receita.php" method="post" name="pagreceita">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Receita">

@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 $acao = 'imprimirReceitas';
 require_once 'controle_servico_receita.php';
 
-if (!isset($_GET['erroImprimir'])){
+if (!isset($_GET['erroImprimir'])) {
     $nome_receita = $listaReceitas;
     $i = isset($i) ? 0 : 0;
     for ($i = 0; $i < count($nome_receita); $i++) {
@@ -14,7 +14,7 @@ if (!isset($_GET['erroImprimir'])){
         $nome_receita[$i]['data_rec'] = isset($listaReceitas[$i]['data_rec']) ?  $listaReceitas[$i]['data_rec'] : $listareceitas[$i]['data_rec'];
         $nome_receita[$i]['codigo'] = isset($listaReceitas[$i]['codigo']) ?  $listaReceitas[$i]['codigo'] : $listareceitas[$i]['codigo'];
     }
-}?>
+} ?>
 
 <!DOCTYPE html>
 <html>
@@ -48,18 +48,18 @@ if (!isset($_GET['erroImprimir'])){
     <div class="ola">
         <p>Olá, Família <?php echo $_SESSION["nome_familia"]; ?></p>
     </div>
-    <div class="receita_despesa">
+    <div class="receita_despes">
         <form id="botão" action="pagprincipal.php" method="post" name="pagprincipal">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Página principal">
             </div>
         </form>
-
+        <!--
         <form id="botão" action="pessoa.php" method="post" name="pagpessoa">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Pessoa">
             </div>
-        </form>
+        </form>-->
         <form id="botão" action="receita.php" method="post" name="pagreceita">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Receita">
