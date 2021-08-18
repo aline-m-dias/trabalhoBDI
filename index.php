@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {
 <body>
 
 	<header class="cabecalho">
-		<a class="logo" href="index.php"> <img src="IMG/logo.jpeg"> </a>
+		<a class="logo" href="index.php"> <img src="IMG/c58e573f-254b-4987-be09-1f4b1cf7324f.jpg"> </a>
 	</header>
 
 	<div class="fundoPretoCadastro">
