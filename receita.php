@@ -47,9 +47,14 @@ for ($i = 0; $i < count($nome_receita); $i++) {
         <p>Olá, Família <?php echo $_SESSION["nome_familia"]; ?></p>
     </div>
     <div class="receita_despesa">
+        <form id="botão" action="pagprincipal.php" method="post" name="pagprincipal">
+            <div class="ful">
+                <input id="btn-submitLogin" type="submit" value="Página principal">
+            </div>
+        </form>
 
         <form id="botão" action="pessoa.php" method="post" name="pagpessoa">
-            <div class="full">
+            <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Pessoa">
             </div>
         </form>
@@ -73,6 +78,7 @@ for ($i = 0; $i < count($nome_receita); $i++) {
                 <input id="btn-submitLogin" type="submit" value="Meta Longo Prazo">
             </div>
         </form>
+
 
     </div>
     <div class="clear"></div>

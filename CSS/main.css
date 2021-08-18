@@ -88,7 +88,7 @@ input[id="btn-submitLogin"] {
     font-size: 15px;
     text-align: center;
     width: 150px;
-    margin-right: 60px;
+    margin-right: 50px;
     margin-top: 10px;
 }
 
@@ -161,7 +161,7 @@ form[id="botão"] {
 
 .ful {
     width: 25%;
-    margin: 0;
+    margin-left: 20px;
 }
 
 .frase {
