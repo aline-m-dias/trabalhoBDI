@@ -6,9 +6,9 @@ if (isset($_GET['pesquisaDespesa']) == false) {
     $acao = 'totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
-    if ($despesa_total_grafico == -1){
+    if ($despesa_total_grafico == -1) {
         header('Location: despesa.php?erroGrafico=1');
-    }else{
+    } else {
         $despesa_grafico = $despesa_total_grafico;
         $i = isset($i) ? 0 : 0;
         for ($i = 0; $i < 6; $i++) {
@@ -20,13 +20,13 @@ if (isset($_GET['pesquisaDespesa']) == false) {
     $acao = 'imprimirDespesas?totalDespesaGrafico';
     require_once 'controle_servico_despesa.php';
 
-    if ($despesa_total_grafico == -1 && $listaDespesas != -1){
+    if ($despesa_total_grafico == -1 && $listaDespesas != -1) {
         header('Location: despesa.php?erroGrafico=1');
-    }else if($despesa_total_grafico == -1 && $listaDespesas == -1){
+    } else if ($despesa_total_grafico == -1 && $listaDespesas == -1) {
         header('Location: despesa.php?erroImprimir=1?erroGrafico=1');
-    }else if($despesa_total_grafico != -1 && $listaDespesas == -1){
+    } else if ($despesa_total_grafico != -1 && $listaDespesas == -1) {
         header('Location: despesa.php?erroImprimir=1');
-    }else{
+    } else {
         $nome_despesa = $listaDespesas;
         $despesa_grafico = $despesa_total_grafico;
 
@@ -42,7 +42,7 @@ if (isset($_GET['pesquisaDespesa']) == false) {
             $despesa_grafico[$i]['valor'] = isset($despesa_total_grafico[$i]['valor']) ?  $despesa_total_grafico[$i]['valor'] : $despesa_total_grafico[$i]['valor'];
         }
     }
-}?>
+} ?>
 
 <!DOCTYPE html>
 <html>
@@ -81,8 +81,8 @@ if (isset($_GET['pesquisaDespesa']) == false) {
         }
     </script>
     <script>
-        function acao(codigo,tipo) {
-            location.href = 'controle_servico_despesa.php?acao=excluirDespesa&codigo='+codigo;
+        function acao(codigo, tipo) {
+            location.href = 'controle_servico_despesa.php?acao=excluirDespesa&codigo=' + codigo;
         }
     </script>
 
@@ -172,29 +172,34 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 </div>
 
             </form>
-
-            <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Despesa cadastrada com sucesso!</h5>
-                </div>
-            <?php } if (isset($_GET['erroCadastro']) && $_GET['erroCadastro'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Erro ao cadastrar, tente novamente!</h5>
-                </div>
-            <?php } if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
-				<div class="msgForm">
-					<h5>Preencha todos os campos obrigatórios!</h5>
-				</div>
-			<?php }?>
-
+            <div style="background-color:#D6A913; border-radius:10px;">
+                <?php if (isset($_GET['despesacadastrada']) && $_GET['despesacadastrada'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Despesa cadastrada com sucesso!</h5>
+                    </div>
+                <?php }
+                if (isset($_GET['erroCadastro']) && $_GET['erroCadastro'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Erro ao cadastrar, tente novamente!</h5>
+                    </div>
+                <?php }
+                if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Preencha todos os campos obrigatórios!</h5>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
     <div class="grafico" id="donutchart" style="width: 900px; height: 500px; text-align:center"></div>
-
-    <?php if (isset($_GET['erroGrafico']) && $_GET['erroGrafico'] == 1) { ?>
+    <div class="clear"></div>
+    <div class="graficomsg">
+        <?php if (isset($_GET['erroGrafico']) && $_GET['erroGrafico'] == 1) { ?>
             <div class="msgForm">
                 <h5>Erro ao imprimir o gráfico, tente mais tarde!</h5>
-            </div> <?php } ?>
+            </div>
+        <?php } ?>
+    </div>
 
     <div class="pesquiseDespesa">
         <div>
@@ -241,19 +246,21 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                                     <div style="float:right; margin-top:-26px; margin-right:30px; padding-top:20px;  ">
                                         <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
                                     </div>
-                            <?php } }
-                            if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
-                                <div class="msgForm">
-                                    <h5>Despesa excluída com sucesso!!</h5>
-                                </div> <?php } 
-                            if (isset($_GET['erroImprimir']) && $_GET['erroImprimir'] == 1) { ?>
-                                <div class="msgForm">
-                                    <h5>Erro ao imprimir, tente novamente mais tarde!</h5>
-                                </div><?php }
-                            if (isset($_GET['erroExcluir']) && $_GET['erroExcluir'] == 1) { ?>
-                                <div class="msgForm">
-                                    <h5>Erro ao excluir, tente novamente!</h5>
-                                </div> <?php } ?>
+                                </div>
+                            <?php }
+                        }
+                        if (isset($_GET['despesaexcluida']) && $_GET['despesaexcluida'] == 1) { ?>
+                            <div class="msgForm">
+                                <h5>Despesa excluída com sucesso!!</h5>
+                            </div> <?php }
+                                if (isset($_GET['erroImprimir']) && $_GET['erroImprimir'] == 1) { ?>
+                            <div class="msgForm">
+                                <h5>Erro ao imprimir, tente novamente mais tarde!</h5>
+                            </div><?php }
+                                if (isset($_GET['erroExcluir']) && $_GET['erroExcluir'] == 1) { ?>
+                            <div class="msgForm">
+                                <h5>Erro ao excluir, tente novamente!</h5>
+                            </div> <?php } ?>
                         </div>
 </body>
 

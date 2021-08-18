@@ -123,24 +123,26 @@ if ($nome_meta[0]['valor'] != NULL) {
                 </div>
 
             </form>
-            <?php if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 1) { ?>
-                <div class="msgForm">
-                    <h5> Meta curto prazo cadastrada com sucesso!</h5>
-                </div>
-            <?php } else if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 0) { ?>
-                <div class="msgForm">
-                    <h5>Atenção: Não foi possível cadastrar, pois só é permitido cadastrar uma única meta
-                        de curto prazo por vez!</h5>
-                </div>
-            <?php } else if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Preencha todos os campos obrigatórios!</h5>
-                </div>
-            <?php } else if (isset($_GET['erroCadastrar']) && $_GET['erroCadastrar=1'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Erro ao cadastrar, tente novamente!</h5>
-                </div>
-            <?php }?>
+            <div style="background-color:#D6A913; border-radius:10px;">
+                <?php if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5> Meta curto prazo cadastrada com sucesso!</h5>
+                    </div>
+                <?php } else if (isset($_GET['metacadastrada']) && $_GET['metacadastrada'] == 0) { ?>
+                    <div class="msgForm">
+                        <h5>Atenção: Não foi possível cadastrar, pois só é permitido cadastrar uma única meta
+                            de curto prazo por vez!</h5>
+                    </div>
+                <?php } else if (isset($_GET['inputEmBranco']) && $_GET['inputEmBranco'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Preencha todos os campos obrigatórios!</h5>
+                    </div>
+                <?php } else if (isset($_GET['erroCadastrar']) && $_GET['erroCadastrar=1'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Erro ao cadastrar, tente novamente!</h5>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
 
@@ -155,18 +157,24 @@ if ($nome_meta[0]['valor'] != NULL) {
             </div>
         </form>
 
-        <?php }if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
+    <?php } ?>
+
+    <div class="clear"></div>
+    <div class="graficomsg">
+
+        <?php if (isset($_GET['metaexcluida']) && $_GET['metaexcluida'] == 1) { ?>
             <div class="msgForm">
                 <h5>Meta excluída com sucesso!!</h5>
             </div><?php }
-            if (isset($_GET['erroImprimir']) && $_GET['erroImprimir'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Erro ao imprimir, tente novamente!</h5>
-                </div><?php }
-            if (isset($_GET['erroExcluir']) && $_GET['erroExcluir'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Erro ao excluir, tente novamente!</h5>
-                </div> <?php } ?>
+                if (isset($_GET['erroImprimir']) && $_GET['erroImprimir'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Erro ao imprimir, tente novamente!</h5>
+            </div><?php }
+                if (isset($_GET['erroExcluir']) && $_GET['erroExcluir'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Erro ao excluir, tente novamente!</h5>
+            </div> <?php } ?>
+    </div>
 
 </body>
 

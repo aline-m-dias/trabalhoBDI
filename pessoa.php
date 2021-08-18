@@ -96,11 +96,13 @@ for ($i = 0; $i < count($nome_pessoa); $i++) {
                 </div>
 
             </form>
-            <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Pessoa cadastrada com sucesso!</h5>
-                </div>
-            <?php } ?>
+            <div style="background-color:#D6A913; border-radius:10px;">
+                <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
+                    <div class="msgForm">
+                        <h5>Pessoa cadastrada com sucesso!</h5>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
     <div class="clear"></div>

@@ -190,7 +190,7 @@ form[id="botão"] {
 
 .fazerLogin {
     background-color: #22d6b5;
-    height: 250px;
+    height: 220px;
     width: 500px;
     float: left;
     margin: 250px;
@@ -312,7 +312,7 @@ select {
 
 .cadrastrarDespesa {
     background-color: #22d6b5;
-    height: 350px;
+    height: 320px;
     width: 500px;
     float: left;
     margin: 70px;
@@ -323,7 +323,7 @@ select {
 
 .cadrastrarReceita {
     background-color: #22d6b5;
-    height: 300px;
+    height: 270px;
     width: 500px;
     float: left;
     margin: 70px;
@@ -350,8 +350,8 @@ select {
 .centro {
     padding-top: 35px;
     margin-left: 30px;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .centro-cadastro {
@@ -359,9 +359,8 @@ select {
 }
 
 .espaco {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     padding-top: 30px;
-    line-height: 130%;
 }
 
 .espacopessoa {
@@ -379,8 +378,7 @@ select {
 
 .receitas {
     background-color: #22d6b5;
-    min-width: 500px;
-    max-width: 700px;
+    width: 500px;
     float: left;
     border-radius: 10px;
     margin-top: 100px;
@@ -497,5 +495,16 @@ select {
     background-color: #D6A913;
     margin-top: 110px;
     text-align: center;
+    font-size: 12px;
     padding: 10px;
+}
+
+.graficomsg {
+    background-color: #D6A913;
+    width: 500px;
+    float: left;
+    margin-top: 110px;
+    margin-left: 450px;
+    text-align: center;
+    border-radius: 10px;
 }

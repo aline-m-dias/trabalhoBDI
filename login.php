@@ -47,18 +47,22 @@ if (!isset($_SESSION)) {
 				</div>
 
 			</form>
-			<?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { ?>
-				<div class="msgForm">
-					<h5>Atenção: Login ou senha incorretos!</h5>
-				</div>
-			<?php } if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
-				<div class="msgForm">
-					<h5>Erro ao logar, tente novamente!</h5>
-				</div>
-			<?php } ?>
+			<div style="background-color:#D6A913; border-radius:10px;">
+				<?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { ?>
+					<div class="msgForm">
+						<h5>Atenção: Login ou senha incorretos!</h5>
+					</div>
+				<?php }
+				if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
+					<div class="msgForm">
+						<h5>Erro ao logar, tente novamente!</h5>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
+	</div>
 
-		<div class="clear"></div>
+	<div class="clear"></div>
 </body>
 
 </html>
