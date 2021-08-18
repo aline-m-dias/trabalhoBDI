@@ -54,7 +54,7 @@ if (!isset($_SESSION)) {
 					<input type="password" name="senha" id="senha" placeholder="Digite sua senha">
 				</div>
 				<div class="full-box">
-					<label for="passconfirmation">Confirmação de senha</label>
+					<label class="required" for="passconfirmation">Confirmação de senha</label>
 					<input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha">
 				</div>
 				<div style="padding-left:10px;" class="required"> Itens obrigatórios</div>
