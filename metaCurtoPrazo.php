@@ -5,18 +5,21 @@ if (!isset($_SESSION)) {
 $acao = 'imprimirMetasCurtoPrazo';
 require_once 'controle_servico_meta.php';
 
-$nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : '';
-$nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : '';
-$nome_meta[0]['data_fim'] = isset($listaMetas[0]['data_fim']) ? $listaMetas[0]['data_fim'] : '';
+if (!isset($_GET['erroImprimir'])){
+    $nome_meta[0]['nome_meta'] = isset($listaMetas[0]['nome_meta']) ? $listaMetas[0]['nome_meta'] : '';
+    $nome_meta[0]['valor'] = isset($listaMetas[0]['valor']) ? $listaMetas[0]['valor'] : '';
+    $nome_meta[0]['data_fim'] = isset($listaMetas[0]['data_fim']) ? $listaMetas[0]['data_fim'] : '';
 
-if ($nome_meta[0]['valor'] != NULL) {
-    $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
-    $concluido = $_SESSION["saldo"];
-    if ($falta <= 0) {
-        $falta = 0;
-        $concluido = $nome_meta[0]['valor'];
+    if ($nome_meta[0]['valor'] != NULL) {
+        $falta = $nome_meta[0]['valor'] - $_SESSION["saldo"];
+        $concluido = $_SESSION["saldo"];
+        if ($falta <= 0) {
+            $falta = 0;
+            $concluido = $nome_meta[0]['valor'];
+        }
     }
-} ?>
+}
+ ?>
 <!DOCTYPE html>
 <html>
 

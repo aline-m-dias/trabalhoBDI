@@ -69,27 +69,23 @@ class Serviços_receita {
 	}
 
 	public function calcularReceitasTotais(){
-		try{
-			if(!isset($_SESSION)){
-				session_start();
-			}
-			$this->login = $_SESSION["login"];
-	
-			$query = "select sum (R.valor) as valor from receita R, usuario U
-						where R.login = '$this->login' AND U.login = '$this->login';";
-			$stmt = $this->conexao->prepare($query);
-			$stmt->execute();
-			$receita = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			
-			if($receita[0]['valor'] == NULL){
-				$receitas_totais = 0;
-			}else{
-				$receitas_totais = $receita[0]['valor'];
-			}
-			return $receitas_totais;
-		}catch (PDOException $e){
-			return null;
+		if(!isset($_SESSION)){
+			session_start();
 		}
+		$this->login = $_SESSION["login"];
+
+		$query = "select sum (R.valor) as valor from receita R, usuario U
+					where R.login = '$this->login' AND U.login = '$this->login';";
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
+		$receita = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			
+		if($receita[0]['valor'] == NULL){
+			$receitas_totais = 0;
+		}else{
+			$receitas_totais = $receita[0]['valor'];
+		}
+		return $receitas_totais;
 	}
 
 	public function excluirReceita(){

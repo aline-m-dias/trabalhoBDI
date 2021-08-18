@@ -5,14 +5,16 @@ if (!isset($_SESSION)) {
 $acao = 'imprimirReceitas';
 require_once 'controle_servico_receita.php';
 
-$nome_receita = $listaReceitas;
-$i = isset($i) ? 0 : 0;
-for ($i = 0; $i < count($nome_receita); $i++) {
-    $nome_receita[$i]['nome'] = isset($listaReceitas[$i]['nome']) ?  $listaReceitas[$i]['nome'] : $listareceitas[$i]['nome'];
-    $nome_receita[$i]['valor'] = isset($listaReceitas[$i]['valor']) ?  $listaReceitas[$i]['valor'] : $listareceitas[$i]['valor'];
-    $nome_receita[$i]['data_rec'] = isset($listaReceitas[$i]['data_rec']) ?  $listaReceitas[$i]['data_rec'] : $listareceitas[$i]['data_rec'];
-    $nome_receita[$i]['codigo'] = isset($listaReceitas[$i]['codigo']) ?  $listaReceitas[$i]['codigo'] : $listareceitas[$i]['codigo'];
-} ?>
+if (!isset($_GET['erroImprimir'])){
+    $nome_receita = $listaReceitas;
+    $i = isset($i) ? 0 : 0;
+    for ($i = 0; $i < count($nome_receita); $i++) {
+        $nome_receita[$i]['nome'] = isset($listaReceitas[$i]['nome']) ?  $listaReceitas[$i]['nome'] : $listareceitas[$i]['nome'];
+        $nome_receita[$i]['valor'] = isset($listaReceitas[$i]['valor']) ?  $listaReceitas[$i]['valor'] : $listareceitas[$i]['valor'];
+        $nome_receita[$i]['data_rec'] = isset($listaReceitas[$i]['data_rec']) ?  $listaReceitas[$i]['data_rec'] : $listareceitas[$i]['data_rec'];
+        $nome_receita[$i]['codigo'] = isset($listaReceitas[$i]['codigo']) ?  $listaReceitas[$i]['codigo'] : $listareceitas[$i]['codigo'];
+    }
+}?>
 
 <!DOCTYPE html>
 <html>
