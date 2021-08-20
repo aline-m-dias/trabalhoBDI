@@ -145,7 +145,7 @@ if (!isset($_GET['erroImprimir'])) {
                     <div class="msgForm">
                         <h5>Preencha todos os campos obrigatórios!</h5>
                     </div>
-                <?php } else if (isset($_GET['erroCadastrar']) && $_GET['erroCadastrar=1'] == 1) { ?>
+                <?php } else if (isset($_GET['erroCadastrar']) && $_GET['erroCadastrar'] == 1) { ?>
                     <div class="msgForm">
                         <h5>Erro ao cadastrar, tente novamente!</h5>
                     </div>

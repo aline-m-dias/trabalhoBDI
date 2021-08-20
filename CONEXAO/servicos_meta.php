@@ -35,16 +35,17 @@ class Serviços_meta
 			$cont = count($stmt->fetchAll(PDO::FETCH_NUM));
 			
 			if($cont == 0){
-				$query = "select codigo from $this->tipo;";
+				$query = "select max(codigo) as max from $this->tipo;";
 				$stmt = $this->conexao->prepare($query);
 				$stmt->execute();
-				$this->codigo = count($stmt->fetchAll(PDO::FETCH_NUM));
-				$this->codigo ++;
-	
+				$meta = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				
+				$this->codigo = $meta[0]['max']; 
+				$this->codigo++;
+				 
 				$query = "insert into $this->tipo (nome_meta, codigo, valor, data_fim, login)
 				values ('$this->nome_meta', $this->codigo, $this->valor, '$this->data_fim', '$this->login');";
 				$this->conexao->exec($query);
-	
 				if ($this->tipo == 'meta_curto_prazo') {
 					header('Location: metaCurtoPrazo.php?metacadastrada=1');
 				} else if ($this->tipo == 'meta_longo_prazo') {
