@@ -16,13 +16,14 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 <head>
 	<title>Poupe Mais</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" href="CSS/main.css">
 </head>
 
 <body>
-
+    <!--
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />-->
 
 	<header class="cabecalho">
 		<a class="logo" href="index.php"> <img src="IMG/c58e573f-254b-4987-be09-1f4b1cf7324f.jpg"> </a>

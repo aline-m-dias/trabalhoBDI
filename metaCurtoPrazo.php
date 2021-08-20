@@ -26,6 +26,7 @@ if (!isset($_GET['erroImprimir'])) {
 <head>
     <title>Poupe Mais | Meta Curto Prazo</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="CSS/main.css">
     <!-- copyright: google chart-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -55,9 +56,7 @@ if (!isset($_GET['erroImprimir'])) {
 
 <body>
 
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
 
     <header class="cabecalho">
         <a class="logo" href="index.php"> <img src="IMG/c58e573f-254b-4987-be09-1f4b1cf7324f.jpg"> </a>
