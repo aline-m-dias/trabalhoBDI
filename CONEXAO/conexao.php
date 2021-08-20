@@ -3,10 +3,10 @@
 class Conexao
 {
 
-	private $host = 'ec2-35-153-114-74.compute-1.amazonaws.com';
-	private $dbname = 'd46f2u52mcqvnk';
-	private $user = 'cfpffxorgxfkzk';
-	private $pass = '1c9ce944b50a8fa0afed83ddc6cf8229289db0f3fe6d911bd3dd0de47c3ead2f';
+	private $host = 'localhost';
+	private $dbname = 'poupemais';
+	private $user = 'postgres';
+	private $pass = '1234';
 
 	public function conectar()
 	{
