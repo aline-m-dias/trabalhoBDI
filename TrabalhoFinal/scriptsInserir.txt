@@ -1,0 +1,82 @@
+/*Inserindo usuários*/
+INSERT INTO usuario (login,senha, nome_familia, qtd_pessoas)
+VALUES ('João da Silva', '982114', 'Silva', 3 );
+INSERT INTO usuario (login,senha, nome_familia, qtd_pessoas)
+VALUES ('Maria Fernandes', '123654', 'Fernandes', 3 );
+INSERT INTO usuario (login,senha, nome_familia, qtd_pessoas)
+VALUES ('Eduardo Ferreira', '974563', 'Ferreira', 2 );
+INSERT INTO usuario (login,senha, nome_familia, qtd_pessoas)
+VALUES ('Ana Soares', '745612', 'Soares', 2 );
+
+/*Inserindo receitas*/
+INSERT INTO receita(nome, codigo, valor, data_rec, login)
+VALUES ('Trabalho',00001, 2000.70, '20/07/21', 'João da Silva');
+INSERT INTO receita(nome, codigo, valor, data_rec, login)
+VALUES ('Emprego',00002, 3030.79, '02/07/21', 'João da Silva');
+INSERT INTO receita(nome, codigo, valor, data_rec, login)
+VALUES ('Trabalho',00003, 1520.00, '20/07/21', 'Maria Fernandes');
+INSERT INTO receita(nome, codigo, valor, data_rec, login)
+VALUES ('Caixa Loja',00004, 5080.80, '01/07/21', 'Maria Fernandes');
+INSERT INTO receita(nome, codigo, valor, data_rec, login)
+VALUES ('Caixa Loja',00005, 2500.00, '07/07/21', 'Ana Soares');
+INSERT INTO receita(nome, codigo, valor, data_rec, login)
+VALUES ('Trabalho',00006, 505.45, '20/07/21', 'Ana Soares');
+
+/*Inserindo despesas educação*/
+INSERT INTO educacao(nome, codigo, valor,data_desp, login)
+VALUES ('Escola',00001,250, '25/07/2021','João da Silva');
+INSERT INTO educacao(nome, codigo, valor,data_desp, login)
+VALUES ('Faculdade',00002,500, '22/07/2021','Maria Fernandes');
+INSERT INTO educacao(nome,codigo,valor,data_desp, login)
+VALUES ('Escola',00003,1000,'20/07/2021','Eduardo Ferreira');
+INSERT INTO educacao(nome,codigo,valor,data_desp, login)
+VALUES ('Cursinho de inglês',00004,300, '05/07/2021','Ana Soares');
+
+/*inserindo diversos*/
+INSERT INTO diversos (nome,codigo,valor,data_desp, login)
+VALUES ('Conserto carro',00001,250, '11/07/2021','João da Silva');
+INSERT INTO diversos (nome,codigo,valor,data_desp, login)
+VALUES ('Pintura da casa',00002,2020.23, '01/07/2021','João da Silva');
+INSERT INTO diversos (nome,codigo,valor,data_desp, login)
+VALUES ('Roupas',00003,247.20, '19/07/2021','João da Silva');
+
+/*inserindo na tabela moradia*/
+INSERT INTO moradia (nome,codigo,valor, data_desp, login)
+VALUES ('Aluguel',00001,700, '01/07/2021', 'Eduardo Ferreira');
+INSERT INTO moradia (nome,codigo,valor, data_desp, login)
+VALUES ('Aluguel apartamento',00002,900, '01/07/2021', 'Maria Fernandes');
+
+/*inserindo na tabela saude*/
+INSERT INTO saude (nome,codigo,valor, data_desp, login)
+VALUES ('Compra de remedios',00001,220.5, '03/07/2021', 'Maria Fernandes');
+INSERT INTO saude (nome,codigo,valor, data_desp, login)
+VALUES ('Cirurgia',00002,2540.50, '06/07/2021', 'Maria Fernandes');
+INSERT INTO saude (nome,codigo,valor, data_desp, login)
+VALUES ('Remedios',00003,100.47, '08/07/2021', 'João da Silva');
+INSERT INTO saude (nome,codigo,valor, data_desp, login)
+VALUES ('Farmacia',00004,220.5, '22/07/2021', 'Eduardo Ferreira');
+
+/*inserido tabela transporte*/
+INSERT INTO transporte (nome,codigo,valor, data_desp, login)
+VALUES ('Passagem',00001, 50, '12/07/2021', 'João da Silva');
+INSERT INTO transporte (nome,codigo,valor, data_desp, login)
+VALUES ('Passagem',00002, 72.7, '05/07/2021', 'Ana Soares');
+
+/*inserindo meta de curto prazo*/
+INSERT INTO meta_curto_prazo (nome_meta,codigo,valor, data_fim, login)
+VALUES ('Viagem',00001, '500', '31/12/2021', 'Eduardo Ferreira');
+INSERT INTO meta_curto_prazo (nome_meta,codigo,valor, data_fim, login)
+VALUES ('Viagem',00002, '1000', '31/10/2021', 'Maria Fernandes');
+
+/*meta de longo prazo*/
+INSERT INTO meta_longo_prazo (nome_meta,codigo,valor, data_fim, login)
+VALUES ('Carro',00001, '30000', '31/12/2024', 'Eduardo Ferreira');
+INSERT INTO meta_longo_prazo (nome_meta,codigo,valor, data_fim, login)
+VALUES ('Casamento',00002, '15000', '15/08/2022', 'Maria Fernandes');
+INSERT INTO meta_longo_prazo (nome_meta,codigo,valor, data_fim, login)
+VALUES ('Viagem Disney',00003, '30000', '01/07/2022', 'Ana Soares');
+
+
+
+
+
