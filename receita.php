@@ -32,12 +32,6 @@ if (!isset($_GET['erroImprimir'])) {
 </head>
 
 <body>
-    <!--
-
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />-->
-
     <header class="cabecalho">
         <a class="logo" href="index.php"> <img src="IMG/c58e573f-254b-4987-be09-1f4b1cf7324f.jpg"> </a>
         <div class="botão-sair">
@@ -56,12 +50,6 @@ if (!isset($_GET['erroImprimir'])) {
                 <input id="btn-submitLogin" type="submit" value="Página principal">
             </div>
         </form>
-        <!--
-        <form id="botão" action="pessoa.php" method="post" name="pagpessoa">
-            <div class="ful">
-                <input id="btn-submitLogin" type="submit" value="Pessoa">
-            </div>
-        </form>-->
         <form id="botão" action="receita.php" method="post" name="pagreceita">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Receita">

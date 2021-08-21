@@ -5,5 +5,4 @@
     unset($_SESSION['meta']);
     unset($_SESSION['tipoDespesa']);
     header('Location: index.php');
-
 ?>

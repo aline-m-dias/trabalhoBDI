@@ -111,12 +111,6 @@ if (isset($_GET['pesquisaDespesa']) == false) {
                 <input id="btn-submitLogin" type="submit" value="Página principal">
             </div>
         </form>
-        <!--
-        <form id="botão" action="pessoa.php" method="post" name="pagpessoa">
-            <div class="ful">
-                <input id="btn-submitLogin" type="submit" value="Pessoa">
-            </div>
-        </form>-->
         <form id="botão" action="receita.php" method="post" name="pagreceita">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="Receita">
